@@ -1,11 +1,13 @@
 class Shop.Views.OrdersItemsIndex extends Backbone.View
 
   tagName: 'tbody'
-  template: JST['orders/items']
+  template: JST['order_items/index']
 
   initialize: ->
     @collection.on('reset', @render, @)
 
   render: ->
-    $(@el).html(@template(order_items: @collection))  
+    $(@el).html(@template(order_items: @collection)) 
     @
+
+	

@@ -12,14 +12,14 @@
             <label for="filter" class="control-label">Filter orders by:</label>
             <div class="controls">
               <select id="filter">
-              <option value="Status">Status</option>
-              <option value="Role">Role</option>                
+            	<option value="Status">Status</option>
+            	<option value="Role">Role</option>                
               </select>            
             
               <select id="filter_options">
-              <option>Ordered</option>
-        <option>Pending</option>
-        <option>Delivered</option>               
+            	<option>Ordered</option>
+				<option>Pending</option>
+				<option>Delivered</option>               
               </select>
             </div>               
            </div>
@@ -31,12 +31,12 @@
             </label>
             <div class="controls">
               <select id="search_orders">
-        <option>Order Name</option>
-        <option>Status</option>
-        <option>Assignee</option>
-        </select>         
+				<option>Order Name</option>
+				<option>Status</option>
+				<option>Assignee</option>
+			  </select>         
 
-        <input type="text" id="filterText" name="request"> <input type="submit" id="search" class= "btn btn-primary"value="Apply">      
+			  <input type="text" id="filterText" name="request"> <input type="submit" id="search" class= "btn btn-primary"value="Apply">      
             </div>   
            </div>
           </fieldset>  
@@ -44,25 +44,25 @@
 </div>
 
 
-      <table id="orders" class="table table-condensed">
-      <tbody>
-      <tr>
-        <th>Order Name</th>
-        <th>Total Price</th>
-        <th>Max Discount</th>
-        <th>Delivery Date</th>
-        <th>Status</th>
-        <th>Assignee</th>
-        <th>Role</th>
-        <th>Edit</th>
-        <th>Delete</th>
-      </tr>     
-
+  		<table id="orders" class="table table-condensed">
+		  <tbody>
+			<tr>
+				<th>Order Name</th>
+				<th>Total Price</th>
+				<th>Max Discount</th>
+				<th>Delivery Date</th>
+				<th>Status</th>
+				<th>Assignee</th>
+				<th>Role</th>
+				<th>Edit</th>
+				<th>Delete</th>
+			</tr>			
+			
           </tbody>
-    </table>
+		</table>
 
-    <div class="pagination pagination-centered" id="paging-buttons">       
-        <ul class="pager">           
+		<div class="pagination pagination-centered" id="paging-buttons">       
+    	  <ul class="pager">           
                     <li>
                         <a href="#" id="first">First</a>
                     </li>
@@ -77,4 +77,4 @@
                     </li>
           </ul>            
          </div>
-</div>
+</div>		
