@@ -18,7 +18,7 @@ class Shop.Views.OrdersIndex extends Backbone.View
     @
 
   createOrder: ->
-    Backbone.history.navigate("orders/new", true) 
+    Backbone.history.navigate("/orders/new", true) 
 
   appendOrder: (order) =>
     view = new Shop.Views.OrdersOrder(model: order)

@@ -1,66 +1,81 @@
 class OrdersController < ApplicationController
-  respond_to :html, :json
-
   def index
-  #  @orders = if params[:request]
-      #fields = if params[:fields] == "all_columns"
-      #  %w(login_name first_name last_name role)
-      #else
-      #  params[:fields] 
-     # end
-     # Order.send params[:scope].intern, fields, params[:request]
-  #  else
-   #   Order.scoped
-   # end
-
-   # @orders = @orders.reorder(params[:orderBy]).page(params[:currentPage]).per(params[:perPage])
-
-   # @pagination = {
-      #current_page: @orders.current_page,
-      #num_pages:    @orders.num_pages,
-     # per_page:     @orders.limit_value,
-     # total_count:  Order.count,
-   # }
     @orders = Order.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @orders }
+    end
+  end
+
+  # GET /orders/1
+  # GET /orders/1.json
+  def show
+    @order = Order.find(params[:id])        
     
     respond_to do |format|
-      format.html
-      format.json do
-        respond_with({ models: @orders })#}.merge @pagination)
+      format.html # show.html.erb      
+      format.json { render json: @order}      
+    end
+  end
+
+  # GET /orders/new
+  # GET /orders/new.json
+  def new
+    @order = Order.new
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @order }
+    end
+  end
+
+  # GET /orders/1/edit
+  def edit
+    @order = Order.find(params[:id])
+  end
+
+  # POST /orders
+  # POST /orders.json
+  def create
+    @order = Order.new(params[:order])
+
+    respond_to do |format|
+      if @order.save
+        format.html { redirect_to @order, notice: 'Order was successfully created.' }
+        format.json { render json: @order, status: :created, location: @order }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  def show
-    @order = Order.find(params[:id])       
-    
-    #@all_items = @order.items.select("item_id,item_name,item_description,dimension,price,quantity,price_per_line")
-    
-    respond_to do |format|
-      format.html # show.html.erb      
-      format.json { render json: @all_items }
-      #format.json { render json: { order: @order, order_items: @all_items.to_json().html_safe } }
-    end
-  end 
-
-  def create
-    @order = Order.create params[:order]
-    respond_to do |format|
-      format.html { redirect_to user_path(@order) }
-      format.json { respond_with @order }
-    end
-  end
-
+  # PUT /orders/1
+  # PUT /orders/1.json
   def update
-    @order = Order.find params[:id]
-    @order.update_attributes params[:order]
+    @order = Order.find(params[:id])
+
     respond_to do |format|
-      format.html
-      format.json { respond_with @order }
+      if @order.update_attributes(params[:order])
+        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @order.errors, status: :unprocessable_entity }
+      end
     end
   end
 
+  # DELETE /orders/1
+  # DELETE /orders/1.json
   def destroy
-    respond_with Order.destroy(params[:id])
+    @order = Order.find(params[:id])
+    @order.destroy
+
+    respond_to do |format|
+      format.html { redirect_to orders_url }
+      format.json { head :no_content }
+    end
   end
 end

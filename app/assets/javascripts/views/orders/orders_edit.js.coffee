@@ -5,7 +5,7 @@ class Shop.Views.OrdersEdit extends Backbone.View
   template: JST['orders/show'] 
 
   initialize: ->
-    @model.on('change', @render, @)        
+    #@model.on('change', @render, @)        
     @render()
     @fillTable()
 
