@@ -4,7 +4,8 @@ class Shop.Views.OrdersIndex extends Backbone.View
 
   events:
     'change #filter': 'fillFilterOptions'
-    'click #order_create_button': 'createOrder'
+    #'click #order_create_button': 'createOrder'
+    'click .backbone': 'navigateLink' 
 
   initialize: ->
     @collection.on('reset', @render, @)
@@ -17,8 +18,9 @@ class Shop.Views.OrdersIndex extends Backbone.View
     @collection.each(@appendOrder)
     @
 
-  createOrder: ->
-    Backbone.history.navigate("orders/new", true) 
+  navigateLink: (event) ->
+    Backbone.history.navigate(event.target.attributes["href"].value, true) 
+    false
 
   appendOrder: (order) =>
     view = new Shop.Views.OrdersOrder(model: order)
@@ -26,7 +28,7 @@ class Shop.Views.OrdersIndex extends Backbone.View
 
   fillFilterOptions: ->
     $("#filter_options").children().remove()
-    cur_filter = ($("#filter option:selected").val())    
+    cur_filter = (@$("#filter option:selected").val())    
     status = ["", "Ordered", "Pending", "Delivered"]
     role = ["", "Merchandiser", "Administrator", "Supervisor"]    
     if cur_filter is "Role"
