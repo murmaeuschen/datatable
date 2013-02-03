@@ -33860,3 +33860,204 @@ Started GET "/api/orders" for 127.0.0.1 at 2013-02-10 15:15:59 +0200
 Processing by OrdersController#index as JSON
   [1m[36mOrder Load (0.7ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
 Completed 200 OK in 558ms (Views: 26.0ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-03 15:03:35 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 30 ORDER BY id asc LIMIT 1[0m
+Completed 401 Unauthorized in 193ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-02-03 15:03:35 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (2.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (38.3ms)
+Compiled jquery.js  (10ms)  (pid 5013)
+Compiled jquery_ujs.js  (0ms)  (pid 5013)
+Compiled twitter/bootstrap/bootstrap-transition.js  (0ms)  (pid 5013)
+Compiled twitter/bootstrap/bootstrap-alert.js  (0ms)  (pid 5013)
+Compiled twitter/bootstrap/bootstrap-modal.js  (0ms)  (pid 5013)
+Compiled twitter/bootstrap/bootstrap-dropdown.js  (0ms)  (pid 5013)
+Compiled twitter/bootstrap/bootstrap-scrollspy.js  (0ms)  (pid 5013)
+Compiled twitter/bootstrap/bootstrap-tab.js  (2ms)  (pid 5013)
+Compiled twitter/bootstrap/bootstrap-tooltip.js  (0ms)  (pid 5013)
+Compiled twitter/bootstrap/bootstrap-popover.js  (0ms)  (pid 5013)
+Compiled twitter/bootstrap/bootstrap-button.js  (0ms)  (pid 5013)
+Compiled twitter/bootstrap/bootstrap-collapse.js  (0ms)  (pid 5013)
+Compiled twitter/bootstrap/bootstrap-carousel.js  (0ms)  (pid 5013)
+Compiled twitter/bootstrap/bootstrap-typeahead.js  (0ms)  (pid 5013)
+Compiled twitter/bootstrap/bootstrap-affix.js  (0ms)  (pid 5013)
+Compiled twitter/bootstrap.js  (594ms)  (pid 5013)
+Compiled underscore.js  (1ms)  (pid 5013)
+Compiled backbone.js  (0ms)  (pid 5013)
+Compiled orders/items.js  (503ms)  (pid 5013)
+Compiled orders/show.js  (121ms)  (pid 5013)
+Compiled models/order_item.js  (168ms)  (pid 5013)
+Compiled collections/order_items.js  (5ms)  (pid 5013)
+Compiled views/orders/orders_items_index.js  (28ms)  (pid 5013)
+Compiled application.js  (2684ms)  (pid 5013)
+  Rendered devise/menu/_login_items.html.erb (1.5ms)
+Completed 200 OK in 3512ms (Views: 3480.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-02-03 15:03:49 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nwDSCtwfsfSLcVbRE7VYWTIgBgTvau3eJxCV5kVZA/E=", "user"=>{"login_name"=>"kot", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (7.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."login_name" = 'kot' ORDER BY id asc LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (55.5ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2013-02-05 10:23:57.460433', "current_sign_in_at" = '2013-02-03 13:03:50.161259', "sign_in_count" = 17, "updated_at" = '2013-02-03 13:03:50.192343' WHERE "users"."id" = 1
+  [1m[36m (9.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 515ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-03 15:03:50 +0200
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY id asc LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 25 OFFSET 0[0m
+  Rendered users/index.html.erb within layouts/application (87.2ms)
+  Rendered devise/menu/_login_items.html.erb (0.7ms)
+Completed 200 OK in 160ms (Views: 150.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/users?orderBy=id+asc&currentPage=1&perPage=25&fields=login_name&scope=start_with&request=" for 127.0.0.1 at 2013-02-03 15:03:51 +0200
+Processing by UsersController#index as JSON
+  Parameters: {"orderBy"=>"id asc", "currentPage"=>"1", "perPage"=>"25", "fields"=>"login_name", "scope"=>"start_with", "request"=>""}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY id asc LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE (login_name LIKE '%')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE (login_name LIKE '%') ORDER BY id asc LIMIT 25 OFFSET 0[0m
+Completed 200 OK in 77ms (Views: 51.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/users?orderBy=id+asc&currentPage=2&perPage=25&fields=login_name&scope=start_with&request=" for 127.0.0.1 at 2013-02-03 15:03:56 +0200
+Processing by UsersController#index as JSON
+  Parameters: {"orderBy"=>"id asc", "currentPage"=>"2", "perPage"=>"25", "fields"=>"login_name", "scope"=>"start_with", "request"=>""}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY id asc LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE (login_name LIKE '%')[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE (login_name LIKE '%') ORDER BY id asc LIMIT 25 OFFSET 25[0m
+Completed 200 OK in 21ms (Views: 2.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/users.json" for 127.0.0.1 at 2013-02-03 15:04:04 +0200
+Processing by UsersController#index as JSON
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY id asc LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 25 OFFSET 0[0m
+Completed 200 OK in 76ms (Views: 49.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2013-02-03 15:04:27 +0200
+Processing by UsersController#create as JSON
+  Parameters: {"login_name"=>"olga", "first_name"=>"olga", "last_name"=>"chumak", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"chumako@mail.ru", "region"=>"South", "role"=>"Customer", "user"=>{"login_name"=>"olga", "first_name"=>"olga", "last_name"=>"chumak", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"chumako@mail.ru", "region"=>"South", "role"=>"Customer"}}
+  [1m[35mUser Load (4.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY id asc LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."login_name" = 'olga' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (17.1ms)[0m  [1mINSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "failed_attempts", "first_name", "last_name", "last_sign_in_at", "last_sign_in_ip", "locked_at", "login_name", "region", "remember_created_at", "reset_password_sent_at", "reset_password_token", "role", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 03 Feb 2013 13:04:28 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "chumako@mail.ru"], ["encrypted_password", "$2a$10$N9fXUUOYjaewhZzz2y5GjeZz0xL9HevJ46bw9j9vuFV7Ya.fSvrM2"], ["failed_attempts", 0], ["first_name", "olga"], ["last_name", "chumak"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["locked_at", nil], ["login_name", "olga"], ["region", "South"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["role", "Customer"], ["sign_in_count", 0], ["updated_at", Sun, 03 Feb 2013 13:04:28 UTC +00:00]]
+  [1m[35m (7.6ms)[0m  commit transaction
+Completed 201 Created in 333ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-03 15:04:33 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY id asc LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35mUser Load (6.1ms)[0m  SELECT "users".* FROM "users" LIMIT 25 OFFSET 0
+  Rendered users/index.html.erb within layouts/application (69.0ms)
+  Rendered devise/menu/_login_items.html.erb (0.6ms)
+Completed 200 OK in 188ms (Views: 152.4ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/api/users?orderBy=id+asc&currentPage=1&perPage=25&fields=login_name&scope=start_with&request=" for 127.0.0.1 at 2013-02-03 15:04:34 +0200
+Processing by UsersController#index as JSON
+  Parameters: {"orderBy"=>"id asc", "currentPage"=>"1", "perPage"=>"25", "fields"=>"login_name", "scope"=>"start_with", "request"=>""}
+  [1m[36mUser Load (18.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY id asc LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "users" WHERE (login_name LIKE '%')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE (login_name LIKE '%') ORDER BY id asc LIMIT 25 OFFSET 0
+Completed 200 OK in 115ms (Views: 69.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/users?orderBy=id+asc&currentPage=2&perPage=25&fields=login_name&scope=start_with&request=" for 127.0.0.1 at 2013-02-03 15:04:38 +0200
+Processing by UsersController#index as JSON
+  Parameters: {"orderBy"=>"id asc", "currentPage"=>"2", "perPage"=>"25", "fields"=>"login_name", "scope"=>"start_with", "request"=>""}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY id asc LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "users" WHERE (login_name LIKE '%')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE (login_name LIKE '%') ORDER BY id asc LIMIT 25 OFFSET 25
+Completed 200 OK in 19ms (Views: 3.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2013-02-03 15:04:46 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"nwDSCtwfsfSLcVbRE7VYWTIgBgTvau3eJxCV5kVZA/E="}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY id asc LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 27ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-03 15:04:46 +0200
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 1ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-02-03 15:04:46 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.7ms)
+  Rendered devise/menu/_login_items.html.erb (0.7ms)
+Completed 200 OK in 66ms (Views: 65.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-02-03 15:04:54 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3/39p2qs1zQjA0PHUFqR4ecKJe5eaUCN4Wnn0kaHb3Q=", "user"=>{"login_name"=>"olga", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."login_name" = 'olga' ORDER BY id asc LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2013-02-03 13:04:54.693747', "current_sign_in_at" = '2013-02-03 13:04:54.693747', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2013-02-03 13:04:54.703766' WHERE "users"."id" = 30
+  [1m[36m (4.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/orders
+Completed 302 Found in 244ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2013-02-03 15:04:54 +0200
+Processing by OrdersController#index as HTML
+  [1m[35mOrder Load (0.2ms)[0m  SELECT "orders".* FROM "orders" 
+  Rendered orders/index.html.erb within layouts/application (19.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 30 ORDER BY id asc LIMIT 1[0m
+  Rendered devise/menu/_login_items.html.erb (0.6ms)
+Completed 200 OK in 124ms (Views: 79.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-03 15:04:55 +0200
+Processing by OrdersController#index as JSON
+  [1m[35mOrder Load (0.3ms)[0m  SELECT "orders".* FROM "orders" 
+Completed 200 OK in 18ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2013-02-03 15:06:46 +0200
+Processing by OrdersController#index as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+  Rendered orders/index.html.erb within layouts/application (3.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 30 ORDER BY id asc LIMIT 1
+  Rendered devise/menu/_login_items.html.erb (0.6ms)
+Completed 200 OK in 158ms (Views: 124.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-03 15:06:47 +0200
+Processing by OrdersController#index as JSON
+  [1m[36mOrder Load (0.4ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+Completed 200 OK in 11ms (Views: 2.5ms | ActiveRecord: 0.0ms)
