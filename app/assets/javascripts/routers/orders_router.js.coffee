@@ -4,6 +4,7 @@ class Shop.Routers.Orders extends Backbone.Router
     "orders"            : "index"
     "orders/new"        : "newOrder"
     "orders/:id/edit"   : "edit"
+    "orders/:id/items"  : "addItem"
         
   initialize: ->
     @collection = new Shop.Collections.Orders($('#container').data('order'))
@@ -14,8 +15,15 @@ class Shop.Routers.Orders extends Backbone.Router
     $('#container').html(view.render().el)
   
   newOrder: ->
-    view = new Shop.Views.OrdersNew({collection: @collection})
+    view = new Shop.Views.OrdersNew({collection: @collection})    
 
   edit: (id) ->    
     order = @collection.get(id)   
     view = new Shop.Views.OrdersEdit(model: order)
+
+  addItem: ->
+    @collection_of_items  = new Shop.Collections.Items()
+    @collection_of_items.fetch()    
+    view = new Shop.Views.ItemsSearch(collection: @collection_of_items)    
+    $('#container').html(view.render().el)
+    
