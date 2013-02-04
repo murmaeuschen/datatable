@@ -28,7 +28,7 @@ class OrderItemsController < ApplicationController
     respond_to do |format|
       format.html
       format.json do
-        respond_with({ models: @order_items })#}.merge @pagination)
+        respond_with({ models: @all_items })#}.merge @pagination)
       end
     end
   end
