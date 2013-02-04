@@ -50085,3 +50085,35 @@ Started GET "/api/items" for 127.0.0.1 at 2013-02-04 09:11:10 +0200
 Processing by ItemsController#index as JSON
   [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" [0m
 Completed 200 OK in 22ms (Views: 13.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2013-02-04 09:38:28 +0200
+Processing by OrdersController#index as HTML
+  [1m[35mOrder Load (2.5ms)[0m  SELECT "orders".* FROM "orders" 
+  Rendered orders/index.html.erb within layouts/application (9.7ms)
+Compiled views/items/items_item.js  (26ms)  (pid 9177)
+Compiled views/items/items_search.js  (45ms)  (pid 9177)
+Compiled application.js  (90ms)  (pid 9177)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 30 ORDER BY id asc LIMIT 1[0m
+  Rendered devise/menu/_login_items.html.erb (1.2ms)
+Completed 200 OK in 849ms (Views: 818.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-04 09:38:30 +0200
+Processing by OrdersController#index as JSON
+  [1m[35mOrder Load (0.3ms)[0m  SELECT "orders".* FROM "orders" 
+Completed 200 OK in 19ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/orders/7/order_items" for 127.0.0.1 at 2013-02-04 09:38:31 +0200
+Processing by OrderItemsController#index as JSON
+  Parameters: {"order_id"=>"7"}
+  [1m[36mOrder Load (0.3ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mItem Load (0.3ms)[0m  SELECT item_id,item_name,item_description,dimension,price,quantity,price_per_line FROM "items" INNER JOIN "order_items" ON "items"."id" = "order_items"."item_id" WHERE "order_items"."order_id" = 7
+Completed 200 OK in 24ms (Views: 8.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/items" for 127.0.0.1 at 2013-02-04 09:38:32 +0200
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" [0m
+Completed 200 OK in 28ms (Views: 1.2ms | ActiveRecord: 0.0ms)
