@@ -5,7 +5,7 @@ class Shop.Views.OrdersEdit extends Backbone.View
   template: JST['orders/show'] 
 
   initialize: ->
-    #@model.on('change', @render, @)        
+    @model.on('change', @render, @)        
     @render()
     @fillTable()
 
@@ -16,4 +16,4 @@ class Shop.Views.OrdersEdit extends Backbone.View
   fillTable: ->          
     @collection_of_orders_items = @model.order_items()
     view = new Shop.Views.OrdersItemsIndex(collection: @collection_of_orders_items)    
-    $('#items_table').html(view.render().el) 
+    $('#table_order_items').html(view.render().el) 

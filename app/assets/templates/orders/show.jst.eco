@@ -30,8 +30,7 @@ $(function(){
 				</option>
 			</select>
 		</div>
-		<table id="items_table" class="table table-condensed">		  
-		</table>
+		<div id="table_order_items"></div>
 		<div class="pagination pagination-centered" id="paging-buttons">       
 	    	  <ul class="pager">           
 	                    <li>
