@@ -11,7 +11,51 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130127120254) do
+ActiveRecord::Schema.define(:version => 20130205085353) do
+
+  create_table "items", :force => true do |t|
+    t.string   "item_name"
+    t.string   "item_description"
+    t.decimal  "price"
+    t.string   "dimension"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  create_table "itemstables", :force => true do |t|
+    t.integer  "item_id"
+    t.integer  "quantity"
+    t.decimal  "price_per_line"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "itemstables", ["item_id"], :name => "index_itemstables_on_item_id"
+
+  create_table "orders", :force => true do |t|
+    t.string   "order_number"
+    t.decimal  "total_price"
+    t.integer  "total_num_of_items"
+    t.decimal  "max_discount"
+    t.date     "delivery_date"
+    t.string   "status"
+    t.integer  "user_id"
+    t.string   "role"
+    t.date     "date_of_ordering"
+    t.date     "pref_delivery_date"
+    t.string   "credit_card_type"
+    t.string   "credit_card_number"
+    t.string   "cvv2"
+    t.date     "expiry_date"
+    t.date     "start_date"
+    t.string   "issue_number"
+    t.integer  "itemstable_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  add_index "orders", ["itemstable_id"], :name => "index_orders_on_itemstable_id"
+  add_index "orders", ["user_id"], :name => "index_orders_on_user_id"
 
   create_table "users", :force => true do |t|
     t.datetime "created_at",                             :null => false

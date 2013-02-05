@@ -25027,3 +25027,1146 @@ Processing by UsersController#index as JSON
 Completed 200 OK in 736ms (Views: 602.4ms | ActiveRecord: 1.6ms)
 Connecting to database specified by database.yml
 Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (44.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20130114174823)
+Migrating to AddFieldsToUser (20130115090200)
+Migrating to AddRegionToUser (20130115151117)
+Migrating to AddRoleToUser (20130115155545)
+Migrating to AddDeviseToUsers (20130127120254)
+Migrating to CreateOrders (20130205085036)
+  [1m[35m (0.5ms)[0m  select sqlite_version(*)
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35m (8.0ms)[0m  CREATE TABLE "orders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "order_number" varchar(255), "total_price" decimal, "total_num_of_items" integer, "max_discount" decimal, "delivery_date" date, "status" varchar(255), "user_id" integer, "role" varchar(255), "date_of_ordering" date, "pref_delivery_date" date, "credit_card_type" varchar(255), "credit_card_number" varchar(255), "cvv2" varchar(255), "expiry_date" date, "start_date" date, "issue_number" varchar(255), "itemstable_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.6ms)[0m  [1mCREATE INDEX "index_orders_on_user_id" ON "orders" ("user_id")[0m
+  [1m[35m (1.3ms)[0m  CREATE INDEX "index_orders_on_itemstable_id" ON "orders" ("itemstable_id")
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130205085036')[0m
+  [1m[35m (30.1ms)[0m  commit transaction
+  [1m[36m (0.8ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (14.8ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20130114174823)
+Migrating to AddFieldsToUser (20130115090200)
+Migrating to AddRegionToUser (20130115151117)
+Migrating to AddRoleToUser (20130115155545)
+Migrating to AddDeviseToUsers (20130127120254)
+Migrating to CreateOrders (20130205085036)
+Migrating to CreateItems (20130205085241)
+  [1m[35m (0.4ms)[0m  select sqlite_version(*)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (4.7ms)[0m  CREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "item_name" varchar(255), "item_description" varchar(255), "price" decimal, "dimension" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130205085241')[0m
+  [1m[35m (23.7ms)[0m  commit transaction
+  [1m[36m (0.9ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (11.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20130114174823)
+Migrating to AddFieldsToUser (20130115090200)
+Migrating to AddRegionToUser (20130115151117)
+Migrating to AddRoleToUser (20130115155545)
+Migrating to AddDeviseToUsers (20130127120254)
+Migrating to CreateOrders (20130205085036)
+Migrating to CreateItems (20130205085241)
+Migrating to CreateItemstables (20130205085353)
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (2.4ms)[0m  CREATE TABLE "itemstables" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "item_id" integer, "quantity" integer, "price_per_line" decimal, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.6ms)[0m  [1mCREATE INDEX "index_itemstables_on_item_id" ON "itemstables" ("item_id")[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130205085353')
+  [1m[36m (18.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-05 11:58:18 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (11.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY id asc LIMIT 1[0m
+  [1m[35m (1.3ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" LIMIT 25 OFFSET 0
+  Rendered users/index.html.erb within layouts/application (324.3ms)
+Compiled items.css  (225ms)  (pid 2514)
+Compiled itemstables.css  (13ms)  (pid 2514)
+Compiled orders.css  (20ms)  (pid 2514)
+Compiled application.css  (1383ms)  (pid 2514)
+Compiled shop.js  (1829ms)  (pid 2514)
+Compiled orders/index.js  (1284ms)  (pid 2514)
+Compiled models/order.js  (75ms)  (pid 2514)
+Compiled collections/orders.js  (106ms)  (pid 2514)
+Compiled views/orders/orders_index.js  (70ms)  (pid 2514)
+Compiled routers/orders_router.js  (189ms)  (pid 2514)
+Compiled application.js  (4967ms)  (pid 2514)
+  Rendered devise/menu/_login_items.html.erb (11.9ms)
+Completed 200 OK in 16472ms (Views: 14304.6ms | ActiveRecord: 109.6ms)
+
+
+Started GET "/api/users?orderBy=id+asc&currentPage=1&perPage=25&fields=login_name&scope=start_with&request=" for 127.0.0.1 at 2013-02-05 11:58:51 +0200
+Processing by UsersController#index as JSON
+  Parameters: {"orderBy"=>"id asc", "currentPage"=>"1", "perPage"=>"25", "fields"=>"login_name", "scope"=>"start_with", "request"=>""}
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY id asc LIMIT 1[0m
+  [1m[35m (13.7ms)[0m  SELECT COUNT(*) FROM "users" WHERE (login_name LIKE '%')
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35mUser Load (4.9ms)[0m  SELECT "users".* FROM "users" WHERE (login_name LIKE '%') ORDER BY id asc LIMIT 25 OFFSET 0
+Completed 200 OK in 1379ms (Views: 274.2ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2013-02-05 11:59:28 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"0sUw3KOuYpWRO6RQv8MlA/AL/l48FesQa9LlQP07bfY="}
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY id asc LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  begin transaction
+  [1m[36m (9.6ms)[0m  [1mUPDATE "users" SET "remember_created_at" = NULL, "updated_at" = '2013-02-05 09:59:29.040352' WHERE "users"."id" = 1[0m
+  [1m[35m (17.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 900ms (ActiveRecord: 29.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-05 11:59:29 +0200
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 2ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-02-05 11:59:30 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (83.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (281.0ms)
+  Rendered devise/menu/_login_items.html.erb (19.2ms)
+Completed 200 OK in 1852ms (Views: 1806.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-02-05 12:00:22 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xl4sjc9s6SdjWxd5w20Zimi4M6gWa+J4HxJysIWm/gc=", "user"=>{"login_name"=>"Blackening", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (5.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."login_name" = 'blackening' ORDER BY id asc LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (3.3ms)[0m  [1mUPDATE "users" SET "failed_attempts" = 1, "updated_at" = '2013-02-05 10:00:24.883329' WHERE "users"."id" = 28[0m
+  [1m[35m (100.7ms)[0m  commit transaction
+Completed 401 Unauthorized in 2505ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xl4sjc9s6SdjWxd5w20Zimi4M6gWa+J4HxJysIWm/gc=", "user"=>{"login_name"=>"Blackening", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (14.2ms)
+  Rendered devise/menu/_login_items.html.erb (0.9ms)
+Completed 200 OK in 1410ms (Views: 324.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-02-05 12:00:37 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xl4sjc9s6SdjWxd5w20Zimi4M6gWa+J4HxJysIWm/gc=", "user"=>{"login_name"=>"Blackening", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."login_name" = 'blackening' ORDER BY id asc LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (9.1ms)[0m  [1mUPDATE "users" SET "failed_attempts" = 2, "updated_at" = '2013-02-05 10:00:40.888637' WHERE "users"."id" = 28[0m
+  [1m[35m (22.1ms)[0m  commit transaction
+Completed 401 Unauthorized in 3077ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xl4sjc9s6SdjWxd5w20Zimi4M6gWa+J4HxJysIWm/gc=", "user"=>{"login_name"=>"Blackening", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.erb (5.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (25.0ms)
+  Rendered devise/menu/_login_items.html.erb (1.5ms)
+Completed 200 OK in 2985ms (Views: 298.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-02-05 12:01:02 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xl4sjc9s6SdjWxd5w20Zimi4M6gWa+J4HxJysIWm/gc=", "user"=>{"login_name"=>"Blackening", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."login_name" = 'blackening' ORDER BY id asc LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (4.0ms)[0m  [1mUPDATE "users" SET "failed_attempts" = 0, "updated_at" = '2013-02-05 10:01:04.477675' WHERE "users"."id" = 28[0m
+  [1m[35m (28.0ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (3.8ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2013-02-05 10:01:04.518781', "current_sign_in_at" = '2013-02-05 10:01:04.518781', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2013-02-05 10:01:04.524880' WHERE "users"."id" = 28
+  [1m[36m (15.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/api/orders
+Completed 302 Found in 2223ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-05 12:01:04 +0200
+Processing by OrdersController#index as HTML
+  [1m[35mOrder Load (1.4ms)[0m  SELECT "orders".* FROM "orders" 
+  Rendered orders/index.html.erb within layouts/application (20.9ms)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1[0m
+  Rendered devise/menu/_login_items.html.erb (4.9ms)
+Completed 200 OK in 1079ms (Views: 1039.3ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2013-02-05 12:01:29 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Xl4sjc9s6SdjWxd5w20Zimi4M6gWa+J4HxJysIWm/gc="}
+  [1m[35mUser Load (1.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 81ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-05 12:01:30 +0200
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 1ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-02-05 12:01:30 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (17.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (94.2ms)
+  Rendered devise/menu/_login_items.html.erb (1.7ms)
+Completed 200 OK in 455ms (Views: 440.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-05 12:03:07 +0200
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 2ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-02-05 12:03:08 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (2.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (93.6ms)
+  Rendered devise/menu/_login_items.html.erb (2.4ms)
+Completed 200 OK in 628ms (Views: 615.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-02-05 12:04:40 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LyJLjOmGJ31+28ZW/5Tc7tkuujgz6Xln3x7EVck4fjI=", "user"=>{"login_name"=>"Blackening", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (8.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."login_name" = 'blackening' ORDER BY id asc LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (10.1ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = '2013-02-05 10:04:45.546761', "sign_in_count" = 2, "updated_at" = '2013-02-05 10:04:45.571146' WHERE "users"."id" = 28[0m
+  [1m[35m (26.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/api/orders
+Completed 302 Found in 4957ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-05 12:04:45 +0200
+Processing by OrdersController#index as HTML
+  [1m[36mOrder Load (5.8ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+  Rendered orders/index.html.erb within layouts/application (0.6ms)
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1
+  Rendered devise/menu/_login_items.html.erb (2.0ms)
+Completed 200 OK in 181ms (Views: 169.1ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2013-02-05 12:04:59 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"LyJLjOmGJ31+28ZW/5Tc7tkuujgz6Xln3x7EVck4fjI="}
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 31ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-05 12:05:00 +0200
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 2ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-02-05 12:05:00 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (2.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (152.9ms)
+  Rendered devise/menu/_login_items.html.erb (12.8ms)
+Completed 200 OK in 1067ms (Views: 1054.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-02-05 12:05:16 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"m/Q2I70kfUDP58By6dz8jGt5SANxg+FQ63TrawB9+RY=", "user"=>{"login_name"=>"kot", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."login_name" = 'kot' ORDER BY id asc LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (7.9ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2013-02-04 20:44:20.669069', "current_sign_in_at" = '2013-02-05 10:05:19.086152', "sign_in_count" = 12, "updated_at" = '2013-02-05 10:05:19.092678' WHERE "users"."id" = 1
+  [1m[36m (24.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/api/orders
+Completed 302 Found in 2678ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-05 12:05:19 +0200
+Processing by OrdersController#index as HTML
+  [1m[35mOrder Load (1.1ms)[0m  SELECT "orders".* FROM "orders" 
+  Rendered orders/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY id asc LIMIT 1[0m
+  Rendered devise/menu/_login_items.html.erb (1.5ms)
+Completed 200 OK in 302ms (Views: 287.9ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2013-02-05 12:05:32 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"m/Q2I70kfUDP58By6dz8jGt5SANxg+FQ63TrawB9+RY="}
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY id asc LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 101ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-05 12:05:32 +0200
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 2ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-02-05 12:05:32 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (34.2ms)
+  Rendered devise/menu/_login_items.html.erb (4.7ms)
+Completed 200 OK in 409ms (Views: 388.7ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-05 12:11:29 +0200
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 125ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-02-05 12:11:31 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (37.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (165.8ms)
+  Rendered devise/menu/_login_items.html.erb (4.2ms)
+Completed 200 OK in 3634ms (Views: 2605.3ms | ActiveRecord: 75.5ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-02-05 12:12:02 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bl1C0dvZKvdwUgXxpgxvgI7ZCto7svGz6N5zhvXwfps=", "user"=>{"login_name"=>"Blackening", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."login_name" = 'blackening' ORDER BY id asc LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (203.2ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2013-02-05 10:04:45.546761', "current_sign_in_at" = '2013-02-05 10:12:05.243430', "sign_in_count" = 3, "updated_at" = '2013-02-05 10:12:05.277240' WHERE "users"."id" = 28[0m
+  [1m[35m (56.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/api/orders
+Completed 302 Found in 3512ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-05 12:12:05 +0200
+Processing by OrdersController#index as HTML
+  [1m[36mOrder Load (4.4ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+  Rendered orders/index.html.erb within layouts/application (2.6ms)
+  [1m[35mUser Load (2.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1
+  Rendered devise/menu/_login_items.html.erb (7.1ms)
+Completed 200 OK in 310ms (Views: 289.6ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2013-02-05 12:12:54 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"bl1C0dvZKvdwUgXxpgxvgI7ZCto7svGz6N5zhvXwfps="}
+  [1m[36mUser Load (8.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1[0m
+  [1m[35m (17.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 220ms (ActiveRecord: 25.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-05 12:12:54 +0200
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 2ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-02-05 12:12:55 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (2.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (39.5ms)
+  Rendered devise/menu/_login_items.html.erb (1.2ms)
+Completed 200 OK in 540ms (Views: 528.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-02-05 12:13:29 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/khFGHS6fsDukscQ5wevK/GHBf2Agy87cv+zQfla3/s=", "user"=>{"login_name"=>"kot", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (1.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."login_name" = 'kot' ORDER BY id asc LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  commit transaction
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35m (9.9ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2013-02-05 10:05:19.086152', "current_sign_in_at" = '2013-02-05 10:13:30.942751', "sign_in_count" = 13, "updated_at" = '2013-02-05 10:13:30.947303' WHERE "users"."id" = 1
+  [1m[36m (16.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/api/orders
+Completed 302 Found in 1847ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-05 12:13:31 +0200
+Processing by OrdersController#index as HTML
+  [1m[35mOrder Load (1.1ms)[0m  SELECT "orders".* FROM "orders" 
+  Rendered orders/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY id asc LIMIT 1[0m
+  Rendered devise/menu/_login_items.html.erb (1.7ms)
+Completed 200 OK in 382ms (Views: 376.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2013-02-05 12:13:40 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/khFGHS6fsDukscQ5wevK/GHBf2Agy87cv+zQfla3/s="}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY id asc LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 39ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-05 12:13:41 +0200
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 1ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-02-05 12:13:41 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (6.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (23.0ms)
+  Rendered devise/menu/_login_items.html.erb (1.6ms)
+Completed 200 OK in 327ms (Views: 323.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-02-05 12:15:44 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (6.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (56.5ms)
+  Rendered devise/menu/_login_items.html.erb (1.4ms)
+Completed 200 OK in 781ms (Views: 405.7ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-02-05 12:16:01 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fE6NHXrUxIVycTXmW8o4MMf9X1BK87V1zPoc5qbl7Kw=", "user"=>{"login_name"=>"kot", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."login_name" = 'kot' ORDER BY id asc LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (5.6ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2013-02-05 10:13:30.942751', "current_sign_in_at" = '2013-02-05 10:16:03.582753', "sign_in_count" = 14, "updated_at" = '2013-02-05 10:16:03.588355' WHERE "users"."id" = 1[0m
+  [1m[35m (14.4ms)[0m  commit transaction
+Redirected to http://localhost:3000orders#index
+Completed 302 Found in 1889ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-02-05 12:16:07 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fE6NHXrUxIVycTXmW8o4MMf9X1BK87V1zPoc5qbl7Kw=", "user"=>{"login_name"=>"kot", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY id asc LIMIT 1[0m
+Redirected to http://localhost:3000orders#index
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 23ms (ActiveRecord: 1.2ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-02-05 12:16:15 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fE6NHXrUxIVycTXmW8o4MMf9X1BK87V1zPoc5qbl7Kw=", "user"=>{"login_name"=>"blackening", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (2.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY id asc LIMIT 1
+Redirected to http://localhost:3000orders#index
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 12ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-02-05 12:16:44 +0200
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY id asc LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 487ms (ActiveRecord: 17.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-05 12:16:46 +0200
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY id asc LIMIT 1
+  [1m[36m (1.1ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36mUser Load (2.3ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 25 OFFSET 0[0m
+  Rendered users/index.html.erb within layouts/application (236.0ms)
+  Rendered devise/menu/_login_items.html.erb (15.5ms)
+Completed 200 OK in 625ms (Views: 577.8ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/api/users?orderBy=id+asc&currentPage=1&perPage=25&fields=login_name&scope=start_with&request=" for 127.0.0.1 at 2013-02-05 12:16:55 +0200
+Processing by UsersController#index as JSON
+  Parameters: {"orderBy"=>"id asc", "currentPage"=>"1", "perPage"=>"25", "fields"=>"login_name", "scope"=>"start_with", "request"=>""}
+  [1m[35mUser Load (11.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY id asc LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE (login_name LIKE '%')[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE (login_name LIKE '%') ORDER BY id asc LIMIT 25 OFFSET 0[0m
+Completed 200 OK in 612ms (Views: 465.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2013-02-05 12:16:59 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"fE6NHXrUxIVycTXmW8o4MMf9X1BK87V1zPoc5qbl7Kw="}
+  [1m[35mUser Load (6.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY id asc LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 88ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-05 12:16:59 +0200
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 6ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-02-05 12:16:59 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (10.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (114.4ms)
+  Rendered devise/menu/_login_items.html.erb (1.4ms)
+Completed 200 OK in 502ms (Views: 496.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-02-05 12:17:20 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (9.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (112.5ms)
+  Rendered devise/menu/_login_items.html.erb (14.0ms)
+Completed 200 OK in 1614ms (Views: 817.7ms | ActiveRecord: 13.9ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-02-05 12:17:38 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Cjn81Q5PJ40uCAR806cD6KtMzl5ODprclmQNQHWp6TM=", "user"=>{"login_name"=>"kot", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (6.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."login_name" = 'kot' ORDER BY id asc LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36m (7.6ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2013-02-05 10:16:03.582753', "current_sign_in_at" = '2013-02-05 10:17:40.608936', "sign_in_count" = 15, "updated_at" = '2013-02-05 10:17:40.621209' WHERE "users"."id" = 1[0m
+  [1m[35m (93.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/orders#index
+Completed 302 Found in 2311ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2013-02-05 12:17:41 +0200
+
+ActionController::RoutingError (No route matches [GET] "/orders"):
+  actionpack (3.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.11) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.11) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.11) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.4) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.4) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.11) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.4) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.11) lib/rails/engine.rb:479:in `call'
+  railties (3.2.11) lib/rails/application.rb:223:in `call'
+  rack (1.4.4) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.11) lib/rails/rack/log_tailer.rb:17:in `call'
+  thin (1.5.0) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.0) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.0) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.0) lib/thin/connection.rb:54:in `process'
+  thin (1.5.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run'
+  thin (1.5.0) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.0) lib/thin/server.rb:159:in `start'
+  rack (1.4.4) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.4) lib/rack/server.rb:268:in `start'
+  railties (3.2.11) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.11) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.11) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.11) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2013-02-05 12:17:57 +0200
+
+ActionController::RoutingError (No route matches [GET] "/users"):
+  actionpack (3.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.11) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.11) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.11) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.4) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.4) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.11) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.4) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.11) lib/rails/engine.rb:479:in `call'
+  railties (3.2.11) lib/rails/application.rb:223:in `call'
+  rack (1.4.4) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.11) lib/rails/rack/log_tailer.rb:17:in `call'
+  thin (1.5.0) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.0) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.0) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.0) lib/thin/connection.rb:54:in `process'
+  thin (1.5.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run'
+  thin (1.5.0) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.0) lib/thin/server.rb:159:in `start'
+  rack (1.4.4) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.4) lib/rack/server.rb:268:in `start'
+  railties (3.2.11) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.11) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.11) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.11) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (16.8ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-02-05 12:21:48 +0200
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY id asc LIMIT 1[0m
+Redirected to http://localhost:3000/orders#index
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 323ms (ActiveRecord: 13.8ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2013-02-05 12:21:50 +0200
+
+ActionController::RoutingError (No route matches [GET] "/orders"):
+  actionpack (3.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.11) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.11) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.11) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.4) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.4) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.11) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.4) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.11) lib/rails/engine.rb:479:in `call'
+  railties (3.2.11) lib/rails/application.rb:223:in `call'
+  rack (1.4.4) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.11) lib/rails/rack/log_tailer.rb:17:in `call'
+  thin (1.5.0) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.0) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.0) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.0) lib/thin/connection.rb:54:in `process'
+  thin (1.5.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run'
+  thin (1.5.0) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.0) lib/thin/server.rb:159:in `start'
+  rack (1.4.4) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.4) lib/rack/server.rb:268:in `start'
+  railties (3.2.11) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.11) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.11) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.11) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (11.0ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2013-02-05 12:22:50 +0200
+
+ActionController::RoutingError (No route matches [GET] "/orders"):
+  actionpack (3.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.11) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.11) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.11) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.4) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.4) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.11) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.4) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.11) lib/rails/engine.rb:479:in `call'
+  railties (3.2.11) lib/rails/application.rb:223:in `call'
+  rack (1.4.4) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.11) lib/rails/rack/log_tailer.rb:17:in `call'
+  thin (1.5.0) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.0) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.0) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.0) lib/thin/connection.rb:54:in `process'
+  thin (1.5.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run'
+  thin (1.5.0) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.0) lib/thin/server.rb:159:in `start'
+  rack (1.4.4) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.4) lib/rack/server.rb:268:in `start'
+  railties (3.2.11) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.11) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.11) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.11) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (22.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-05 12:22:54 +0200
+
+SyntaxError - /home/blackening/rails_projects/shop/app/controllers/application_controller.rb:9: syntax error, unexpected tCONSTANT, expecting keyword_end
+    root_path' if current_user.role = 'Administrator'
+                                                    ^:
+  app/controllers/application_controller.rb:9:in `'
+  (gem) activesupport-3.2.11/lib/active_support/dependencies.rb:469:in `load'
+  (gem) activesupport-3.2.11/lib/active_support/dependencies.rb:469:in `block in load_file'
+  (gem) activesupport-3.2.11/lib/active_support/dependencies.rb:639:in `new_constants_in'
+  (gem) activesupport-3.2.11/lib/active_support/dependencies.rb:468:in `load_file'
+  (gem) activesupport-3.2.11/lib/active_support/dependencies.rb:353:in `require_or_load'
+  (gem) activesupport-3.2.11/lib/active_support/dependencies.rb:502:in `load_missing_constant'
+  (gem) activesupport-3.2.11/lib/active_support/dependencies.rb:192:in `block in const_missing'
+  (gem) activesupport-3.2.11/lib/active_support/dependencies.rb:190:in `each'
+  (gem) activesupport-3.2.11/lib/active_support/dependencies.rb:190:in `const_missing'
+  app/controllers/users_controller.rb:1:in `<top (required)>'
+  (gem) activesupport-3.2.11/lib/active_support/dependencies.rb:469:in `load'
+  (gem) activesupport-3.2.11/lib/active_support/dependencies.rb:469:in `block in load_file'
+  (gem) activesupport-3.2.11/lib/active_support/dependencies.rb:639:in `new_constants_in'
+  (gem) activesupport-3.2.11/lib/active_support/dependencies.rb:468:in `load_file'
+  (gem) activesupport-3.2.11/lib/active_support/dependencies.rb:353:in `require_or_load'
+  (gem) activesupport-3.2.11/lib/active_support/dependencies.rb:502:in `load_missing_constant'
+  (gem) activesupport-3.2.11/lib/active_support/dependencies.rb:192:in `block in const_missing'
+  (gem) activesupport-3.2.11/lib/active_support/dependencies.rb:190:in `each'
+  (gem) activesupport-3.2.11/lib/active_support/dependencies.rb:190:in `const_missing'
+  (gem) activesupport-3.2.11/lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  (gem) activesupport-3.2.11/lib/active_support/inflector/methods.rb:229:in `each'
+  (gem) activesupport-3.2.11/lib/active_support/inflector/methods.rb:229:in `constantize'
+  (gem) activesupport-3.2.11/lib/active_support/dependencies.rb:554:in `get'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:32:in `call'
+  (gem) journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+  (gem) journey-1.0.4/lib/journey/router.rb:56:in `each'
+  (gem) journey-1.0.4/lib/journey/router.rb:56:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:601:in `call'
+  (gem) better_errors-0.3.2/lib/better_errors/middleware.rb:51:in `app_call'
+  (gem) better_errors-0.3.2/lib/better_errors/middleware.rb:45:in `call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:35:in `block in call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:34:in `catch'
+  (gem) warden-1.2.1/lib/warden/manager.rb:34:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  (gem) rack-1.4.4/lib/rack/etag.rb:23:in `call'
+  (gem) rack-1.4.4/lib/rack/conditionalget.rb:25:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/head.rb:14:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/flash.rb:242:in `call'
+  (gem) rack-1.4.4/lib/rack/session/abstract/id.rb:210:in `context'
+  (gem) rack-1.4.4/lib/rack/session/abstract/id.rb:205:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  (gem) activerecord-3.2.11/lib/active_record/query_cache.rb:64:in `call'
+  (gem) activerecord-3.2.11/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:405:in `_run__909298001__call__937186630__callbacks'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  (gem) railties-3.2.11/lib/rails/rack/logger.rb:32:in `call_app'
+  (gem) railties-3.2.11/lib/rails/rack/logger.rb:16:in `block in call'
+  (gem) activesupport-3.2.11/lib/active_support/tagged_logging.rb:22:in `tagged'
+  (gem) railties-3.2.11/lib/rails/rack/logger.rb:16:in `call'
+  (gem) quiet_assets-1.0.1/lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  (gem) rack-1.4.4/lib/rack/methodoverride.rb:21:in `call'
+  (gem) rack-1.4.4/lib/rack/runtime.rb:17:in `call'
+  (gem) activesupport-3.2.11/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  (gem) rack-1.4.4/lib/rack/lock.rb:15:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/static.rb:62:in `call'
+  (gem) railties-3.2.11/lib/rails/engine.rb:479:in `call'
+  (gem) railties-3.2.11/lib/rails/application.rb:223:in `call'
+  (gem) rack-1.4.4/lib/rack/content_length.rb:14:in `call'
+  (gem) railties-3.2.11/lib/rails/rack/log_tailer.rb:17:in `call'
+  (gem) thin-1.5.0/lib/thin/connection.rb:81:in `block in pre_process'
+  (gem) thin-1.5.0/lib/thin/connection.rb:79:in `catch'
+  (gem) thin-1.5.0/lib/thin/connection.rb:79:in `pre_process'
+  (gem) thin-1.5.0/lib/thin/connection.rb:54:in `process'
+  (gem) thin-1.5.0/lib/thin/connection.rb:39:in `receive_data'
+  (gem) eventmachine-1.0.0/lib/eventmachine.rb:187:in `run_machine'
+  (gem) eventmachine-1.0.0/lib/eventmachine.rb:187:in `run'
+  (gem) thin-1.5.0/lib/thin/backends/base.rb:63:in `start'
+  (gem) thin-1.5.0/lib/thin/server.rb:159:in `start'
+  (gem) rack-1.4.4/lib/rack/handler/thin.rb:13:in `run'
+  (gem) rack-1.4.4/lib/rack/server.rb:268:in `start'
+  (gem) railties-3.2.11/lib/rails/commands/server.rb:70:in `start'
+  (gem) railties-3.2.11/lib/rails/commands.rb:55:in `block in <top (required)>'
+  (gem) railties-3.2.11/lib/rails/commands.rb:50:in `tap'
+  (gem) railties-3.2.11/lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+
+Started POST "/__better_errors/97796430/variables" for 127.0.0.1 at 2013-02-05 12:22:56 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-05 12:23:11 +0200
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY id asc LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36mUser Load (2.1ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 25 OFFSET 0[0m
+  Rendered users/index.html.erb within layouts/application (115.2ms)
+  Rendered devise/menu/_login_items.html.erb (2.1ms)
+Completed 200 OK in 821ms (Views: 338.8ms | ActiveRecord: 28.0ms)
+
+
+Started GET "/api/users?orderBy=id+asc&currentPage=1&perPage=25&fields=login_name&scope=start_with&request=" for 127.0.0.1 at 2013-02-05 12:23:20 +0200
+Processing by UsersController#index as JSON
+  Parameters: {"orderBy"=>"id asc", "currentPage"=>"1", "perPage"=>"25", "fields"=>"login_name", "scope"=>"start_with", "request"=>""}
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY id asc LIMIT 1
+  [1m[36m (3.9ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE (login_name LIKE '%')[0m
+  [1m[35m (3.7ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36mUser Load (9.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE (login_name LIKE '%') ORDER BY id asc LIMIT 25 OFFSET 0[0m
+Completed 200 OK in 355ms (Views: 244.0ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2013-02-05 12:23:24 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Cjn81Q5PJ40uCAR806cD6KtMzl5ODprclmQNQHWp6TM="}
+  [1m[35mUser Load (7.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY id asc LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 52ms (ActiveRecord: 8.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-05 12:23:26 +0200
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 2ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-02-05 12:23:26 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (14.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (78.4ms)
+  Rendered devise/menu/_login_items.html.erb (1.3ms)
+Completed 200 OK in 365ms (Views: 358.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-02-05 12:23:55 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6W3kyzh/MGOWK6SIe88JgFUzPpTI28+NpvxlrzpWDjg=", "user"=>{"login_name"=>"kot", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (10.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."login_name" = 'kot' ORDER BY id asc LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (3.7ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2013-02-05 10:17:40.608936', "current_sign_in_at" = '2013-02-05 10:23:57.460433', "sign_in_count" = 16, "updated_at" = '2013-02-05 10:23:57.464465' WHERE "users"."id" = 1[0m
+  [1m[35m (26.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/orders#index
+Completed 302 Found in 1842ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2013-02-05 12:23:57 +0200
+
+ActionController::RoutingError (No route matches [GET] "/orders"):
+  actionpack (3.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.11) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.11) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.11) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.4) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.4) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.11) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.4) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.11) lib/rails/engine.rb:479:in `call'
+  railties (3.2.11) lib/rails/application.rb:223:in `call'
+  rack (1.4.4) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.11) lib/rails/rack/log_tailer.rb:17:in `call'
+  thin (1.5.0) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.0) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.0) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.0) lib/thin/connection.rb:54:in `process'
+  thin (1.5.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run'
+  thin (1.5.0) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.0) lib/thin/server.rb:159:in `start'
+  rack (1.4.4) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.4) lib/rack/server.rb:268:in `start'
+  railties (3.2.11) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.11) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.11) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.11) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2013-02-05 12:24:04 +0200
+
+ActionController::RoutingError (No route matches [GET] "/users"):
+  actionpack (3.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.11) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.11) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.11) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.4) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.4) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.11) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.4) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.11) lib/rails/engine.rb:479:in `call'
+  railties (3.2.11) lib/rails/application.rb:223:in `call'
+  rack (1.4.4) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.11) lib/rails/rack/log_tailer.rb:17:in `call'
+  thin (1.5.0) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.0) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.0) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.0) lib/thin/connection.rb:54:in `process'
+  thin (1.5.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run'
+  thin (1.5.0) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.0) lib/thin/server.rb:159:in `start'
+  rack (1.4.4) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.4) lib/rack/server.rb:268:in `start'
+  railties (3.2.11) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.11) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.11) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.11) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (19.5ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-02-05 12:25:42 +0200
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (9.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY id asc LIMIT 1[0m
+Redirected to http://localhost:3000/api/orders
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 466ms (ActiveRecord: 11.8ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-05 12:25:45 +0200
+Processing by OrdersController#index as HTML
+  [1m[35mOrder Load (1.4ms)[0m  SELECT "orders".* FROM "orders" 
+  Rendered orders/index.html.erb within layouts/application (0.5ms)
+Compiled shop.js  (814ms)  (pid 2695)
+Compiled application.js  (214ms)  (pid 2695)
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY id asc LIMIT 1[0m
+  Rendered devise/menu/_login_items.html.erb (1.7ms)
+Completed 200 OK in 2475ms (Views: 2454.1ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2013-02-05 12:26:23 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"6W3kyzh/MGOWK6SIe88JgFUzPpTI28+NpvxlrzpWDjg="}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY id asc LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 84ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-05 12:26:23 +0200
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 3ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-02-05 12:26:23 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (10.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (60.7ms)
+  Rendered devise/menu/_login_items.html.erb (1.2ms)
+Completed 200 OK in 321ms (Views: 308.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-02-05 12:27:12 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3WrS880PTisy00AB2m9Q/g600ThLVKHiTFSjInHd3AM=", "user"=>{"login_name"=>"blackening", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (4.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."login_name" = 'blackening' ORDER BY id asc LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (7.6ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2013-02-05 10:12:05.243430', "current_sign_in_at" = '2013-02-05 10:27:14.943404', "sign_in_count" = 4, "updated_at" = '2013-02-05 10:27:14.946963' WHERE "users"."id" = 28[0m
+  [1m[35m (16.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/api/orders
+Completed 302 Found in 2518ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-05 12:27:15 +0200
+Processing by OrdersController#index as HTML
+  [1m[36mOrder Load (1.0ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+  Rendered orders/index.html.erb within layouts/application (0.5ms)
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1
+  Rendered devise/menu/_login_items.html.erb (12.3ms)
+Completed 200 OK in 216ms (Views: 205.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2013-02-05 12:28:12 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"3WrS880PTisy00AB2m9Q/g600ThLVKHiTFSjInHd3AM="}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 67ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-05 12:28:13 +0200
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 1ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-02-05 12:28:13 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (31.8ms)
+  Rendered devise/menu/_login_items.html.erb (1.1ms)
+Completed 200 OK in 265ms (Views: 245.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-02-05 12:29:07 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (3.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (19.5ms)
+  Rendered devise/menu/_login_items.html.erb (2.0ms)
+Completed 200 OK in 969ms (Views: 604.5ms | ActiveRecord: 7.8ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-02-05 12:29:24 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"J/BrtUG21bEyCMCZd8f+kGyEko0S86FsmK01fzI53xo=", "user"=>{"login_name"=>"blackening", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."login_name" = 'blackening' ORDER BY id asc LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (4.5ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2013-02-05 10:27:14.943404', "current_sign_in_at" = '2013-02-05 10:29:28.348244', "sign_in_count" = 5, "updated_at" = '2013-02-05 10:29:28.353057' WHERE "users"."id" = 28
+  [1m[36m (58.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 3626ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-05 12:29:28 +0200
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (4.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36mUser Load (7.0ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 25 OFFSET 0[0m
+  Rendered users/index.html.erb within layouts/application (109.7ms)
+  Rendered devise/menu/_login_items.html.erb (3.1ms)
+Completed 200 OK in 366ms (Views: 311.2ms | ActiveRecord: 12.6ms)
+
+
+Started GET "/api/users?orderBy=id+asc&currentPage=1&perPage=25&fields=login_name&scope=start_with&request=" for 127.0.0.1 at 2013-02-05 12:29:37 +0200
+Processing by UsersController#index as JSON
+  Parameters: {"orderBy"=>"id asc", "currentPage"=>"1", "perPage"=>"25", "fields"=>"login_name", "scope"=>"start_with", "request"=>""}
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1
+  [1m[36m (2.2ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE (login_name LIKE '%')[0m
+  [1m[35m (3.5ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36mUser Load (12.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE (login_name LIKE '%') ORDER BY id asc LIMIT 25 OFFSET 0[0m
+Completed 200 OK in 1027ms (Views: 888.2ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2013-02-05 12:30:02 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"J/BrtUG21bEyCMCZd8f+kGyEko0S86FsmK01fzI53xo="}
+  [1m[35mUser Load (1.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 176ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-05 12:30:03 +0200
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 3ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-02-05 12:30:03 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (2.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (108.2ms)
+  Rendered devise/menu/_login_items.html.erb (29.9ms)
+Completed 200 OK in 932ms (Views: 913.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-02-05 12:30:29 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (6.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (26.5ms)
+  Rendered devise/menu/_login_items.html.erb (1.4ms)
+Completed 200 OK in 1350ms (Views: 237.6ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-02-05 12:30:40 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZGVwjuiCb+aVzBou4cfbDHrZR5SzY3C5Lf/Uhxe529o=", "user"=>{"login_name"=>"blackening", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."login_name" = 'blackening' ORDER BY id asc LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36m (5.4ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2013-02-05 10:29:28.348244', "current_sign_in_at" = '2013-02-05 10:30:43.324241', "sign_in_count" = 6, "updated_at" = '2013-02-05 10:30:43.335870' WHERE "users"."id" = 28[0m
+  [1m[35m (22.8ms)[0m  commit transaction
+Redirected to http://localhost:3000users#index
+Completed 302 Found in 2807ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-02-05 12:31:38 +0200
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1[0m
+Redirected to http://localhost:3000/api/orders
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 377ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-05 12:31:41 +0200
+Processing by OrdersController#index as HTML
+  [1m[35mOrder Load (5.8ms)[0m  SELECT "orders".* FROM "orders" 
+  Rendered orders/index.html.erb within layouts/application (0.6ms)
+Compiled shop.js  (267ms)  (pid 2695)
+Compiled application.js  (435ms)  (pid 2695)
+  [1m[36mUser Load (15.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1[0m
+  Rendered devise/menu/_login_items.html.erb (1.5ms)
+Completed 200 OK in 2000ms (Views: 1952.2ms | ActiveRecord: 22.5ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2013-02-05 12:32:03 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ZGVwjuiCb+aVzBou4cfbDHrZR5SzY3C5Lf/Uhxe529o="}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 51ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-05 12:32:04 +0200
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 3ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-02-05 12:32:04 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (2.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (31.0ms)
+  Rendered devise/menu/_login_items.html.erb (1.9ms)
+Completed 200 OK in 527ms (Views: 522.0ms | ActiveRecord: 0.0ms)

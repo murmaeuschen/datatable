@@ -5,9 +5,12 @@ Shop::Application.routes.draw do
   
   scope "api" do
     resources :users
-    #resources orders and others
+    resources :itemstables
+    resources :items
+    resources :orders
   end
-  
+
+
   
   root to: "users#index"
 

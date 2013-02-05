@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     root_path if current_user.role = 'Administrator'
-    #orders_path if current_user.role = 'Customer'
+    orders_path if current_user.role = 'Customer'
 
   end
 

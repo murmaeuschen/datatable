@@ -15,3 +15,5 @@ $(document).ready ->
   Shop.initUsers() if curUser.role == "Administrator"
   Shop.initOrders() if curUser.role == "Customer"
   
+
+  
