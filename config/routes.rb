@@ -9,10 +9,10 @@ Shop::Application.routes.draw do
     resources :items
     resources :orders
   end
-
-
   
   root to: "users#index"
+
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

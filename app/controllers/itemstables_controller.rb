@@ -1,0 +1,2 @@
+class ItemstablesController < ApplicationController
+end
