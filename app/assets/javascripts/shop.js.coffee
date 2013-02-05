@@ -12,8 +12,8 @@ window.Shop =
     Backbone.history.start(pushState: true)
 
 $(document).ready ->
-  Shop.initUsers() if curUser.role == "Administrator"
-  Shop.initOrders() if curUser.role == "Customer"
+  Shop.initUsers() if curUser?.role == "Administrator"
+  Shop.initOrders() if curUser?.role == "Customer"
   
 
   

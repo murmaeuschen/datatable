@@ -2,7 +2,7 @@ class Shop.Routers.Orders extends Backbone.Router
 
   routes:
     ""         : "index"
-    "index"         : "index"
+    "index"    : "index"
 
   #initialize: ->
     #@collection = new Shop.Collections.Orders($('#order').data('orders'))
