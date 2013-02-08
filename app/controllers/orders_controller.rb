@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-    respond_to :html, :json
+  respond_to :html, :json
 
   def index
   #  @orders = if params[:request]
@@ -32,10 +32,14 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.find params[:id]
+    @order = Order.find(params[:id])       
+    
+    @all_items = @order.items.select("item_id,item_name,item_description,dimension,price,quantity,price_per_line")
+    
     respond_to do |format|
-      format.html
-      format.json { respond_with @order }
+      format.html # show.html.erb      
+      format.json { render json: @all_items }
+      #format.json { render json: { order: @order, order_items: @all_items.to_json().html_safe } }
     end
   end
 
