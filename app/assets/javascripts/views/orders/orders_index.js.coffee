@@ -22,7 +22,7 @@ class Shop.Views.OrdersIndex extends Backbone.View
     @$('tbody').append(view.render().el)	
 
   fillFilterOptions: ->
-    $("#filter_options").children().remove()
+    @$el.find("#filter_options").children().remove()
     cur_filter = ($("#filter option:selected").val())    
     status = ["", "Ordered", "Pending", "Delivered"]
     role = ["", "Merchandiser", "Administrator", "Supervisor"]  	

@@ -31095,3 +31095,625 @@ Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 13:07:49 +0200
 Processing by OrdersController#index as JSON
   [1m[36mOrder Load (0.9ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
 Completed 200 OK in 111ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+  [1m[36m (10.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (3.0ms)[0m  begin transaction
+  [1m[36mSQL (373.9ms)[0m  [1mINSERT INTO "orders" ("created_at", "credit_card_number", "credit_card_type", "cvv2", "date_of_ordering", "delivery_date", "expiry_date", "issue_number", "max_discount", "order_number", "pref_delivery_date", "role", "start_date", "status", "total_num_of_items", "total_price", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 08 Feb 2013 11:52:35 UTC +00:00], ["credit_card_number", nil], ["credit_card_type", "MasterCard"], ["cvv2", nil], ["date_of_ordering", 2013-02-08 13:52:34 +0200], ["delivery_date", 2013-02-08 13:52:34 +0200], ["expiry_date", nil], ["issue_number", nil], ["max_discount", #<BigDecimal:bc979e8,'0.0',9(36)>], ["order_number", "000003"], ["pref_delivery_date", 2013-02-08 13:52:34 +0200], ["role", "Administrator"], ["start_date", nil], ["status", "Ordered"], ["total_num_of_items", 5], ["total_price", #<BigDecimal:bc97a60,'0.1E2',9(36)>], ["updated_at", Fri, 08 Feb 2013 11:52:35 UTC +00:00], ["user_id", nil]]
+  [1m[35m (19.8ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (4.9ms)[0m  INSERT INTO "items" ("created_at", "dimension", "item_description", "item_name", "price", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Fri, 08 Feb 2013 11:52:35 UTC +00:00], ["dimension", "Box"], ["item_description", "Orange1"], ["item_name", "Orange1"], ["price", #<BigDecimal:b9bb080,'0.1E2',9(36)>], ["updated_at", Fri, 08 Feb 2013 11:52:35 UTC +00:00]]
+  [1m[36m (10.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (5.6ms)[0m  [1mINSERT INTO "items" ("created_at", "dimension", "item_description", "item_name", "price", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 08 Feb 2013 11:52:35 UTC +00:00], ["dimension", "Box"], ["item_description", "Onion1"], ["item_name", "Onion1"], ["price", #<BigDecimal:bb269ec,'0.2E1',9(36)>], ["updated_at", Fri, 08 Feb 2013 11:52:35 UTC +00:00]]
+  [1m[35m (8.7ms)[0m  commit transaction
+Connecting to database specified by database.yml
+  [1m[36m (11.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.7ms)[0m  begin transaction
+  [1m[36mSQL (31.6ms)[0m  [1mINSERT INTO "orders" ("created_at", "credit_card_number", "credit_card_type", "cvv2", "date_of_ordering", "delivery_date", "expiry_date", "issue_number", "max_discount", "order_number", "pref_delivery_date", "role", "start_date", "status", "total_num_of_items", "total_price", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 08 Feb 2013 11:58:18 UTC +00:00], ["credit_card_number", nil], ["credit_card_type", "MasterCard"], ["cvv2", nil], ["date_of_ordering", 2013-02-08 13:58:18 +0200], ["delivery_date", 2013-02-08 13:58:18 +0200], ["expiry_date", nil], ["issue_number", nil], ["max_discount", #<BigDecimal:b111bdc,'0.0',9(36)>], ["order_number", "000003"], ["pref_delivery_date", 2013-02-08 13:58:18 +0200], ["role", "Administrator"], ["start_date", nil], ["status", "Ordered"], ["total_num_of_items", 5], ["total_price", #<BigDecimal:b111c54,'0.1E2',9(36)>], ["updated_at", Fri, 08 Feb 2013 11:58:18 UTC +00:00], ["user_id", nil]]
+  [1m[35m (15.3ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (5.8ms)[0m  INSERT INTO "items" ("created_at", "dimension", "item_description", "item_name", "price", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Fri, 08 Feb 2013 11:58:18 UTC +00:00], ["dimension", "Box"], ["item_description", "Orange1"], ["item_name", "Orange1"], ["price", #<BigDecimal:b052304,'0.1E2',9(36)>], ["updated_at", Fri, 08 Feb 2013 11:58:18 UTC +00:00]]
+  [1m[36m (9.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (5.4ms)[0m  [1mINSERT INTO "items" ("created_at", "dimension", "item_description", "item_name", "price", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 08 Feb 2013 11:58:18 UTC +00:00], ["dimension", "Box"], ["item_description", "Onion1"], ["item_name", "Onion1"], ["price", #<BigDecimal:b168ff4,'0.2E1',9(36)>], ["updated_at", Fri, 08 Feb 2013 11:58:18 UTC +00:00]]
+  [1m[35m (10.7ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (9.4ms)[0m  INSERT INTO "itemstables" ("created_at", "item_id", "order_id", "price_per_line", "quantity", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Fri, 08 Feb 2013 11:58:19 UTC +00:00], ["item_id", 3], ["order_id", nil], ["price_per_line", #<BigDecimal:b0e7440,'0.5E2',9(36)>], ["quantity", 1], ["updated_at", Fri, 08 Feb 2013 11:58:19 UTC +00:00]]
+  [1m[36m (12.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (6.5ms)[0m  [1mINSERT INTO "itemstables" ("created_at", "item_id", "order_id", "price_per_line", "quantity", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 08 Feb 2013 11:58:19 UTC +00:00], ["item_id", 4], ["order_id", nil], ["price_per_line", #<BigDecimal:b1b1858,'0.2E2',9(36)>], ["quantity", 2], ["updated_at", Fri, 08 Feb 2013 11:58:19 UTC +00:00]]
+  [1m[35m (10.3ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (3.3ms)[0m  UPDATE "itemstables" SET "order_id" = 2, "updated_at" = '2013-02-08 11:58:19.340422' WHERE "itemstables"."id" = 1
+  [1m[36m (8.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (3.3ms)[0m  [1mUPDATE "itemstables" SET "order_id" = 2, "updated_at" = '2013-02-08 11:58:19.360287' WHERE "itemstables"."id" = 2[0m
+  [1m[35m (8.3ms)[0m  commit transaction
+Connecting to database specified by database.yml
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 14:04:55 +0200
+Processing by OrdersController#index as HTML
+  [1m[36mOrder Load (1.2ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+  Rendered orders/index.html.erb within layouts/application (292.3ms)
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1
+  Rendered devise/menu/_login_items.html.erb (19.5ms)
+Completed 200 OK in 3860ms (Views: 2733.5ms | ActiveRecord: 25.9ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 14:05:13 +0200
+Processing by OrdersController#index as JSON
+  [1m[36mOrder Load (0.7ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+Completed 200 OK in 381ms (Views: 16.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2013-02-08 16:58:58 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"XI9FS9RUkrENSl4hR56+qeDItEFPLcxF6Wi1dG6TdG0="}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 36ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-08 16:58:58 +0200
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 1ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-02-08 16:58:58 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (9.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (25.0ms)
+  Rendered devise/menu/_login_items.html.erb (0.7ms)
+Completed 200 OK in 225ms (Views: 222.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-02-08 16:59:04 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FO2HNSwhE3MNf2RfIuvUKeLVTDcuV+g8FzGahVhZJs0=", "user"=>{"login_name"=>"blackening", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."login_name" = 'blackening' ORDER BY id asc LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (10.8ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2013-02-08 11:05:25.341490', "current_sign_in_at" = '2013-02-08 14:59:05.892111', "sign_in_count" = 31, "updated_at" = '2013-02-08 14:59:05.894294' WHERE "users"."id" = 28[0m
+  [1m[35m (19.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 1057ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-08 16:59:06 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36mCACHE (1.6ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" LIMIT 25 OFFSET 0
+  Rendered users/index.html.erb within layouts/application (66.0ms)
+  Rendered devise/menu/_login_items.html.erb (0.7ms)
+Completed 200 OK in 197ms (Views: 180.9ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/api/users?orderBy=id+asc&currentPage=1&perPage=25&fields=login_name&scope=start_with&request=" for 127.0.0.1 at 2013-02-08 16:59:10 +0200
+Processing by UsersController#index as JSON
+  Parameters: {"orderBy"=>"id asc", "currentPage"=>"1", "perPage"=>"25", "fields"=>"login_name", "scope"=>"start_with", "request"=>""}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users" WHERE (login_name LIKE '%')
+  [1m[36m (3.1ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35mUser Load (3.3ms)[0m  SELECT "users".* FROM "users" WHERE (login_name LIKE '%') ORDER BY id asc LIMIT 25 OFFSET 0
+Completed 200 OK in 248ms (Views: 192.6ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2013-02-08 16:59:13 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FO2HNSwhE3MNf2RfIuvUKeLVTDcuV+g8FzGahVhZJs0="}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-08 16:59:13 +0200
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 1ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-02-08 16:59:13 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.7ms)
+Completed 200 OK in 139ms (Views: 136.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-02-08 16:59:29 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wOWnMj2vfrTRjYYNujq+gYTBgs4GWtw8V9vw/jWNbZ8=", "user"=>{"login_name"=>"customer", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."login_name" = 'customer' ORDER BY id asc LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (2.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2013-02-08 11:07:35.819748', "current_sign_in_at" = '2013-02-08 14:59:29.824698', "sign_in_count" = 7, "updated_at" = '2013-02-08 14:59:29.829315' WHERE "users"."id" = 29
+  [1m[36m (10.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/api/orders
+Completed 302 Found in 723ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 16:59:29 +0200
+Processing by OrdersController#index as HTML
+  [1m[35mOrder Load (0.6ms)[0m  SELECT "orders".* FROM "orders" 
+  Rendered orders/index.html.erb within layouts/application (3.9ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1[0m
+  Rendered devise/menu/_login_items.html.erb (0.7ms)
+Completed 200 OK in 117ms (Views: 113.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 16:59:33 +0200
+Processing by OrdersController#index as JSON
+  [1m[35mOrder Load (3.6ms)[0m  SELECT "orders".* FROM "orders" 
+Completed 200 OK in 66ms (Views: 16.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 17:07:20 +0200
+Processing by OrdersController#index as HTML
+  [1m[36mOrder Load (13.5ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+  Rendered orders/index.html.erb within layouts/application (64.5ms)
+Compiled views/orders/orders_index.js  (1087ms)  (pid 3502)
+Compiled application.js  (210ms)  (pid 3502)
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1
+  Rendered devise/menu/_login_items.html.erb (1.7ms)
+Completed 200 OK in 3550ms (Views: 3505.8ms | ActiveRecord: 14.3ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 17:07:31 +0200
+Processing by OrdersController#index as JSON
+  [1m[36mOrder Load (0.6ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+Completed 200 OK in 90ms (Views: 31.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 17:09:25 +0200
+Processing by OrdersController#index as HTML
+  [1m[35mOrder Load (1.0ms)[0m  SELECT "orders".* FROM "orders" 
+  Rendered orders/index.html.erb within layouts/application (20.1ms)
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1[0m
+  Rendered devise/menu/_login_items.html.erb (3.1ms)
+Completed 200 OK in 434ms (Views: 427.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 17:10:22 +0200
+Processing by OrdersController#index as JSON
+  [1m[35mOrder Load (13.2ms)[0m  SELECT "orders".* FROM "orders" 
+Completed 200 OK in 274ms (Views: 81.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 17:10:53 +0200
+Processing by OrdersController#index as HTML
+  [1m[36mOrder Load (20.6ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+  Rendered orders/index.html.erb within layouts/application (64.7ms)
+Compiled routers/orders_router.js  (510ms)  (pid 3502)
+Compiled application.js  (325ms)  (pid 3502)
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1
+  Rendered devise/menu/_login_items.html.erb (2.4ms)
+Completed 200 OK in 4305ms (Views: 4279.7ms | ActiveRecord: 21.6ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 17:11:20 +0200
+Processing by OrdersController#index as HTML
+  [1m[36mOrder Load (0.8ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+  Rendered orders/index.html.erb within layouts/application (62.8ms)
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1
+  Rendered devise/menu/_login_items.html.erb (1.9ms)
+Completed 200 OK in 354ms (Views: 341.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 17:11:30 +0200
+Processing by OrdersController#index as JSON
+  [1m[36mOrder Load (0.7ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+Completed 200 OK in 184ms (Views: 55.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2013-02-08 17:15:29 +0200
+
+ActionController::RoutingError (No route matches [GET] "/orders"):
+  actionpack (3.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.11) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.11) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.11) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.4) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.4) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.11) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.4) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.11) lib/rails/engine.rb:479:in `call'
+  railties (3.2.11) lib/rails/application.rb:223:in `call'
+  rack (1.4.4) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.11) lib/rails/rack/log_tailer.rb:17:in `call'
+  thin (1.5.0) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.0) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.0) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.0) lib/thin/connection.rb:54:in `process'
+  thin (1.5.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run'
+  thin (1.5.0) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.0) lib/thin/server.rb:159:in `start'
+  rack (1.4.4) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.4) lib/rack/server.rb:268:in `start'
+  railties (3.2.11) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.11) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.11) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.11) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (9.5ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 21:26:49 +0200
+Processing by OrdersController#index as HTML
+  [1m[35mOrder Load (0.6ms)[0m  SELECT "orders".* FROM "orders" 
+  Rendered orders/index.html.erb within layouts/application (6.9ms)
+Compiled routers/orders_router.js  (523ms)  (pid 3502)
+Compiled application.js  (539ms)  (pid 3502)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1[0m
+  Rendered devise/menu/_login_items.html.erb (2.3ms)
+Completed 200 OK in 4336ms (Views: 4022.4ms | ActiveRecord: 14.1ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-08 21:28:43 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (8.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35mUser Load (2.5ms)[0m  SELECT "users".* FROM "users" LIMIT 25 OFFSET 0
+  Rendered users/index.html.erb within layouts/application (323.6ms)
+  Rendered devise/menu/_login_items.html.erb (14.4ms)
+Completed 200 OK in 5461ms (Views: 3905.5ms | ActiveRecord: 50.8ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 21:29:09 +0200
+Processing by OrdersController#index as JSON
+  [1m[36mOrder Load (1.1ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+Completed 200 OK in 504ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2013-02-08 21:29:15 +0200
+Processing by OrdersController#index as HTML
+  [1m[35mOrder Load (1.1ms)[0m  SELECT "orders".* FROM "orders" 
+  Rendered orders/index.html.erb within layouts/application (61.4ms)
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1[0m
+  Rendered devise/menu/_login_items.html.erb (7.1ms)
+Completed 200 OK in 520ms (Views: 504.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 21:29:30 +0200
+Processing by OrdersController#index as JSON
+  [1m[35mOrder Load (4.8ms)[0m  SELECT "orders".* FROM "orders" 
+Completed 200 OK in 693ms (Views: 34.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 21:29:51 +0200
+Processing by OrdersController#index as HTML
+  [1m[36mOrder Load (1.1ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+  Rendered orders/index.html.erb within layouts/application (47.5ms)
+  [1m[35mUser Load (12.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1
+  Rendered devise/menu/_login_items.html.erb (9.6ms)
+Completed 200 OK in 727ms (Views: 702.9ms | ActiveRecord: 13.6ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 21:30:07 +0200
+Processing by OrdersController#index as JSON
+  [1m[36mOrder Load (0.7ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+Completed 200 OK in 152ms (Views: 35.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2013-02-08 21:30:17 +0200
+Processing by OrdersController#index as HTML
+  [1m[35mOrder Load (0.9ms)[0m  SELECT "orders".* FROM "orders" 
+  Rendered orders/index.html.erb within layouts/application (29.4ms)
+  [1m[36mUser Load (12.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1[0m
+  Rendered devise/menu/_login_items.html.erb (9.9ms)
+Completed 200 OK in 1474ms (Views: 1456.2ms | ActiveRecord: 13.7ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 21:30:35 +0200
+Processing by OrdersController#index as JSON
+  [1m[35mOrder Load (1.5ms)[0m  SELECT "orders".* FROM "orders" 
+Completed 200 OK in 365ms (Views: 183.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2013-02-08 21:32:36 +0200
+Processing by OrdersController#index as HTML
+  [1m[36mOrder Load (9.5ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+  Rendered orders/index.html.erb within layouts/application (36.6ms)
+  [1m[35mUser Load (5.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1
+  Rendered devise/menu/_login_items.html.erb (2.2ms)
+Completed 200 OK in 1063ms (Views: 1041.5ms | ActiveRecord: 14.5ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 21:32:48 +0200
+Processing by OrdersController#index as JSON
+  [1m[36mOrder Load (0.8ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+Completed 200 OK in 248ms (Views: 81.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2013-02-08 21:33:54 +0200
+Processing by OrdersController#index as HTML
+  [1m[35mOrder Load (0.9ms)[0m  SELECT "orders".* FROM "orders" 
+  Rendered orders/index.html.erb within layouts/application (16.9ms)
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1[0m
+  Rendered devise/menu/_login_items.html.erb (2.7ms)
+Completed 200 OK in 783ms (Views: 764.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 21:35:04 +0200
+Processing by OrdersController#index as JSON
+  [1m[35mOrder Load (0.6ms)[0m  SELECT "orders".* FROM "orders" 
+Completed 200 OK in 110ms (Views: 24.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2013-02-08 21:35:36 +0200
+Processing by OrdersController#index as HTML
+  [1m[36mOrder Load (8.6ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+  Rendered orders/index.html.erb within layouts/application (14.3ms)
+  [1m[35mUser Load (26.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1
+  Rendered devise/menu/_login_items.html.erb (18.2ms)
+Completed 200 OK in 1375ms (Views: 1334.2ms | ActiveRecord: 34.6ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2013-02-08 21:36:03 +0200
+Processing by OrdersController#index as HTML
+  [1m[36mOrder Load (0.8ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+  Rendered orders/index.html.erb within layouts/application (78.5ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1
+  Rendered devise/menu/_login_items.html.erb (4.4ms)
+Completed 200 OK in 1008ms (Views: 963.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 21:36:12 +0200
+Processing by OrdersController#index as JSON
+  [1m[36mOrder Load (19.1ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+Completed 200 OK in 150ms (Views: 51.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2013-02-08 21:36:43 +0200
+
+ActionController::RoutingError (No route matches [GET] "/orders"):
+  actionpack (3.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.11) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.11) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.11) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.4) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.4) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.11) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.4) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.11) lib/rails/engine.rb:479:in `call'
+  railties (3.2.11) lib/rails/application.rb:223:in `call'
+  rack (1.4.4) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.11) lib/rails/rack/log_tailer.rb:17:in `call'
+  thin (1.5.0) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.0) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.0) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.0) lib/thin/connection.rb:54:in `process'
+  thin (1.5.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run'
+  thin (1.5.0) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.0) lib/thin/server.rb:159:in `start'
+  rack (1.4.4) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.4) lib/rack/server.rb:268:in `start'
+  railties (3.2.11) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.11) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.11) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.11) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (13.3ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2013-02-08 21:36:47 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"wOWnMj2vfrTRjYYNujq+gYTBgs4GWtw8V9vw/jWNbZ8="}
+  [1m[35mUser Load (6.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1
+  [1m[36mEXPLAIN (0.4ms)[0m  [1mEXPLAIN QUERY PLAN SELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1[0m
+EXPLAIN for: SELECT  "users".* FROM "users"  WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1
+0|0|TABLE users USING PRIMARY KEY ORDER BY
+
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 686ms (ActiveRecord: 11.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-08 21:36:48 +0200
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 5ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-02-08 21:36:49 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (13.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (77.4ms)
+Compiled routers/orders_router.js  (822ms)  (pid 3735)
+Compiled application.js  (253ms)  (pid 3735)
+  Rendered devise/menu/_login_items.html.erb (1.8ms)
+Completed 200 OK in 2752ms (Views: 2742.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-02-08 21:37:10 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qCxHXFkcwII04uAT0pz47dEROjTtMUT6aLxU6UWVJH0=", "user"=>{"login_name"=>"customer", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (3.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."login_name" = 'customer' ORDER BY id asc LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (238.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2013-02-08 14:59:29.824698', "current_sign_in_at" = '2013-02-08 19:37:12.956458', "sign_in_count" = 8, "updated_at" = '2013-02-08 19:37:12.961713' WHERE "users"."id" = 29
+  [1m[36m (31.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/api/orders
+Completed 302 Found in 2848ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 21:37:13 +0200
+Processing by OrdersController#index as HTML
+  [1m[35mOrder Load (6.0ms)[0m  SELECT "orders".* FROM "orders" 
+  Rendered orders/index.html.erb within layouts/application (74.4ms)
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1[0m
+  Rendered devise/menu/_login_items.html.erb (2.0ms)
+Completed 200 OK in 721ms (Views: 494.3ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 21:37:21 +0200
+Processing by OrdersController#index as JSON
+  [1m[35mOrder Load (1.0ms)[0m  SELECT "orders".* FROM "orders" 
+Completed 200 OK in 111ms (Views: 28.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 21:39:39 +0200
+Processing by OrdersController#index as HTML
+  [1m[36mOrder Load (1.2ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+  Rendered orders/index.html.erb within layouts/application (19.2ms)
+Compiled views/orders/orders_index.js  (792ms)  (pid 3735)
+Compiled routers/orders_router.js  (401ms)  (pid 3735)
+Compiled application.js  (589ms)  (pid 3735)
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1
+  Rendered devise/menu/_login_items.html.erb (5.9ms)
+Completed 200 OK in 4177ms (Views: 3931.4ms | ActiveRecord: 13.2ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 21:39:52 +0200
+Processing by OrdersController#index as JSON
+  [1m[36mOrder Load (0.9ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+Completed 200 OK in 119ms (Views: 48.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2013-02-08 21:40:15 +0200
+Processing by OrdersController#index as HTML
+  [1m[35mOrder Load (26.4ms)[0m  SELECT "orders".* FROM "orders" 
+  Rendered orders/index.html.erb within layouts/application (71.8ms)
+Compiled views/orders/orders_index.js  (571ms)  (pid 3735)
+Compiled application.js  (504ms)  (pid 3735)
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1[0m
+  Rendered devise/menu/_login_items.html.erb (1.9ms)
+Completed 200 OK in 4959ms (Views: 4928.6ms | ActiveRecord: 27.5ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 21:40:25 +0200
+Processing by OrdersController#index as HTML
+  [1m[35mOrder Load (0.7ms)[0m  SELECT "orders".* FROM "orders" 
+  Rendered orders/index.html.erb within layouts/application (108.0ms)
+Compiled views/orders/orders_index.js  (226ms)  (pid 3735)
+Compiled application.js  (388ms)  (pid 3735)
+  [1m[36mUser Load (3.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1[0m
+  Rendered devise/menu/_login_items.html.erb (2.1ms)
+Completed 200 OK in 4046ms (Views: 4023.9ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 21:40:37 +0200
+Processing by OrdersController#index as JSON
+  [1m[35mOrder Load (6.8ms)[0m  SELECT "orders".* FROM "orders" 
+Completed 200 OK in 63ms (Views: 19.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 21:40:37 +0200
+Processing by OrdersController#index as JSON
+  [1m[36mOrder Load (0.8ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+Completed 200 OK in 100ms (Views: 23.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 21:40:47 +0200
+Processing by OrdersController#index as HTML
+  [1m[35mOrder Load (1.5ms)[0m  SELECT "orders".* FROM "orders" 
+  Rendered orders/index.html.erb within layouts/application (122.1ms)
+Compiled views/orders/orders_index.js  (413ms)  (pid 3735)
+Compiled application.js  (1214ms)  (pid 3735)
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1[0m
+  Rendered devise/menu/_login_items.html.erb (15.3ms)
+Completed 200 OK in 5037ms (Views: 5004.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 21:41:00 +0200
+Processing by OrdersController#index as JSON
+  [1m[35mOrder Load (8.6ms)[0m  SELECT "orders".* FROM "orders" 
+Completed 200 OK in 98ms (Views: 19.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 21:41:30 +0200
+Processing by OrdersController#index as HTML
+  [1m[36mOrder Load (1.2ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+  Rendered orders/index.html.erb within layouts/application (21.0ms)
+Compiled routers/orders_router.js  (110ms)  (pid 3735)
+Compiled application.js  (436ms)  (pid 3735)
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1
+  Rendered devise/menu/_login_items.html.erb (2.0ms)
+Completed 200 OK in 2966ms (Views: 2958.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 21:41:39 +0200
+Processing by OrdersController#index as JSON
+  [1m[36mOrder Load (12.0ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+Completed 200 OK in 161ms (Views: 71.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2013-02-08 21:42:07 +0200
+Processing by OrdersController#index as HTML
+  [1m[35mOrder Load (1.1ms)[0m  SELECT "orders".* FROM "orders" 
+  Rendered orders/index.html.erb within layouts/application (49.4ms)
+  [1m[36mUser Load (3.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1[0m
+  Rendered devise/menu/_login_items.html.erb (1.4ms)
+Completed 200 OK in 896ms (Views: 880.4ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 21:42:15 +0200
+Processing by OrdersController#index as JSON
+  [1m[35mOrder Load (0.8ms)[0m  SELECT "orders".* FROM "orders" 
+Completed 200 OK in 118ms (Views: 23.5ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/orders" for 127.0.0.1 at 2013-02-08 21:43:01 +0200
+Processing by OrdersController#index as HTML
+  [1m[36mOrder Load (0.8ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+  Rendered orders/index.html.erb within layouts/application (218.9ms)
+Compiled views/orders/orders_index.js  (769ms)  (pid 3812)
+Compiled application.js  (158ms)  (pid 3812)
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1
+  Rendered devise/menu/_login_items.html.erb (3.2ms)
+Completed 200 OK in 4039ms (Views: 3385.4ms | ActiveRecord: 33.9ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 21:43:13 +0200
+Processing by OrdersController#index as JSON
+  [1m[36mOrder Load (0.7ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+Completed 200 OK in 477ms (Views: 43.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2013-02-08 21:45:07 +0200
+Processing by OrdersController#index as HTML
+  [1m[35mOrder Load (1.2ms)[0m  SELECT "orders".* FROM "orders" 
+  Rendered orders/index.html.erb within layouts/application (62.8ms)
+Compiled routers/orders_router.js  (414ms)  (pid 3812)
+Compiled application.js  (361ms)  (pid 3812)
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1[0m
+  Rendered devise/menu/_login_items.html.erb (1.7ms)
+Completed 200 OK in 3816ms (Views: 3770.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 21:45:17 +0200
+Processing by OrdersController#index as JSON
+  [1m[35mOrder Load (0.8ms)[0m  SELECT "orders".* FROM "orders" 
+Completed 200 OK in 148ms (Views: 76.1ms | ActiveRecord: 0.0ms)

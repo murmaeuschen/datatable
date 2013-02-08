@@ -43,26 +43,4 @@ class ItemstablesController < ApplicationController
       #format.json { render json: { itemstable: @itemstable, itemstable_items: @all_items.to_json().html_safe } }
     end
   end
-
-  def create
-    @itemstable = Itemstable.create params[:itemstable]
-    respond_to do |format|
-      format.html { redirect_to itemstable_path(@itemstable) }
-      format.json { respond_with @itemstable }
-    end
-  end
-
-  def update
-    @itemstable = Itemstable.find params[:id]
-    @itemstable.update_attributes params[:itemstable]
-    respond_to do |format|
-      format.html
-      format.json { respond_with @itemstable }
-    end
-  end
-
-  def destroy
-    respond_with Itemstable.destroy(params[:id])
-  end
-
-end 
+end

@@ -9,8 +9,13 @@ Shop::Application.routes.draw do
     resources :items
     resources :orders
   end
+  resources :orders
+  resources :itemstables
+  resources :items
   
+    
   root to: "users#index"
+
 
   
 
