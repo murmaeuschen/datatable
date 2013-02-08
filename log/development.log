@@ -30958,3 +30958,140 @@ Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 13:02:38 +0200
 Processing by OrdersController#index as JSON
   [1m[36mOrder Load (0.7ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
 Completed 200 OK in 49ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-08 13:04:49 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (9.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35mUser Load (2.4ms)[0m  SELECT "users".* FROM "users" LIMIT 25 OFFSET 0
+  Rendered users/index.html.erb within layouts/application (287.9ms)
+  Rendered devise/menu/_login_items.html.erb (3.2ms)
+Completed 200 OK in 3966ms (Views: 2614.3ms | ActiveRecord: 38.6ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 13:05:04 +0200
+Processing by OrdersController#index as JSON
+  [1m[36mOrder Load (0.7ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+Completed 200 OK in 108ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2013-02-08 13:05:08 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"qZwlEJhBdS902HmHSc2bAl4JhgAUtaUh/EuQMZ2D6gc="}
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 160ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-08 13:05:08 +0200
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 1ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-02-08 13:05:08 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (9.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (42.2ms)
+  Rendered devise/menu/_login_items.html.erb (6.4ms)
+Completed 200 OK in 477ms (Views: 468.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-02-08 13:05:22 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"94eb6QDPOdWB5iywuqbwuBjZMyS1+6B7zZ//GyFz5Fc=", "user"=>{"login_name"=>"blackening", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."login_name" = 'blackening' ORDER BY id asc LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (14.5ms)[0m  begin transaction
+  [1m[36m (60.9ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2013-02-05 18:40:00.449542', "current_sign_in_at" = '2013-02-08 11:05:25.341490', "sign_in_count" = 30, "updated_at" = '2013-02-08 11:05:25.373536' WHERE "users"."id" = 28[0m
+  [1m[35m (31.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 2944ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-08 13:05:25 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" LIMIT 25 OFFSET 0
+  Rendered users/index.html.erb within layouts/application (208.3ms)
+  Rendered devise/menu/_login_items.html.erb (2.4ms)
+Completed 200 OK in 597ms (Views: 555.7ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/api/users?orderBy=id+asc&currentPage=1&perPage=25&fields=login_name&scope=start_with&request=" for 127.0.0.1 at 2013-02-08 13:05:37 +0200
+Processing by UsersController#index as JSON
+  Parameters: {"orderBy"=>"id asc", "currentPage"=>"1", "perPage"=>"25", "fields"=>"login_name", "scope"=>"start_with", "request"=>""}
+  [1m[36mUser Load (3.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "users" WHERE (login_name LIKE '%')
+  [1m[36m (1.5ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35mUser Load (6.4ms)[0m  SELECT "users".* FROM "users" WHERE (login_name LIKE '%') ORDER BY id asc LIMIT 25 OFFSET 0
+Completed 200 OK in 522ms (Views: 365.1ms | ActiveRecord: 6.4ms)
+
+
+Started DELETE "/api/users/3" for 127.0.0.1 at 2013-02-08 13:05:46 +0200
+Processing by UsersController#destroy as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1[0m
+  [1m[35mUser Load (1.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY id asc LIMIT 1  [["id", "3"]]
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (39.8ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 3]]
+  [1m[36m (55.4ms)[0m  [1mcommit transaction[0m
+Completed 204 No Content in 383ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2013-02-08 13:05:49 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"94eb6QDPOdWB5iywuqbwuBjZMyS1+6B7zZ//GyFz5Fc="}
+  [1m[35mUser Load (2.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 30ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-08 13:05:50 +0200
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 2ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-02-08 13:05:50 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (2.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (23.3ms)
+  Rendered devise/menu/_login_items.html.erb (1.9ms)
+Completed 200 OK in 379ms (Views: 360.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-02-08 13:07:33 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XI9FS9RUkrENSl4hR56+qeDItEFPLcxF6Wi1dG6TdG0=", "user"=>{"login_name"=>"customer", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."login_name" = 'customer' ORDER BY id asc LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (6.6ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2013-02-08 10:58:31.284882', "current_sign_in_at" = '2013-02-08 11:07:35.819748', "sign_in_count" = 6, "updated_at" = '2013-02-08 11:07:35.830416' WHERE "users"."id" = 29[0m
+  [1m[35m (36.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/api/orders
+Completed 302 Found in 2877ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 13:07:36 +0200
+Processing by OrdersController#index as HTML
+  [1m[36mOrder Load (1.0ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+  Rendered orders/index.html.erb within layouts/application (3.6ms)
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1
+  Rendered devise/menu/_login_items.html.erb (2.0ms)
+Completed 200 OK in 419ms (Views: 412.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 13:07:49 +0200
+Processing by OrdersController#index as JSON
+  [1m[36mOrder Load (0.9ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+Completed 200 OK in 111ms (Views: 0.5ms | ActiveRecord: 0.0ms)
