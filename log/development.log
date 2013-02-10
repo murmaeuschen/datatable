@@ -31751,3 +31751,174 @@ Migrating to RenameItemstableToOrderItem (20130210101710)
   [1m[36m (18.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130210101710')[0m
   [1m[35m (37.2ms)[0m  commit transaction
   [1m[36m (0.7ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-10 13:02:15 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1[0m
+  [1m[35m (1.1ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35mUser Load (6.6ms)[0m  SELECT "users".* FROM "users" LIMIT 25 OFFSET 0
+  Rendered users/index.html.erb within layouts/application (385.0ms)
+Compiled orders/details.js  (1764ms)  (pid 3199)
+Compiled orders/edit.js  (496ms)  (pid 3199)
+Compiled orders/index.js  (115ms)  (pid 3199)
+Compiled orders/item.js  (118ms)  (pid 3199)
+Compiled orders/new.js  (52ms)  (pid 3199)
+Compiled models/order.js  (1086ms)  (pid 3199)
+Compiled views/orders/orders_edit.js  (337ms)  (pid 3199)
+Compiled views/orders/orders_index.js  (164ms)  (pid 3199)
+Compiled views/orders/orders_item.js  (32ms)  (pid 3199)
+Compiled views/orders/orders_new.js  (241ms)  (pid 3199)
+Compiled views/orders/orders_order.js  (127ms)  (pid 3199)
+Compiled routers/orders_router.js  (83ms)  (pid 3199)
+Compiled orders/items.js  (46ms)  (pid 3199)
+Compiled orders/show.js  (219ms)  (pid 3199)
+Compiled models/order_item.js  (57ms)  (pid 3199)
+Compiled collections/order_items.js  (18ms)  (pid 3199)
+Compiled views/orders/orders_items_index.js  (33ms)  (pid 3199)
+Compiled application.js  (1704ms)  (pid 3199)
+  Rendered devise/menu/_login_items.html.erb (16.2ms)
+Completed 200 OK in 13445ms (Views: 12015.8ms | ActiveRecord: 52.4ms)
+
+
+Started GET "/api/users?orderBy=id+asc&currentPage=1&perPage=25&fields=login_name&scope=start_with&request=" for 127.0.0.1 at 2013-02-10 13:02:39 +0200
+Processing by UsersController#index as JSON
+  Parameters: {"orderBy"=>"id asc", "currentPage"=>"1", "perPage"=>"25", "fields"=>"login_name", "scope"=>"start_with", "request"=>""}
+  [1m[36mUser Load (17.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1[0m
+  [1m[35m (2.7ms)[0m  SELECT COUNT(*) FROM "users" WHERE (login_name LIKE '%')
+  [1m[36m (3.3ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35mUser Load (13.0ms)[0m  SELECT "users".* FROM "users" WHERE (login_name LIKE '%') ORDER BY id asc LIMIT 25 OFFSET 0
+Completed 200 OK in 924ms (Views: 387.9ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2013-02-10 13:02:45 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"qCxHXFkcwII04uAT0pz47dEROjTtMUT6aLxU6UWVJH0="}
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1[0m
+  [1m[35m (1.7ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 91ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-10 13:02:46 +0200
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 1ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-02-10 13:02:46 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (4.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (19.9ms)
+  Rendered devise/menu/_login_items.html.erb (0.9ms)
+Completed 200 OK in 250ms (Views: 245.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-02-10 13:03:18 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mRJ3JdEhYrK+bqiOez4hmiG01lu/Y0BNglF86JAmSsc=", "user"=>{"login_name"=>"blackening", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (1.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."login_name" = 'blackening' ORDER BY id asc LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (39.7ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2013-02-08 14:59:05.892111', "current_sign_in_at" = '2013-02-10 11:03:22.484747', "sign_in_count" = 32, "updated_at" = '2013-02-10 11:03:22.489566' WHERE "users"."id" = 28
+  [1m[36m (32.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 4510ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-10 13:03:22 +0200
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36mUser Load (2.2ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 25 OFFSET 0[0m
+  Rendered users/index.html.erb within layouts/application (262.4ms)
+  Rendered devise/menu/_login_items.html.erb (5.9ms)
+Completed 200 OK in 713ms (Views: 663.3ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/api/users?orderBy=id+asc&currentPage=1&perPage=25&fields=login_name&scope=start_with&request=" for 127.0.0.1 at 2013-02-10 13:03:34 +0200
+Processing by UsersController#index as JSON
+  Parameters: {"orderBy"=>"id asc", "currentPage"=>"1", "perPage"=>"25", "fields"=>"login_name", "scope"=>"start_with", "request"=>""}
+  [1m[35mUser Load (3.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1
+  [1m[36m (2.2ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE (login_name LIKE '%')[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE (login_name LIKE '%') ORDER BY id asc LIMIT 25 OFFSET 0[0m
+Completed 200 OK in 541ms (Views: 414.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2013-02-10 13:03:37 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"mRJ3JdEhYrK+bqiOez4hmiG01lu/Y0BNglF86JAmSsc="}
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 41ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-10 13:03:38 +0200
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 1ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-02-10 13:03:38 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (2.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (20.9ms)
+  Rendered devise/menu/_login_items.html.erb (10.0ms)
+Completed 200 OK in 509ms (Views: 505.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-02-10 13:03:55 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T3nanKNZs6WdbXHumf94JBif8FNqYMdloe8Lu9DWabQ=", "user"=>{"login_name"=>"customer", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (7.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."login_name" = 'customer' ORDER BY id asc LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (6.3ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2013-02-08 19:37:12.956458', "current_sign_in_at" = '2013-02-10 11:03:57.629689', "sign_in_count" = 9, "updated_at" = '2013-02-10 11:03:57.634833' WHERE "users"."id" = 29[0m
+  [1m[35m (21.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/api/orders
+Completed 302 Found in 2348ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-10 13:03:57 +0200
+Processing by OrdersController#index as HTML
+  [1m[36mOrder Load (0.7ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+  Rendered orders/index.html.erb within layouts/application (21.6ms)
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1
+  Rendered devise/menu/_login_items.html.erb (1.5ms)
+Completed 200 OK in 451ms (Views: 295.8ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2013-02-10 13:04:29 +0200
+Processing by OrdersController#index as HTML
+  [1m[36mOrder Load (1.0ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+  Rendered orders/index.html.erb within layouts/application (39.5ms)
+  [1m[35mUser Load (1.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1
+  Rendered devise/menu/_login_items.html.erb (1.4ms)
+Completed 200 OK in 599ms (Views: 582.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-10 13:04:43 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35mUser Load (6.3ms)[0m  SELECT "users".* FROM "users" LIMIT 25 OFFSET 0
+  Rendered users/index.html.erb within layouts/application (213.3ms)
+  Rendered devise/menu/_login_items.html.erb (1.3ms)
+Completed 200 OK in 755ms (Views: 640.4ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2013-02-10 13:04:53 +0200
+Processing by OrdersController#index as HTML
+  [1m[36mOrder Load (1.1ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+  Rendered orders/index.html.erb within layouts/application (73.1ms)
+  [1m[35mUser Load (1.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1
+  Rendered devise/menu/_login_items.html.erb (17.7ms)
+Completed 200 OK in 1487ms (Views: 1448.5ms | ActiveRecord: 2.5ms)
