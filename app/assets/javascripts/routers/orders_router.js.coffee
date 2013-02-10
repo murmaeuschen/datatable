@@ -17,7 +17,6 @@ class Shop.Routers.Orders extends Backbone.Router
     $('#container').html(view.render().el)
   
   show: (id) ->
-    $.getJSON "/api/orders/"+id+".json", (data) ->
     order = @collection.get(id)    
     view = new Shop.Views.OrdersEdit({model: order, details: "details"})
 

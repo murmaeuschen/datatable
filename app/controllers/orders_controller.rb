@@ -42,6 +42,4 @@ class OrdersController < ApplicationController
       #format.json { render json: { order: @order, order_items: @all_items.to_json().html_safe } }
     end
   end 
-
-  
 end
