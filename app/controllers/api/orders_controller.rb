@@ -43,5 +43,24 @@ class OrdersController < ApplicationController
     end
   end 
 
-  
+  def create
+    @order = Order.create params[:order]
+    respond_to do |format|
+      format.html { redirect_to user_path(@order) }
+      format.json { respond_with @order }
+    end
+  end
+
+  def update
+    @order = Order.find params[:id]
+    @order.update_attributes params[:order]
+    respond_to do |format|
+      format.html
+      format.json { respond_with @order }
+    end
+  end
+
+  def destroy
+    respond_with Order.destroy(params[:id])
+  end
 end

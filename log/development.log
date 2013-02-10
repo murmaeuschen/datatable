@@ -31717,3 +31717,37 @@ Started GET "/api/orders" for 127.0.0.1 at 2013-02-08 21:45:17 +0200
 Processing by OrdersController#index as JSON
   [1m[35mOrder Load (0.8ms)[0m  SELECT "orders".* FROM "orders" 
 Completed 200 OK in 148ms (Views: 76.1ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+  [1m[36m (7.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20130114174823)
+Migrating to AddFieldsToUser (20130115090200)
+Migrating to AddRegionToUser (20130115151117)
+Migrating to AddRoleToUser (20130115155545)
+Migrating to AddDeviseToUsers (20130127120254)
+Migrating to CreateOrders (20130205085036)
+Migrating to CreateItems (20130205085241)
+Migrating to CreateItemstables (20130205085353)
+Migrating to RemoveItemstableIdFromOrders (20130208101617)
+Migrating to AddOrderIdToItemstables (20130208101733)
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (0.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (24.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20130114174823)
+Migrating to AddFieldsToUser (20130115090200)
+Migrating to AddRegionToUser (20130115151117)
+Migrating to AddRoleToUser (20130115155545)
+Migrating to AddDeviseToUsers (20130127120254)
+Migrating to CreateOrders (20130205085036)
+Migrating to CreateItems (20130205085241)
+Migrating to CreateItemstables (20130205085353)
+Migrating to RemoveItemstableIdFromOrders (20130208101617)
+Migrating to AddOrderIdToItemstables (20130208101733)
+Migrating to RenameItemstableToOrderItem (20130210101710)
+  [1m[35m (0.4ms)[0m  select sqlite_version(*)
+  [1m[36m (1.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (37.5ms)[0m  ALTER TABLE "itemstables" RENAME TO "order_items"
+  [1m[36m (18.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130210101710')[0m
+  [1m[35m (37.2ms)[0m  commit transaction
+  [1m[36m (0.7ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m

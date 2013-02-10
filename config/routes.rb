@@ -5,12 +5,12 @@ Shop::Application.routes.draw do
   
   scope "api" do
     resources :users
-    resources :itemstables
+    resources :order_items
     resources :items
     resources :orders
   end
   resources :orders
-  resources :itemstables
+  resources :order_items
   resources :items
   
     

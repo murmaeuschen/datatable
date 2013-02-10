@@ -41,4 +41,24 @@ class ItemsController < ApplicationController
     end
   end
 
+  def create
+    @item = Item.create params[:item]
+    respond_to do |format|
+      format.html { redirect_to user_path(@item) }
+      format.json { respond_with @item }
+    end
+  end
+
+  def update
+    @item = Item.find params[:id]
+    @item.update_attributes params[:item]
+    respond_to do |format|
+      format.html
+      format.json { respond_with @item }
+    end
+  end
+
+  def destroy
+    respond_with Item.destroy(params[:id])
+  end
 end

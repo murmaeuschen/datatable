@@ -9,7 +9,7 @@ class Shop.Routers.Orders extends Backbone.Router
    
     
   initialize: ->
-    @collection = new Shop.Collections.Orders()
+    @collection = new Shop.Collections.Orders($('#container').data('orders'))
     @collection.fetch()     
 
   index: ->
@@ -18,7 +18,6 @@ class Shop.Routers.Orders extends Backbone.Router
   
   show: (id) ->
     $.getJSON "/api/orders/"+id+".json", (data) ->
-      console.log(data)
     order = @collection.get(id)    
     view = new Shop.Views.OrdersEdit({model: order, details: "details"})
 

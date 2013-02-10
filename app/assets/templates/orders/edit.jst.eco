@@ -159,9 +159,9 @@ $(function(){
           <fieldset>			                
               <div class="row-fluid">	
 		  	  	<label for="credit_card_type" class="span6">Credit Card Type*</label>
-		  	  	
+
 		  	  	<select name="credit_card_type" class="span6">
-	                                
+
 	                <option <%="selected" if @order.get('credit_card_type')== "Visa" %>>Visa</option>
 	                <option <%="selected" if @order.get('credit_card_type')== "MasterCard" %>>MasterCard</option>
 	                <option <%="selected" if @order.get('credit_card_type')== "American Express" %>>American Express</option>
@@ -203,6 +203,6 @@ $(function(){
 		  </fieldset>	  	 
         </div>
 	   </div>	    
-	
+
 </form>
 </div>

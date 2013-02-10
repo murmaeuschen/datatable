@@ -30,38 +30,7 @@ $(function(){
 				</option>
 			</select>
 		</div>
-		<table id="items_table" class="table table-condensed">
-		  <tbody>
-			<tr>
-				<th>
-					Item Number
-				</th>
-				<th>
-					Item Name
-				</th>
-				<th>
-					Item Description
-				</th>
-				<th>
-					Dimension
-				</th>
-				<th>
-					Price
-				</th>
-				<th>
-					Quantity
-				</th>
-				<th>
-					Price per Line
-				</th>
-				<th>
-					Edit
-				</th>
-				<th>
-					Delete
-				</th>
-			</tr>			
-		  </tbody>
+		<table id="items_table" class="table table-condensed">		  
 		</table>
 		<div class="pagination pagination-centered" id="paging-buttons">       
 	    	  <ul class="pager">           
@@ -130,7 +99,7 @@ $(function(){
           <fieldset>			                
               <div class="row-fluid">	
 		  	  	<label for="credit_card_type" class="span6">Credit Card Type*</label>
-		  	  	
+
 		  	  	<select name="credit_card_type" class="span6" id="credit_card_type">                       
 	                <option value="Visa">Visa</option>
 	                <option value="MasterCard">MasterCard</option>
@@ -176,6 +145,6 @@ $(function(){
 		  </fieldset>	  	 
         </div>
 	   </div>	    
-	
+
 </form>
 </div>
