@@ -6,6 +6,7 @@ class Shop.Views.OrdersNew extends Backbone.View
 
   events:
     "submit #new_order": "createOrder"
+    'click #cancel'    : 'returnOnMain'
 
   
   initialize: ->
@@ -35,9 +36,6 @@ class Shop.Views.OrdersNew extends Backbone.View
       total_price:        $(@el).find('#total_price').text()      
       total_num_of_items: $(@el).find('#total_num_of_items').text()
       date_of_ordering:   $(@el).find('#date_of_ordering').text()
-      
-      #role: $(@el).find('#assignee :selected').val()
-
     @collection.create attributes,
       wait: true
       success: -> 
@@ -50,3 +48,7 @@ class Shop.Views.OrdersNew extends Backbone.View
       errors = $.parseJSON(response.responseText).errors
       for attribute, messages of errors
         alert "#{attribute} #{message}" for message in messages
+
+  returnOnMain: ->
+    if confirm 'Are you sure you want to cancel operation. All data will be lost?'
+      Backbone.history.navigate("/orders", true)

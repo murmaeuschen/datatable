@@ -4,3 +4,6 @@ class Shop.Collections.Orders extends Backbone.Collection
 
   url: '/api/orders'
 
+  parse: (resp) =>
+    #@init_pagination(resp)
+    resp["models"]

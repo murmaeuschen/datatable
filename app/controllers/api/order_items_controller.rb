@@ -1,95 +1,69 @@
 class OrderItemsController < ApplicationController
-  # GET /order_items
-  # GET /order_items.json
+ respond_to :html, :json
+
   def index
-    #@order_items = OrderItem.all
+  #  @order_items = if params[:request]
+      #fields = if params[:fields] == "all_columns"
+      #  %w(login_name first_name last_name role)
+      #else
+      #  params[:fields] 
+     # end
+     # order_item.send params[:scope].intern, fields, params[:request]
+  #  else
+   #   order_item.scoped
+   # end
 
-    #respond_to do |format|
-    #  format.html # index.html.erb
-    #  format.json { render json: @order_items }
-    #end
+   # @order_items = @order_items.reorder(params[:itemstableBy]).page(params[:currentPage]).per(params[:perPage])
 
+   # @pagination = {
+      #current_page: @order_items.current_page,
+      #num_pages:    @order_items.num_pages,
+     # per_page:     @order_items.limit_value,
+     # total_count:  order_item.count,
+   # }
     @order = Order.find params[:order_id]
 
     @all_items = @order.items.select("item_id,item_name,item_description,dimension,price,quantity,price_per_line")
-
+    
     respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @all_items }
+      format.html
+      format.json do
+        respond_with({ models: @order_items })#}.merge @pagination)
+      end
     end
   end
 
-  # GET /order_items/1
-  # GET /order_items/1.json
   def show
-    @order_item = OrderItem.find(params[:id])
-    @order = Order.find(@order_item.order_id)  
-
+    @order_item = OrderItem.find(params[:id])       
+    @order = Order.find(@order_item.order_id)
+    
     @all_items = @order.items.select("item_id,item_name,item_description,dimension,price,quantity,price_per_line")
-
+    
     respond_to do |format|
-      format.html # show.html.erb
+      format.html # show.html.erb      
       format.json { render json: @all_items }
+      #format.json { render json: { order_item: @order_item, itemstable_items: @all_items.to_json().html_safe } }
     end
   end
 
-  # GET /order_items/new
-  # GET /order_items/new.json
-  def new
-    @order_item = OrderItem.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @order_item }
-    end
-  end
-
-  # GET /order_items/1/edit
-  def edit
-    @order_item = OrderItem.find(params[:id])
-  end
-
-  # POST /order_items
-  # POST /order_items.json
   def create
-    @order_item = OrderItem.new(params[:order_item])
-
+    @order_item = OrderItem.create params[:order_item]
     respond_to do |format|
-      if @order_item.save
-        format.html { redirect_to @order_item, notice: 'OrderItem was successfully created.' }
-        format.json { render json: @order_item, status: :created, location: @order_item }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @order_item.errors, status: :unprocessable_entity }
-      end
+      format.html { redirect_to user_path(@order_item) }
+      format.json { respond_with @order_item }
     end
   end
 
-  # PUT /order_items/1
-  # PUT /order_items/1.json
   def update
-    @order_item = OrderItem.find(params[:id])
-
+    @order_item = OrderItem.find params[:id]
+    @order_item.update_attributes params[:order_item]
     respond_to do |format|
-      if @order_item.update_attributes(params[:order_item])
-        format.html { redirect_to @order_item, notice: 'OrderItem was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @order_item.errors, status: :unprocessable_entity }
-      end
+      format.html
+      format.json { respond_with @order_item }
     end
   end
 
-  # DELETE /order_items/1
-  # DELETE /order_items/1.json
   def destroy
-    @order_item = OrderItem.find(params[:id])
-    @order_item.destroy
-
-    respond_to do |format|
-      format.html { redirect_to order_items_url }
-      format.json { head :no_content }
-    end
+    respond_with OrderItem.destroy(params[:id])
   end
 end

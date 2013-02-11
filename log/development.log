@@ -41710,3 +41710,1532 @@ Processing by OrderItemsController#index as JSON
   [1m[35mOrder Load (4.9ms)[0m  SELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT 1  [["id", "2"]]
   [1m[36mItem Load (0.6ms)[0m  [1mSELECT item_id,item_name,item_description,dimension,price,quantity,price_per_line FROM "items" INNER JOIN "order_items" ON "items"."id" = "order_items"."item_id" WHERE "order_items"."order_id" = 2[0m
 Completed 200 OK in 64ms (Views: 50.6ms | ActiveRecord: 5.5ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/orders" for 127.0.0.1 at 2013-02-11 21:46:59 +0200
+Processing by OrdersController#index as HTML
+  [1m[36mOrder Load (0.8ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+  Rendered orders/index.html.erb within layouts/application (197.1ms)
+Compiled bootstrap_and_overrides.css  (20688ms)  (pid 2550)
+Compiled items.css  (299ms)  (pid 2550)
+Compiled itemstables.css  (48ms)  (pid 2550)
+Compiled jquery.ui.datepicker.css  (1ms)  (pid 2550)
+Compiled main.css  (142ms)  (pid 2550)
+Compiled orders.css  (12ms)  (pid 2550)
+Compiled users.css  (11ms)  (pid 2550)
+Compiled application.css  (24018ms)  (pid 2550)
+Compiled jquery.js  (31ms)  (pid 2550)
+Compiled jquery_ujs.js  (1ms)  (pid 2550)
+Compiled jquery.ui.datepicker.js  (1ms)  (pid 2550)
+Compiled twitter/bootstrap/bootstrap-transition.js  (1ms)  (pid 2550)
+Compiled twitter/bootstrap/bootstrap-alert.js  (1ms)  (pid 2550)
+Compiled twitter/bootstrap/bootstrap-modal.js  (1ms)  (pid 2550)
+Compiled twitter/bootstrap/bootstrap-dropdown.js  (1ms)  (pid 2550)
+Compiled twitter/bootstrap/bootstrap-scrollspy.js  (9ms)  (pid 2550)
+Compiled twitter/bootstrap/bootstrap-tab.js  (3ms)  (pid 2550)
+Compiled twitter/bootstrap/bootstrap-tooltip.js  (1ms)  (pid 2550)
+Compiled twitter/bootstrap/bootstrap-popover.js  (1ms)  (pid 2550)
+Compiled twitter/bootstrap/bootstrap-button.js  (1ms)  (pid 2550)
+Compiled twitter/bootstrap/bootstrap-collapse.js  (6ms)  (pid 2550)
+Compiled twitter/bootstrap/bootstrap-carousel.js  (1ms)  (pid 2550)
+Compiled twitter/bootstrap/bootstrap-typeahead.js  (2ms)  (pid 2550)
+Compiled twitter/bootstrap/bootstrap-affix.js  (1ms)  (pid 2550)
+Compiled twitter/bootstrap.js  (2981ms)  (pid 2550)
+Compiled underscore.js  (8ms)  (pid 2550)
+Compiled backbone.js  (4ms)  (pid 2550)
+Compiled jquery.validate.js  (305ms)  (pid 2550)
+Compiled shop.js  (443ms)  (pid 2550)
+Compiled helpers/app_helper.js  (130ms)  (pid 2550)
+Compiled order_items/index.js  (574ms)  (pid 2550)
+Compiled orders/details.js  (15ms)  (pid 2550)
+Compiled orders/edit.js  (193ms)  (pid 2550)
+Compiled orders/index.js  (10ms)  (pid 2550)
+Compiled orders/item.js  (96ms)  (pid 2550)
+Compiled orders/items.js  (146ms)  (pid 2550)
+Compiled orders/new.js  (8ms)  (pid 2550)
+Compiled orders/order.js  (75ms)  (pid 2550)
+Compiled orders/show.js  (197ms)  (pid 2550)
+Compiled users/duplicate.js  (2ms)  (pid 2550)
+Compiled users/edit.js  (10ms)  (pid 2550)
+Compiled users/index.js  (68ms)  (pid 2550)
+Compiled users/new.js  (21ms)  (pid 2550)
+Compiled users/show.js  (17ms)  (pid 2550)
+Compiled users/user.js  (68ms)  (pid 2550)
+Compiled models/order.js  (106ms)  (pid 2550)
+Compiled models/order_item.js  (14ms)  (pid 2550)
+Compiled models/user.js  (10ms)  (pid 2550)
+Compiled collections/order_items.js  (20ms)  (pid 2550)
+Compiled collections/orders.js  (12ms)  (pid 2550)
+Compiled collections/users.js  (216ms)  (pid 2550)
+Compiled views/orders/orders_edit.js  (12ms)  (pid 2550)
+Compiled views/orders/orders_index.js  (86ms)  (pid 2550)
+Compiled views/orders/orders_item.js  (21ms)  (pid 2550)
+Compiled views/orders/orders_items_index.js  (5ms)  (pid 2550)
+Compiled views/orders/orders_new.js  (124ms)  (pid 2550)
+Compiled views/orders/orders_order.js  (19ms)  (pid 2550)
+Compiled views/users/users_duplicate.js  (81ms)  (pid 2550)
+Compiled views/users/users_edit.js  (92ms)  (pid 2550)
+Compiled views/users/users_index.js  (121ms)  (pid 2550)
+Compiled views/users/users_new.js  (105ms)  (pid 2550)
+Compiled views/users/users_show.js  (27ms)  (pid 2550)
+Compiled views/users/users_user.js  (138ms)  (pid 2550)
+Compiled routers/orders_router.js  (51ms)  (pid 2550)
+Compiled routers/users_router.js  (88ms)  (pid 2550)
+Compiled bootstrap.js  (13ms)  (pid 2550)
+Compiled application.js  (14965ms)  (pid 2550)
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1
+  Rendered devise/menu/_login_items.html.erb (3.3ms)
+Completed 200 OK in 46818ms (Views: 46218.2ms | ActiveRecord: 27.6ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-11 21:47:54 +0200
+Processing by OrdersController#index as JSON
+  [1m[36mOrder Load (0.8ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+Completed 200 OK in 108ms (Views: 90.9ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/api/orders/4" for 127.0.0.1 at 2013-02-11 21:48:01 +0200
+Processing by OrdersController#destroy as JSON
+  Parameters: {"id"=>"4"}
+  [1m[35mOrder Load (1.1ms)[0m  SELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT 1  [["id", "4"]]
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (212.3ms)[0m  DELETE FROM "orders" WHERE "orders"."id" = ?  [["id", 4]]
+  [1m[36m (26.8ms)[0m  [1mcommit transaction[0m
+Completed 204 No Content in 342ms (ActiveRecord: 240.6ms)
+
+
+Started GET "/orders/orders/new" for 127.0.0.1 at 2013-02-11 21:48:05 +0200
+
+ActionController::RoutingError (No route matches [GET] "/orders/orders/new"):
+  actionpack (3.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.11) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.11) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.11) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.4) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.4) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.11) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.4) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.11) lib/rails/engine.rb:479:in `call'
+  railties (3.2.11) lib/rails/application.rb:223:in `call'
+  rack (1.4.4) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.11) lib/rails/rack/log_tailer.rb:17:in `call'
+  thin (1.5.0) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.0) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.0) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.0) lib/thin/connection.rb:54:in `process'
+  thin (1.5.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run'
+  thin (1.5.0) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.0) lib/thin/server.rb:159:in `start'
+  rack (1.4.4) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.4) lib/rack/server.rb:268:in `start'
+  railties (3.2.11) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.11) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.11) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.11) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.7ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2013-02-11 21:48:09 +0200
+Processing by OrdersController#new as HTML
+Completed 500 Internal Server Error in 692ms
+
+ActionView::MissingTemplate - Missing template orders/new, application/new with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/home/blackening/rails_projects/shop/app/views"
+  * "/usr/local/rvm/gems/ruby-1.9.3-p327/gems/devise-2.2.2/app/views"
+  * "/usr/local/rvm/gems/ruby-1.9.3-p327/gems/kaminari-0.14.1/app/views"
+  * "/usr/local/rvm/gems/ruby-1.9.3-p327/gems/twitter-bootstrap-rails-2.2.0/app/views"
+:
+  (gem) actionpack-3.2.11/lib/action_view/path_set.rb:58:in `find'
+  (gem) actionpack-3.2.11/lib/action_view/lookup_context.rb:109:in `find'
+  (gem) actionpack-3.2.11/lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  (gem) actionpack-3.2.11/lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  (gem) actionpack-3.2.11/lib/action_view/renderer/template_renderer.rb:10:in `render'
+  (gem) actionpack-3.2.11/lib/action_view/renderer/renderer.rb:36:in `render_template'
+  (gem) actionpack-3.2.11/lib/action_view/renderer/renderer.rb:17:in `render'
+  (gem) actionpack-3.2.11/lib/abstract_controller/rendering.rb:110:in `_render_template'
+  (gem) actionpack-3.2.11/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  (gem) actionpack-3.2.11/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  (gem) actionpack-3.2.11/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  (gem) actionpack-3.2.11/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  (gem) actionpack-3.2.11/lib/abstract_controller/rendering.rb:88:in `render'
+  (gem) actionpack-3.2.11/lib/action_controller/metal/rendering.rb:16:in `render'
+  (gem) actionpack-3.2.11/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  (gem) activesupport-3.2.11/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /usr/local/rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  (gem) activesupport-3.2.11/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  (gem) actionpack-3.2.11/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  (gem) actionpack-3.2.11/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  (gem) activerecord-3.2.11/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  (gem) actionpack-3.2.11/lib/action_controller/metal/instrumentation.rb:39:in `render'
+  (gem) actionpack-3.2.11/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  (gem) actionpack-3.2.11/lib/action_controller/metal/mime_responds.rb:196:in `respond_to'
+  app/controllers/orders_controller.rb:27:in `new'
+  (gem) actionpack-3.2.11/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  (gem) actionpack-3.2.11/lib/abstract_controller/base.rb:167:in `process_action'
+  (gem) actionpack-3.2.11/lib/action_controller/metal/rendering.rb:10:in `process_action'
+  (gem) actionpack-3.2.11/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:414:in `_run__1024112980__process_action__651027319__callbacks'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) actionpack-3.2.11/lib/abstract_controller/callbacks.rb:17:in `process_action'
+  (gem) actionpack-3.2.11/lib/action_controller/metal/rescue.rb:29:in `process_action'
+  (gem) actionpack-3.2.11/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  (gem) activesupport-3.2.11/lib/active_support/notifications.rb:123:in `block in instrument'
+  (gem) activesupport-3.2.11/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  (gem) activesupport-3.2.11/lib/active_support/notifications.rb:123:in `instrument'
+  (gem) actionpack-3.2.11/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  (gem) actionpack-3.2.11/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  (gem) activerecord-3.2.11/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  (gem) actionpack-3.2.11/lib/abstract_controller/base.rb:121:in `process'
+  (gem) actionpack-3.2.11/lib/abstract_controller/rendering.rb:45:in `process'
+  (gem) actionpack-3.2.11/lib/action_controller/metal.rb:203:in `dispatch'
+  (gem) actionpack-3.2.11/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  (gem) actionpack-3.2.11/lib/action_controller/metal.rb:246:in `block in action'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:73:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:36:in `call'
+  (gem) journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+  (gem) journey-1.0.4/lib/journey/router.rb:56:in `each'
+  (gem) journey-1.0.4/lib/journey/router.rb:56:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:601:in `call'
+  (gem) better_errors-0.3.2/lib/better_errors/middleware.rb:51:in `app_call'
+  (gem) better_errors-0.3.2/lib/better_errors/middleware.rb:45:in `call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:35:in `block in call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:34:in `catch'
+  (gem) warden-1.2.1/lib/warden/manager.rb:34:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  (gem) rack-1.4.4/lib/rack/etag.rb:23:in `call'
+  (gem) rack-1.4.4/lib/rack/conditionalget.rb:25:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/head.rb:14:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/flash.rb:242:in `call'
+  (gem) rack-1.4.4/lib/rack/session/abstract/id.rb:210:in `context'
+  (gem) rack-1.4.4/lib/rack/session/abstract/id.rb:205:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  (gem) activerecord-3.2.11/lib/active_record/query_cache.rb:64:in `call'
+  (gem) activerecord-3.2.11/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:405:in `_run__90365240__call__1057054599__callbacks'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  (gem) railties-3.2.11/lib/rails/rack/logger.rb:32:in `call_app'
+  (gem) railties-3.2.11/lib/rails/rack/logger.rb:16:in `block in call'
+  (gem) activesupport-3.2.11/lib/active_support/tagged_logging.rb:22:in `tagged'
+  (gem) railties-3.2.11/lib/rails/rack/logger.rb:16:in `call'
+  (gem) quiet_assets-1.0.1/lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  (gem) rack-1.4.4/lib/rack/methodoverride.rb:21:in `call'
+  (gem) rack-1.4.4/lib/rack/runtime.rb:17:in `call'
+  (gem) activesupport-3.2.11/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  (gem) rack-1.4.4/lib/rack/lock.rb:15:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/static.rb:62:in `call'
+  (gem) railties-3.2.11/lib/rails/engine.rb:479:in `call'
+  (gem) railties-3.2.11/lib/rails/application.rb:223:in `call'
+  (gem) rack-1.4.4/lib/rack/content_length.rb:14:in `call'
+  (gem) railties-3.2.11/lib/rails/rack/log_tailer.rb:17:in `call'
+  (gem) thin-1.5.0/lib/thin/connection.rb:81:in `block in pre_process'
+  (gem) thin-1.5.0/lib/thin/connection.rb:79:in `catch'
+  (gem) thin-1.5.0/lib/thin/connection.rb:79:in `pre_process'
+  (gem) thin-1.5.0/lib/thin/connection.rb:54:in `process'
+  (gem) thin-1.5.0/lib/thin/connection.rb:39:in `receive_data'
+  (gem) eventmachine-1.0.0/lib/eventmachine.rb:187:in `run_machine'
+  (gem) eventmachine-1.0.0/lib/eventmachine.rb:187:in `run'
+  (gem) thin-1.5.0/lib/thin/backends/base.rb:63:in `start'
+  (gem) thin-1.5.0/lib/thin/server.rb:159:in `start'
+  (gem) rack-1.4.4/lib/rack/handler/thin.rb:13:in `run'
+  (gem) rack-1.4.4/lib/rack/server.rb:268:in `start'
+  (gem) railties-3.2.11/lib/rails/commands/server.rb:70:in `start'
+  (gem) railties-3.2.11/lib/rails/commands.rb:55:in `block in <top (required)>'
+  (gem) railties-3.2.11/lib/rails/commands.rb:50:in `tap'
+  (gem) railties-3.2.11/lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+
+Started POST "/__better_errors/117773830/variables" for 127.0.0.1 at 2013-02-11 21:48:12 +0200
+
+
+Started GET "/orders" for 127.0.0.1 at 2013-02-11 21:48:35 +0200
+Processing by OrdersController#index as HTML
+  [1m[35mOrder Load (1.2ms)[0m  SELECT "orders".* FROM "orders" 
+  Rendered orders/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1[0m
+  Rendered devise/menu/_login_items.html.erb (1.7ms)
+Completed 200 OK in 712ms (Views: 678.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-11 21:48:51 +0200
+Processing by OrdersController#index as JSON
+  [1m[35mOrder Load (0.7ms)[0m  SELECT "orders".* FROM "orders" 
+Completed 200 OK in 82ms (Views: 64.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/orders/1/order_items" for 127.0.0.1 at 2013-02-11 21:49:17 +0200
+Processing by OrderItemsController#index as JSON
+  Parameters: {"order_id"=>"1"}
+  [1m[36mOrder Load (0.7ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mItem Load (2.2ms)[0m  SELECT item_id,item_name,item_description,dimension,price,quantity,price_per_line FROM "items" INNER JOIN "order_items" ON "items"."id" = "order_items"."item_id" WHERE "order_items"."order_id" = 1
+  [1m[36mEXPLAIN (0.4ms)[0m  [1mEXPLAIN QUERY PLAN SELECT item_id,item_name,item_description,dimension,price,quantity,price_per_line FROM "items" INNER JOIN "order_items" ON "items"."id" = "order_items"."item_id" WHERE "order_items"."order_id" = 1[0m
+EXPLAIN for: SELECT item_id,item_name,item_description,dimension,price,quantity,price_per_line FROM "items" INNER JOIN "order_items" ON "items"."id" = "order_items"."item_id" WHERE "order_items"."order_id" = 1
+0|0|TABLE items
+1|1|TABLE order_items WITH INDEX index_itemstables_on_item_id
+
+Completed 200 OK in 2179ms (Views: 747.6ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2013-02-11 21:56:18 +0200
+Processing by OrdersController#index as HTML
+  [1m[35mOrder Load (1.3ms)[0m  SELECT "orders".* FROM "orders" 
+  [1m[36mEXPLAIN (0.4ms)[0m  [1mEXPLAIN QUERY PLAN SELECT "orders".* FROM "orders" [0m
+EXPLAIN for: SELECT "orders".* FROM "orders" 
+0|0|TABLE orders
+
+  Rendered orders/index.html.erb within layouts/application (0.2ms)
+Compiled collections/order_items.js  (74ms)  (pid 2550)
+Compiled collections/orders.js  (29ms)  (pid 2550)
+Compiled application.js  (446ms)  (pid 2550)
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1
+  Rendered devise/menu/_login_items.html.erb (2.5ms)
+Completed 200 OK in 4569ms (Views: 3509.4ms | ActiveRecord: 27.4ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-11 21:56:35 +0200
+Processing by OrdersController#index as JSON
+  [1m[36mOrder Load (6.2ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+Completed 200 OK in 96ms (Views: 39.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/orders/1/order_items" for 127.0.0.1 at 2013-02-11 21:57:36 +0200
+Processing by OrderItemsController#index as JSON
+  Parameters: {"order_id"=>"1"}
+  [1m[35mOrder Load (5.2ms)[0m  SELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 250ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2013-02-11 21:58:09 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7G150NRUc+rCDooTtCj3lRF5jwV08aoQoZysvJ2hoaw="}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 97ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-11 21:58:10 +0200
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 5ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-02-11 21:58:10 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (23.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (48.5ms)
+  Rendered devise/menu/_login_items.html.erb (1.2ms)
+Completed 200 OK in 270ms (Views: 265.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-02-11 21:58:23 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JgYoL9yHtOi9yPrSCLduZ0TIxmnL+MsbOrXdGeOvp6k=", "user"=>{"login_name"=>"customer", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (2.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."login_name" = 'customer' ORDER BY id asc LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (13.5ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2013-02-10 12:43:40.319335', "current_sign_in_at" = '2013-02-11 19:58:25.724580', "sign_in_count" = 13, "updated_at" = '2013-02-11 19:58:25.749348' WHERE "users"."id" = 29
+  [1m[36m (102.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/orders
+Completed 302 Found in 2266ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2013-02-11 21:58:25 +0200
+Processing by OrdersController#index as HTML
+  [1m[35mOrder Load (0.9ms)[0m  SELECT "orders".* FROM "orders" 
+  Rendered orders/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1[0m
+  Rendered devise/menu/_login_items.html.erb (4.6ms)
+Completed 200 OK in 261ms (Views: 251.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-11 21:58:36 +0200
+Processing by OrdersController#index as JSON
+  [1m[35mOrder Load (0.8ms)[0m  SELECT "orders".* FROM "orders" 
+Completed 200 OK in 164ms (Views: 79.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2013-02-11 22:02:28 +0200
+Processing by OrdersController#index as HTML
+  [1m[36mOrder Load (1.3ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+  Rendered orders/index.html.erb within layouts/application (42.9ms)
+Compiled models/order.js  (198ms)  (pid 2550)
+Compiled models/order_item.js  (16ms)  (pid 2550)
+Compiled routers/orders_router.js  (18ms)  (pid 2550)
+Compiled application.js  (693ms)  (pid 2550)
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1
+  Rendered devise/menu/_login_items.html.erb (4.4ms)
+Completed 200 OK in 4920ms (Views: 4888.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-11 22:02:48 +0200
+Processing by OrdersController#index as JSON
+  [1m[36mOrder Load (0.7ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+Completed 200 OK in 121ms (Views: 82.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/orders/1/order_items" for 127.0.0.1 at 2013-02-11 22:02:57 +0200
+Processing by OrderItemsController#index as JSON
+  Parameters: {"order_id"=>"1"}
+  [1m[35mOrder Load (10.2ms)[0m  SELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 112ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2013-02-11 22:06:26 +0200
+Processing by OrdersController#index as HTML
+  [1m[36mOrder Load (9.9ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+  Rendered orders/index.html.erb within layouts/application (14.9ms)
+Compiled views/orders/orders_index.js  (120ms)  (pid 2550)
+Compiled views/orders/orders_new.js  (27ms)  (pid 2550)
+Compiled routers/orders_router.js  (54ms)  (pid 2550)
+Compiled application.js  (239ms)  (pid 2550)
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1
+  Rendered devise/menu/_login_items.html.erb (1.5ms)
+Completed 200 OK in 2124ms (Views: 2107.8ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-11 22:06:38 +0200
+Processing by OrdersController#index as JSON
+  [1m[36mOrder Load (0.8ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+Completed 200 OK in 113ms (Views: 43.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/orders" for 127.0.0.1 at 2013-02-11 22:07:02 +0200
+
+AbstractController::ActionNotFound - The action 'create' could not be found for OrdersController:
+  (gem) actionpack-3.2.11/lib/abstract_controller/base.rb:116:in `process'
+  (gem) actionpack-3.2.11/lib/abstract_controller/rendering.rb:45:in `process'
+  (gem) actionpack-3.2.11/lib/action_controller/metal.rb:203:in `dispatch'
+  (gem) actionpack-3.2.11/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  (gem) actionpack-3.2.11/lib/action_controller/metal.rb:246:in `block in action'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:73:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:36:in `call'
+  (gem) journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+  (gem) journey-1.0.4/lib/journey/router.rb:56:in `each'
+  (gem) journey-1.0.4/lib/journey/router.rb:56:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:601:in `call'
+  (gem) better_errors-0.3.2/lib/better_errors/middleware.rb:51:in `app_call'
+  (gem) better_errors-0.3.2/lib/better_errors/middleware.rb:45:in `call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:35:in `block in call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:34:in `catch'
+  (gem) warden-1.2.1/lib/warden/manager.rb:34:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  (gem) rack-1.4.4/lib/rack/etag.rb:23:in `call'
+  (gem) rack-1.4.4/lib/rack/conditionalget.rb:35:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/head.rb:14:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/flash.rb:242:in `call'
+  (gem) rack-1.4.4/lib/rack/session/abstract/id.rb:210:in `context'
+  (gem) rack-1.4.4/lib/rack/session/abstract/id.rb:205:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  (gem) activerecord-3.2.11/lib/active_record/query_cache.rb:64:in `call'
+  (gem) activerecord-3.2.11/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:405:in `_run__90365240__call__1057054599__callbacks'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  (gem) railties-3.2.11/lib/rails/rack/logger.rb:32:in `call_app'
+  (gem) railties-3.2.11/lib/rails/rack/logger.rb:16:in `block in call'
+  (gem) activesupport-3.2.11/lib/active_support/tagged_logging.rb:22:in `tagged'
+  (gem) railties-3.2.11/lib/rails/rack/logger.rb:16:in `call'
+  (gem) quiet_assets-1.0.1/lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  (gem) rack-1.4.4/lib/rack/methodoverride.rb:21:in `call'
+  (gem) rack-1.4.4/lib/rack/runtime.rb:17:in `call'
+  (gem) activesupport-3.2.11/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  (gem) rack-1.4.4/lib/rack/lock.rb:15:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/static.rb:62:in `call'
+  (gem) railties-3.2.11/lib/rails/engine.rb:479:in `call'
+  (gem) railties-3.2.11/lib/rails/application.rb:223:in `call'
+  (gem) rack-1.4.4/lib/rack/content_length.rb:14:in `call'
+  (gem) railties-3.2.11/lib/rails/rack/log_tailer.rb:17:in `call'
+  (gem) thin-1.5.0/lib/thin/connection.rb:81:in `block in pre_process'
+  (gem) thin-1.5.0/lib/thin/connection.rb:79:in `catch'
+  (gem) thin-1.5.0/lib/thin/connection.rb:79:in `pre_process'
+  (gem) thin-1.5.0/lib/thin/connection.rb:54:in `process'
+  (gem) thin-1.5.0/lib/thin/connection.rb:39:in `receive_data'
+  (gem) eventmachine-1.0.0/lib/eventmachine.rb:187:in `run_machine'
+  (gem) eventmachine-1.0.0/lib/eventmachine.rb:187:in `run'
+  (gem) thin-1.5.0/lib/thin/backends/base.rb:63:in `start'
+  (gem) thin-1.5.0/lib/thin/server.rb:159:in `start'
+  (gem) rack-1.4.4/lib/rack/handler/thin.rb:13:in `run'
+  (gem) rack-1.4.4/lib/rack/server.rb:268:in `start'
+  (gem) railties-3.2.11/lib/rails/commands/server.rb:70:in `start'
+  (gem) railties-3.2.11/lib/rails/commands.rb:55:in `block in <top (required)>'
+  (gem) railties-3.2.11/lib/rails/commands.rb:50:in `tap'
+  (gem) railties-3.2.11/lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+
+Started POST "/api/orders" for 127.0.0.1 at 2013-02-11 22:08:44 +0200
+
+AbstractController::ActionNotFound - The action 'create' could not be found for OrdersController:
+  (gem) actionpack-3.2.11/lib/abstract_controller/base.rb:116:in `process'
+  (gem) actionpack-3.2.11/lib/abstract_controller/rendering.rb:45:in `process'
+  (gem) actionpack-3.2.11/lib/action_controller/metal.rb:203:in `dispatch'
+  (gem) actionpack-3.2.11/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  (gem) actionpack-3.2.11/lib/action_controller/metal.rb:246:in `block in action'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:73:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:36:in `call'
+  (gem) journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+  (gem) journey-1.0.4/lib/journey/router.rb:56:in `each'
+  (gem) journey-1.0.4/lib/journey/router.rb:56:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:601:in `call'
+  (gem) better_errors-0.3.2/lib/better_errors/middleware.rb:51:in `app_call'
+  (gem) better_errors-0.3.2/lib/better_errors/middleware.rb:45:in `call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:35:in `block in call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:34:in `catch'
+  (gem) warden-1.2.1/lib/warden/manager.rb:34:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  (gem) rack-1.4.4/lib/rack/etag.rb:23:in `call'
+  (gem) rack-1.4.4/lib/rack/conditionalget.rb:35:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/head.rb:14:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/flash.rb:242:in `call'
+  (gem) rack-1.4.4/lib/rack/session/abstract/id.rb:210:in `context'
+  (gem) rack-1.4.4/lib/rack/session/abstract/id.rb:205:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  (gem) activerecord-3.2.11/lib/active_record/query_cache.rb:64:in `call'
+  (gem) activerecord-3.2.11/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:405:in `_run__90365240__call__1057054599__callbacks'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  (gem) railties-3.2.11/lib/rails/rack/logger.rb:32:in `call_app'
+  (gem) railties-3.2.11/lib/rails/rack/logger.rb:16:in `block in call'
+  (gem) activesupport-3.2.11/lib/active_support/tagged_logging.rb:22:in `tagged'
+  (gem) railties-3.2.11/lib/rails/rack/logger.rb:16:in `call'
+  (gem) quiet_assets-1.0.1/lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  (gem) rack-1.4.4/lib/rack/methodoverride.rb:21:in `call'
+  (gem) rack-1.4.4/lib/rack/runtime.rb:17:in `call'
+  (gem) activesupport-3.2.11/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  (gem) rack-1.4.4/lib/rack/lock.rb:15:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/static.rb:62:in `call'
+  (gem) railties-3.2.11/lib/rails/engine.rb:479:in `call'
+  (gem) railties-3.2.11/lib/rails/application.rb:223:in `call'
+  (gem) rack-1.4.4/lib/rack/content_length.rb:14:in `call'
+  (gem) railties-3.2.11/lib/rails/rack/log_tailer.rb:17:in `call'
+  (gem) thin-1.5.0/lib/thin/connection.rb:81:in `block in pre_process'
+  (gem) thin-1.5.0/lib/thin/connection.rb:79:in `catch'
+  (gem) thin-1.5.0/lib/thin/connection.rb:79:in `pre_process'
+  (gem) thin-1.5.0/lib/thin/connection.rb:54:in `process'
+  (gem) thin-1.5.0/lib/thin/connection.rb:39:in `receive_data'
+  (gem) eventmachine-1.0.0/lib/eventmachine.rb:187:in `run_machine'
+  (gem) eventmachine-1.0.0/lib/eventmachine.rb:187:in `run'
+  (gem) thin-1.5.0/lib/thin/backends/base.rb:63:in `start'
+  (gem) thin-1.5.0/lib/thin/server.rb:159:in `start'
+  (gem) rack-1.4.4/lib/rack/handler/thin.rb:13:in `run'
+  (gem) rack-1.4.4/lib/rack/server.rb:268:in `start'
+  (gem) railties-3.2.11/lib/rails/commands/server.rb:70:in `start'
+  (gem) railties-3.2.11/lib/rails/commands.rb:55:in `block in <top (required)>'
+  (gem) railties-3.2.11/lib/rails/commands.rb:50:in `tap'
+  (gem) railties-3.2.11/lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2013-02-11 22:11:30 +0200
+
+AbstractController::ActionNotFound - The action 'new' could not be found for OrdersController:
+  (gem) actionpack-3.2.11/lib/abstract_controller/base.rb:116:in `process'
+  (gem) actionpack-3.2.11/lib/abstract_controller/rendering.rb:45:in `process'
+  (gem) actionpack-3.2.11/lib/action_controller/metal.rb:203:in `dispatch'
+  (gem) actionpack-3.2.11/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  (gem) actionpack-3.2.11/lib/action_controller/metal.rb:246:in `block in action'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:73:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:36:in `call'
+  (gem) journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+  (gem) journey-1.0.4/lib/journey/router.rb:56:in `each'
+  (gem) journey-1.0.4/lib/journey/router.rb:56:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:601:in `call'
+  (gem) better_errors-0.3.2/lib/better_errors/middleware.rb:51:in `app_call'
+  (gem) better_errors-0.3.2/lib/better_errors/middleware.rb:45:in `call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:35:in `block in call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:34:in `catch'
+  (gem) warden-1.2.1/lib/warden/manager.rb:34:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  (gem) rack-1.4.4/lib/rack/etag.rb:23:in `call'
+  (gem) rack-1.4.4/lib/rack/conditionalget.rb:25:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/head.rb:14:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/flash.rb:242:in `call'
+  (gem) rack-1.4.4/lib/rack/session/abstract/id.rb:210:in `context'
+  (gem) rack-1.4.4/lib/rack/session/abstract/id.rb:205:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  (gem) activerecord-3.2.11/lib/active_record/query_cache.rb:64:in `call'
+  (gem) activerecord-3.2.11/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:405:in `_run__90365240__call__1057054599__callbacks'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  (gem) railties-3.2.11/lib/rails/rack/logger.rb:32:in `call_app'
+  (gem) railties-3.2.11/lib/rails/rack/logger.rb:16:in `block in call'
+  (gem) activesupport-3.2.11/lib/active_support/tagged_logging.rb:22:in `tagged'
+  (gem) railties-3.2.11/lib/rails/rack/logger.rb:16:in `call'
+  (gem) quiet_assets-1.0.1/lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  (gem) rack-1.4.4/lib/rack/methodoverride.rb:21:in `call'
+  (gem) rack-1.4.4/lib/rack/runtime.rb:17:in `call'
+  (gem) activesupport-3.2.11/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  (gem) rack-1.4.4/lib/rack/lock.rb:15:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/static.rb:62:in `call'
+  (gem) railties-3.2.11/lib/rails/engine.rb:479:in `call'
+  (gem) railties-3.2.11/lib/rails/application.rb:223:in `call'
+  (gem) rack-1.4.4/lib/rack/content_length.rb:14:in `call'
+  (gem) railties-3.2.11/lib/rails/rack/log_tailer.rb:17:in `call'
+  (gem) thin-1.5.0/lib/thin/connection.rb:81:in `block in pre_process'
+  (gem) thin-1.5.0/lib/thin/connection.rb:79:in `catch'
+  (gem) thin-1.5.0/lib/thin/connection.rb:79:in `pre_process'
+  (gem) thin-1.5.0/lib/thin/connection.rb:54:in `process'
+  (gem) thin-1.5.0/lib/thin/connection.rb:39:in `receive_data'
+  (gem) eventmachine-1.0.0/lib/eventmachine.rb:187:in `run_machine'
+  (gem) eventmachine-1.0.0/lib/eventmachine.rb:187:in `run'
+  (gem) thin-1.5.0/lib/thin/backends/base.rb:63:in `start'
+  (gem) thin-1.5.0/lib/thin/server.rb:159:in `start'
+  (gem) rack-1.4.4/lib/rack/handler/thin.rb:13:in `run'
+  (gem) rack-1.4.4/lib/rack/server.rb:268:in `start'
+  (gem) railties-3.2.11/lib/rails/commands/server.rb:70:in `start'
+  (gem) railties-3.2.11/lib/rails/commands.rb:55:in `block in <top (required)>'
+  (gem) railties-3.2.11/lib/rails/commands.rb:50:in `tap'
+  (gem) railties-3.2.11/lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+
+Started POST "/__better_errors/93943420/variables" for 127.0.0.1 at 2013-02-11 22:11:33 +0200
+
+
+Started GET "/orders/" for 127.0.0.1 at 2013-02-11 22:11:41 +0200
+Processing by OrdersController#index as HTML
+  [1m[35mOrder Load (0.9ms)[0m  SELECT "orders".* FROM "orders" 
+  Rendered orders/index.html.erb within layouts/application (7.6ms)
+Compiled views/orders/orders_new.js  (432ms)  (pid 2550)
+Compiled application.js  (579ms)  (pid 2550)
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1[0m
+  Rendered devise/menu/_login_items.html.erb (1.5ms)
+Completed 200 OK in 3445ms (Views: 3232.3ms | ActiveRecord: 31.1ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2013-02-11 22:11:44 +0200
+Processing by OrdersController#index as HTML
+  [1m[35mOrder Load (0.8ms)[0m  SELECT "orders".* FROM "orders" 
+  Rendered orders/index.html.erb within layouts/application (22.6ms)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1[0m
+  Rendered devise/menu/_login_items.html.erb (2.5ms)
+Completed 200 OK in 284ms (Views: 270.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-11 22:11:57 +0200
+Processing by OrdersController#index as JSON
+  [1m[35mOrder Load (0.7ms)[0m  SELECT "orders".* FROM "orders" 
+Completed 200 OK in 175ms (Views: 100.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/orders/1/order_items" for 127.0.0.1 at 2013-02-11 22:12:00 +0200
+Processing by OrderItemsController#index as JSON
+  Parameters: {"order_id"=>"1"}
+  [1m[36mOrder Load (1.2ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 761ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/orders/1/edit?order_number=000004&assignee=Administrator&credit_card_type=MasterCard&credit_card_number=&cvv2=&pref_delivery_date=2013-02-08&start_date=&issue_number=" for 127.0.0.1 at 2013-02-11 22:12:04 +0200
+
+AbstractController::ActionNotFound - The action 'edit' could not be found for OrdersController:
+  (gem) actionpack-3.2.11/lib/abstract_controller/base.rb:116:in `process'
+  (gem) actionpack-3.2.11/lib/abstract_controller/rendering.rb:45:in `process'
+  (gem) actionpack-3.2.11/lib/action_controller/metal.rb:203:in `dispatch'
+  (gem) actionpack-3.2.11/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  (gem) actionpack-3.2.11/lib/action_controller/metal.rb:246:in `block in action'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:73:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:36:in `call'
+  (gem) journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+  (gem) journey-1.0.4/lib/journey/router.rb:56:in `each'
+  (gem) journey-1.0.4/lib/journey/router.rb:56:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:601:in `call'
+  (gem) better_errors-0.3.2/lib/better_errors/middleware.rb:51:in `app_call'
+  (gem) better_errors-0.3.2/lib/better_errors/middleware.rb:45:in `call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:35:in `block in call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:34:in `catch'
+  (gem) warden-1.2.1/lib/warden/manager.rb:34:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  (gem) rack-1.4.4/lib/rack/etag.rb:23:in `call'
+  (gem) rack-1.4.4/lib/rack/conditionalget.rb:25:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/head.rb:14:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/flash.rb:242:in `call'
+  (gem) rack-1.4.4/lib/rack/session/abstract/id.rb:210:in `context'
+  (gem) rack-1.4.4/lib/rack/session/abstract/id.rb:205:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  (gem) activerecord-3.2.11/lib/active_record/query_cache.rb:64:in `call'
+  (gem) activerecord-3.2.11/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:405:in `_run__90365240__call__1057054599__callbacks'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  (gem) railties-3.2.11/lib/rails/rack/logger.rb:32:in `call_app'
+  (gem) railties-3.2.11/lib/rails/rack/logger.rb:16:in `block in call'
+  (gem) activesupport-3.2.11/lib/active_support/tagged_logging.rb:22:in `tagged'
+  (gem) railties-3.2.11/lib/rails/rack/logger.rb:16:in `call'
+  (gem) quiet_assets-1.0.1/lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  (gem) rack-1.4.4/lib/rack/methodoverride.rb:21:in `call'
+  (gem) rack-1.4.4/lib/rack/runtime.rb:17:in `call'
+  (gem) activesupport-3.2.11/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  (gem) rack-1.4.4/lib/rack/lock.rb:15:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/static.rb:62:in `call'
+  (gem) railties-3.2.11/lib/rails/engine.rb:479:in `call'
+  (gem) railties-3.2.11/lib/rails/application.rb:223:in `call'
+  (gem) rack-1.4.4/lib/rack/content_length.rb:14:in `call'
+  (gem) railties-3.2.11/lib/rails/rack/log_tailer.rb:17:in `call'
+  (gem) thin-1.5.0/lib/thin/connection.rb:81:in `block in pre_process'
+  (gem) thin-1.5.0/lib/thin/connection.rb:79:in `catch'
+  (gem) thin-1.5.0/lib/thin/connection.rb:79:in `pre_process'
+  (gem) thin-1.5.0/lib/thin/connection.rb:54:in `process'
+  (gem) thin-1.5.0/lib/thin/connection.rb:39:in `receive_data'
+  (gem) eventmachine-1.0.0/lib/eventmachine.rb:187:in `run_machine'
+  (gem) eventmachine-1.0.0/lib/eventmachine.rb:187:in `run'
+  (gem) thin-1.5.0/lib/thin/backends/base.rb:63:in `start'
+  (gem) thin-1.5.0/lib/thin/server.rb:159:in `start'
+  (gem) rack-1.4.4/lib/rack/handler/thin.rb:13:in `run'
+  (gem) rack-1.4.4/lib/rack/server.rb:268:in `start'
+  (gem) railties-3.2.11/lib/rails/commands/server.rb:70:in `start'
+  (gem) railties-3.2.11/lib/rails/commands.rb:55:in `block in <top (required)>'
+  (gem) railties-3.2.11/lib/rails/commands.rb:50:in `tap'
+  (gem) railties-3.2.11/lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+
+Started POST "/__better_errors/119989260/variables" for 127.0.0.1 at 2013-02-11 22:12:06 +0200
+
+
+Started GET "/orders/1/edit" for 127.0.0.1 at 2013-02-11 22:12:09 +0200
+
+AbstractController::ActionNotFound - The action 'edit' could not be found for OrdersController:
+  (gem) actionpack-3.2.11/lib/abstract_controller/base.rb:116:in `process'
+  (gem) actionpack-3.2.11/lib/abstract_controller/rendering.rb:45:in `process'
+  (gem) actionpack-3.2.11/lib/action_controller/metal.rb:203:in `dispatch'
+  (gem) actionpack-3.2.11/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  (gem) actionpack-3.2.11/lib/action_controller/metal.rb:246:in `block in action'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:73:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:36:in `call'
+  (gem) journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+  (gem) journey-1.0.4/lib/journey/router.rb:56:in `each'
+  (gem) journey-1.0.4/lib/journey/router.rb:56:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:601:in `call'
+  (gem) better_errors-0.3.2/lib/better_errors/middleware.rb:51:in `app_call'
+  (gem) better_errors-0.3.2/lib/better_errors/middleware.rb:45:in `call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:35:in `block in call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:34:in `catch'
+  (gem) warden-1.2.1/lib/warden/manager.rb:34:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  (gem) rack-1.4.4/lib/rack/etag.rb:23:in `call'
+  (gem) rack-1.4.4/lib/rack/conditionalget.rb:25:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/head.rb:14:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/flash.rb:242:in `call'
+  (gem) rack-1.4.4/lib/rack/session/abstract/id.rb:210:in `context'
+  (gem) rack-1.4.4/lib/rack/session/abstract/id.rb:205:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  (gem) activerecord-3.2.11/lib/active_record/query_cache.rb:64:in `call'
+  (gem) activerecord-3.2.11/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:405:in `_run__90365240__call__1057054599__callbacks'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  (gem) railties-3.2.11/lib/rails/rack/logger.rb:32:in `call_app'
+  (gem) railties-3.2.11/lib/rails/rack/logger.rb:16:in `block in call'
+  (gem) activesupport-3.2.11/lib/active_support/tagged_logging.rb:22:in `tagged'
+  (gem) railties-3.2.11/lib/rails/rack/logger.rb:16:in `call'
+  (gem) quiet_assets-1.0.1/lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  (gem) rack-1.4.4/lib/rack/methodoverride.rb:21:in `call'
+  (gem) rack-1.4.4/lib/rack/runtime.rb:17:in `call'
+  (gem) activesupport-3.2.11/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  (gem) rack-1.4.4/lib/rack/lock.rb:15:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/static.rb:62:in `call'
+  (gem) railties-3.2.11/lib/rails/engine.rb:479:in `call'
+  (gem) railties-3.2.11/lib/rails/application.rb:223:in `call'
+  (gem) rack-1.4.4/lib/rack/content_length.rb:14:in `call'
+  (gem) railties-3.2.11/lib/rails/rack/log_tailer.rb:17:in `call'
+  (gem) thin-1.5.0/lib/thin/connection.rb:81:in `block in pre_process'
+  (gem) thin-1.5.0/lib/thin/connection.rb:79:in `catch'
+  (gem) thin-1.5.0/lib/thin/connection.rb:79:in `pre_process'
+  (gem) thin-1.5.0/lib/thin/connection.rb:54:in `process'
+  (gem) thin-1.5.0/lib/thin/connection.rb:39:in `receive_data'
+  (gem) eventmachine-1.0.0/lib/eventmachine.rb:187:in `run_machine'
+  (gem) eventmachine-1.0.0/lib/eventmachine.rb:187:in `run'
+  (gem) thin-1.5.0/lib/thin/backends/base.rb:63:in `start'
+  (gem) thin-1.5.0/lib/thin/server.rb:159:in `start'
+  (gem) rack-1.4.4/lib/rack/handler/thin.rb:13:in `run'
+  (gem) rack-1.4.4/lib/rack/server.rb:268:in `start'
+  (gem) railties-3.2.11/lib/rails/commands/server.rb:70:in `start'
+  (gem) railties-3.2.11/lib/rails/commands.rb:55:in `block in <top (required)>'
+  (gem) railties-3.2.11/lib/rails/commands.rb:50:in `tap'
+  (gem) railties-3.2.11/lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+
+Started POST "/__better_errors/118904530/variables" for 127.0.0.1 at 2013-02-11 22:12:11 +0200
+
+
+Started GET "/orders/" for 127.0.0.1 at 2013-02-11 22:12:15 +0200
+Processing by OrdersController#index as HTML
+  [1m[35mOrder Load (1.0ms)[0m  SELECT "orders".* FROM "orders" 
+  Rendered orders/index.html.erb within layouts/application (48.6ms)
+  [1m[36mUser Load (16.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1[0m
+  Rendered devise/menu/_login_items.html.erb (17.9ms)
+Completed 200 OK in 922ms (Views: 892.3ms | ActiveRecord: 17.1ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2013-02-11 22:12:19 +0200
+Processing by OrdersController#index as HTML
+  [1m[35mOrder Load (0.7ms)[0m  SELECT "orders".* FROM "orders" 
+  Rendered orders/index.html.erb within layouts/application (28.6ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1[0m
+  Rendered devise/menu/_login_items.html.erb (5.6ms)
+Completed 200 OK in 899ms (Views: 882.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-11 22:12:29 +0200
+Processing by OrdersController#index as JSON
+  [1m[35mOrder Load (3.6ms)[0m  SELECT "orders".* FROM "orders" 
+Completed 200 OK in 143ms (Views: 56.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/orders" for 127.0.0.1 at 2013-02-11 22:12:52 +0200
+Processing by OrdersController#create as JSON
+  Parameters: {"order_number"=>"00007", "status"=>"Ordered", "total_price"=>"1020.00$", "total_num_of_items"=>"12", "date_of_ordering"=>"12/2/2010", "order"=>{"date_of_ordering"=>"12/2/2010", "order_number"=>"00007", "status"=>"Ordered", "total_num_of_items"=>"12", "total_price"=>"1020.00$"}}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mOrder Exists (1.2ms)[0m  SELECT 1 AS one FROM "orders" WHERE "orders"."order_number" = '00007' LIMIT 1
+  [1m[36mSQL (12.0ms)[0m  [1mINSERT INTO "orders" ("created_at", "credit_card_number", "credit_card_type", "cvv2", "date_of_ordering", "delivery_date", "expiry_date", "issue_number", "max_discount", "order_number", "pref_delivery_date", "role", "start_date", "status", "total_num_of_items", "total_price", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 11 Feb 2013 20:12:53 UTC +00:00], ["credit_card_number", nil], ["credit_card_type", nil], ["cvv2", nil], ["date_of_ordering", Fri, 12 Feb 2010], ["delivery_date", nil], ["expiry_date", nil], ["issue_number", nil], ["max_discount", nil], ["order_number", "00007"], ["pref_delivery_date", nil], ["role", nil], ["start_date", nil], ["status", "Ordered"], ["total_num_of_items", 12], ["total_price", #<BigDecimal:e70a7e8,'0.102E4',9(18)>], ["updated_at", Mon, 11 Feb 2013 20:12:53 UTC +00:00], ["user_id", nil]]
+  [1m[35m (20.7ms)[0m  commit transaction
+Completed 201 Created in 522ms (Views: 44.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2013-02-11 22:15:11 +0200
+Processing by OrdersController#index as HTML
+  [1m[36mOrder Load (6.7ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+  Rendered orders/index.html.erb within layouts/application (65.4ms)
+Compiled views/orders/orders_new.js  (133ms)  (pid 2550)
+Compiled application.js  (478ms)  (pid 2550)
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1
+  Rendered devise/menu/_login_items.html.erb (2.0ms)
+Completed 200 OK in 3923ms (Views: 3899.0ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-11 22:15:22 +0200
+Processing by OrdersController#index as JSON
+  [1m[36mOrder Load (0.7ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+Completed 200 OK in 224ms (Views: 121.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2013-02-11 22:15:40 +0200
+
+AbstractController::ActionNotFound - The action 'new' could not be found for OrdersController:
+  (gem) actionpack-3.2.11/lib/abstract_controller/base.rb:116:in `process'
+  (gem) actionpack-3.2.11/lib/abstract_controller/rendering.rb:45:in `process'
+  (gem) actionpack-3.2.11/lib/action_controller/metal.rb:203:in `dispatch'
+  (gem) actionpack-3.2.11/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  (gem) actionpack-3.2.11/lib/action_controller/metal.rb:246:in `block in action'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:73:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:36:in `call'
+  (gem) journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+  (gem) journey-1.0.4/lib/journey/router.rb:56:in `each'
+  (gem) journey-1.0.4/lib/journey/router.rb:56:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:601:in `call'
+  (gem) better_errors-0.3.2/lib/better_errors/middleware.rb:51:in `app_call'
+  (gem) better_errors-0.3.2/lib/better_errors/middleware.rb:45:in `call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:35:in `block in call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:34:in `catch'
+  (gem) warden-1.2.1/lib/warden/manager.rb:34:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  (gem) rack-1.4.4/lib/rack/etag.rb:23:in `call'
+  (gem) rack-1.4.4/lib/rack/conditionalget.rb:25:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/head.rb:14:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/flash.rb:242:in `call'
+  (gem) rack-1.4.4/lib/rack/session/abstract/id.rb:210:in `context'
+  (gem) rack-1.4.4/lib/rack/session/abstract/id.rb:205:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  (gem) activerecord-3.2.11/lib/active_record/query_cache.rb:64:in `call'
+  (gem) activerecord-3.2.11/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:405:in `_run__90365240__call__1057054599__callbacks'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  (gem) railties-3.2.11/lib/rails/rack/logger.rb:32:in `call_app'
+  (gem) railties-3.2.11/lib/rails/rack/logger.rb:16:in `block in call'
+  (gem) activesupport-3.2.11/lib/active_support/tagged_logging.rb:22:in `tagged'
+  (gem) railties-3.2.11/lib/rails/rack/logger.rb:16:in `call'
+  (gem) quiet_assets-1.0.1/lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  (gem) rack-1.4.4/lib/rack/methodoverride.rb:21:in `call'
+  (gem) rack-1.4.4/lib/rack/runtime.rb:17:in `call'
+  (gem) activesupport-3.2.11/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  (gem) rack-1.4.4/lib/rack/lock.rb:15:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/static.rb:62:in `call'
+  (gem) railties-3.2.11/lib/rails/engine.rb:479:in `call'
+  (gem) railties-3.2.11/lib/rails/application.rb:223:in `call'
+  (gem) rack-1.4.4/lib/rack/content_length.rb:14:in `call'
+  (gem) railties-3.2.11/lib/rails/rack/log_tailer.rb:17:in `call'
+  (gem) thin-1.5.0/lib/thin/connection.rb:81:in `block in pre_process'
+  (gem) thin-1.5.0/lib/thin/connection.rb:79:in `catch'
+  (gem) thin-1.5.0/lib/thin/connection.rb:79:in `pre_process'
+  (gem) thin-1.5.0/lib/thin/connection.rb:54:in `process'
+  (gem) thin-1.5.0/lib/thin/connection.rb:39:in `receive_data'
+  (gem) eventmachine-1.0.0/lib/eventmachine.rb:187:in `run_machine'
+  (gem) eventmachine-1.0.0/lib/eventmachine.rb:187:in `run'
+  (gem) thin-1.5.0/lib/thin/backends/base.rb:63:in `start'
+  (gem) thin-1.5.0/lib/thin/server.rb:159:in `start'
+  (gem) rack-1.4.4/lib/rack/handler/thin.rb:13:in `run'
+  (gem) rack-1.4.4/lib/rack/server.rb:268:in `start'
+  (gem) railties-3.2.11/lib/rails/commands/server.rb:70:in `start'
+  (gem) railties-3.2.11/lib/rails/commands.rb:55:in `block in <top (required)>'
+  (gem) railties-3.2.11/lib/rails/commands.rb:50:in `tap'
+  (gem) railties-3.2.11/lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+
+Started POST "/__better_errors/117573140/variables" for 127.0.0.1 at 2013-02-11 22:15:42 +0200
+
+
+Started GET "/orders" for 127.0.0.1 at 2013-02-11 22:15:46 +0200
+Processing by OrdersController#index as HTML
+  [1m[35mOrder Load (1.0ms)[0m  SELECT "orders".* FROM "orders" 
+  Rendered orders/index.html.erb within layouts/application (58.9ms)
+Compiled views/orders/orders_new.js  (61ms)  (pid 2550)
+Compiled application.js  (259ms)  (pid 2550)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1[0m
+  Rendered devise/menu/_login_items.html.erb (1.4ms)
+Completed 200 OK in 3021ms (Views: 3004.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-11 22:15:55 +0200
+Processing by OrdersController#index as JSON
+  [1m[35mOrder Load (1.1ms)[0m  SELECT "orders".* FROM "orders" 
+Completed 200 OK in 190ms (Views: 107.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/orders?order_number=&assignee=Administrator&credit_card_type=Visa&credit_card_number=&cvv2=&pref_delivery_date=&start_date=&issue_number=" for 127.0.0.1 at 2013-02-11 22:16:01 +0200
+Processing by OrdersController#index as HTML
+  Parameters: {"order_number"=>"", "assignee"=>"Administrator", "credit_card_type"=>"Visa", "credit_card_number"=>"", "cvv2"=>"", "pref_delivery_date"=>"", "start_date"=>"", "issue_number"=>""}
+  [1m[36mOrder Load (16.0ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+  Rendered orders/index.html.erb within layouts/application (50.9ms)
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1
+  Rendered devise/menu/_login_items.html.erb (25.7ms)
+Completed 200 OK in 847ms (Views: 818.0ms | ActiveRecord: 16.8ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-11 22:16:09 +0200
+Processing by OrdersController#index as JSON
+  [1m[36mOrder Load (26.4ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+Completed 200 OK in 159ms (Views: 43.3ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2013-02-11 22:19:07 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JgYoL9yHtOi9yPrSCLduZ0TIxmnL+MsbOrXdGeOvp6k="}
+  [1m[36mUser Load (9.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 908ms (ActiveRecord: 180.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-11 22:19:10 +0200
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 11ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-02-11 22:19:10 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (32.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (130.5ms)
+  Rendered devise/menu/_login_items.html.erb (3.7ms)
+Completed 200 OK in 2808ms (Views: 2776.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-02-11 22:19:36 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1Yh7HBZ3KRLXrCh6aW+rAbnAiYitXJyiNoPVNRsDUbM=", "user"=>{"login_name"=>"blackening", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (12.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."login_name" = 'blackening' ORDER BY id asc LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (58.7ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2013-02-10 12:42:44.559361', "current_sign_in_at" = '2013-02-11 20:19:39.664621', "sign_in_count" = 34, "updated_at" = '2013-02-11 20:19:39.693285' WHERE "users"."id" = 28
+  [1m[36m (53.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 4114ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-11 22:19:40 +0200
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (2.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36mUser Load (2.7ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 25 OFFSET 0[0m
+  Rendered users/index.html.erb within layouts/application (161.5ms)
+  Rendered devise/menu/_login_items.html.erb (19.8ms)
+Completed 200 OK in 1181ms (Views: 1121.1ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/api/users?orderBy=id+asc&currentPage=1&perPage=25&fields=login_name&scope=start_with&request=" for 127.0.0.1 at 2013-02-11 22:19:54 +0200
+Processing by UsersController#index as JSON
+  Parameters: {"orderBy"=>"id asc", "currentPage"=>"1", "perPage"=>"25", "fields"=>"login_name", "scope"=>"start_with", "request"=>""}
+  [1m[35mUser Load (13.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1
+  [1m[36m (12.4ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE (login_name LIKE '%')[0m
+  [1m[35m (11.3ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36mUser Load (14.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE (login_name LIKE '%') ORDER BY id asc LIMIT 25 OFFSET 0[0m
+Completed 200 OK in 684ms (Views: 479.1ms | ActiveRecord: 14.8ms)
+
+
+Started GET "/api/users.json" for 127.0.0.1 at 2013-02-11 22:20:02 +0200
+Processing by UsersController#index as JSON
+  [1m[35mUser Load (19.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1
+  [1m[36m (5.1ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36mUser Load (11.9ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 25 OFFSET 0[0m
+Completed 200 OK in 590ms (Views: 404.4ms | ActiveRecord: 11.9ms)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2013-02-11 22:20:16 +0200
+Processing by UsersController#create as JSON
+  Parameters: {"login_name"=>"park", "first_name"=>"dark", "last_name"=>"dar", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"dsfd@Gmail.com", "region"=>"North", "role"=>"Supervisor", "user"=>{"login_name"=>"park", "first_name"=>"dark", "last_name"=>"dar", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"dsfd@Gmail.com", "region"=>"North", "role"=>"Supervisor"}}
+  [1m[35mUser Load (1.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."login_name" = 'park' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (17.2ms)[0m  [1mINSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "failed_attempts", "first_name", "last_name", "last_sign_in_at", "last_sign_in_ip", "locked_at", "login_name", "region", "remember_created_at", "reset_password_sent_at", "reset_password_token", "role", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 11 Feb 2013 20:20:18 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "dsfd@Gmail.com"], ["encrypted_password", "$2a$10$puCmXbc6D.WbhlbqyOzhperWZACU6/xpYAqUkdqkuTLJsNJak5LNa"], ["failed_attempts", 0], ["first_name", "dark"], ["last_name", "dar"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["locked_at", nil], ["login_name", "park"], ["region", "North"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["role", "Supervisor"], ["sign_in_count", 0], ["updated_at", Mon, 11 Feb 2013 20:20:18 UTC +00:00]]
+  [1m[35m (25.4ms)[0m  commit transaction
+Completed 201 Created in 1923ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/users?orderBy=id+asc&currentPage=1&perPage=25&fields=login_name&scope=start_with&request=" for 127.0.0.1 at 2013-02-11 22:20:26 +0200
+Processing by UsersController#index as JSON
+  Parameters: {"orderBy"=>"id asc", "currentPage"=>"1", "perPage"=>"25", "fields"=>"login_name", "scope"=>"start_with", "request"=>""}
+  [1m[36mUser Load (3.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1[0m
+  [1m[35m (6.1ms)[0m  SELECT COUNT(*) FROM "users" WHERE (login_name LIKE '%')
+  [1m[36m (8.9ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35mUser Load (2.1ms)[0m  SELECT "users".* FROM "users" WHERE (login_name LIKE '%') ORDER BY id asc LIMIT 25 OFFSET 0
+Completed 200 OK in 1785ms (Views: 1504.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/?login_name=&first_name=&last_name=&password=&password_confirmation=&email=" for 127.0.0.1 at 2013-02-11 22:20:28 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"login_name"=>"", "first_name"=>"", "last_name"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>""}
+  [1m[36mUser Load (19.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35mUser Load (14.9ms)[0m  SELECT "users".* FROM "users" LIMIT 25 OFFSET 0
+  Rendered users/index.html.erb within layouts/application (636.9ms)
+  Rendered devise/menu/_login_items.html.erb (1.6ms)
+Completed 200 OK in 1949ms (Views: 1795.3ms | ActiveRecord: 35.1ms)
+
+
+Started GET "/api/users?orderBy=id+asc&currentPage=1&perPage=25&fields=login_name&scope=start_with&request=" for 127.0.0.1 at 2013-02-11 22:20:42 +0200
+Processing by UsersController#index as JSON
+  Parameters: {"orderBy"=>"id asc", "currentPage"=>"1", "perPage"=>"25", "fields"=>"login_name", "scope"=>"start_with", "request"=>""}
+  [1m[36mUser Load (3.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1[0m
+  [1m[35m (2.1ms)[0m  SELECT COUNT(*) FROM "users" WHERE (login_name LIKE '%')
+  [1m[36m (3.9ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35mUser Load (11.9ms)[0m  SELECT "users".* FROM "users" WHERE (login_name LIKE '%') ORDER BY id asc LIMIT 25 OFFSET 0
+Completed 200 OK in 689ms (Views: 428.7ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/api/users?orderBy=id+asc&currentPage=2&perPage=25&fields=login_name&scope=start_with&request=" for 127.0.0.1 at 2013-02-11 22:20:50 +0200
+Processing by UsersController#index as JSON
+  Parameters: {"orderBy"=>"id asc", "currentPage"=>"2", "perPage"=>"25", "fields"=>"login_name", "scope"=>"start_with", "request"=>""}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "users" WHERE (login_name LIKE '%')
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35mUser Load (1.3ms)[0m  SELECT "users".* FROM "users" WHERE (login_name LIKE '%') ORDER BY id asc LIMIT 25 OFFSET 25
+Completed 200 OK in 71ms (Views: 17.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/users.json" for 127.0.0.1 at 2013-02-11 22:20:56 +0200
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (5.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35mUser Load (6.6ms)[0m  SELECT "users".* FROM "users" LIMIT 25 OFFSET 0
+Completed 200 OK in 590ms (Views: 434.0ms | ActiveRecord: 6.6ms)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2013-02-11 22:21:02 +0200
+Processing by UsersController#create as JSON
+  Parameters: {"created_at"=>"2013-02-11T20:20:18Z", "email"=>"dsfd@Gmail.com", "first_name"=>"dark", "last_name"=>"dar", "login_name"=>"FAR", "region"=>"North", "role"=>"Supervisor", "updated_at"=>"2013-02-11T20:20:18Z", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"login_name"=>"FAR", "first_name"=>"dark", "last_name"=>"dar", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"dsfd@Gmail.com", "region"=>"North", "role"=>"Supervisor"}}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."login_name" = 'far' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (13.1ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "failed_attempts", "first_name", "last_name", "last_sign_in_at", "last_sign_in_ip", "locked_at", "login_name", "region", "remember_created_at", "reset_password_sent_at", "reset_password_token", "role", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Mon, 11 Feb 2013 20:21:05 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "dsfd@Gmail.com"], ["encrypted_password", "$2a$10$1QHzDyGq.TqKskAE9Ib1S.zwkTQ5w4xLo53q8T0bPFsR1YLMoyvpq"], ["failed_attempts", 0], ["first_name", "dark"], ["last_name", "dar"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["locked_at", nil], ["login_name", "far"], ["region", "North"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["role", "Supervisor"], ["sign_in_count", 0], ["updated_at", Mon, 11 Feb 2013 20:21:05 UTC +00:00]]
+  [1m[36m (21.0ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 2895ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/users?orderBy=id+asc&currentPage=2&perPage=25&fields=login_name&scope=start_with&request=" for 127.0.0.1 at 2013-02-11 22:21:08 +0200
+Processing by UsersController#index as JSON
+  Parameters: {"orderBy"=>"id asc", "currentPage"=>"2", "perPage"=>"25", "fields"=>"login_name", "scope"=>"start_with", "request"=>""}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE (login_name LIKE '%')[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36mUser Load (8.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE (login_name LIKE '%') ORDER BY id asc LIMIT 25 OFFSET 25[0m
+Completed 200 OK in 149ms (Views: 33.2ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/?login_name=&password=&password_confirmation=" for 127.0.0.1 at 2013-02-11 22:21:08 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"login_name"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[35mUser Load (17.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 25 OFFSET 0[0m
+  Rendered users/index.html.erb within layouts/application (231.0ms)
+  Rendered devise/menu/_login_items.html.erb (1.1ms)
+Completed 200 OK in 881ms (Views: 821.5ms | ActiveRecord: 19.0ms)
+
+
+Started GET "/api/users?orderBy=id+asc&currentPage=1&perPage=25&fields=login_name&scope=start_with&request=" for 127.0.0.1 at 2013-02-11 22:21:15 +0200
+Processing by UsersController#index as JSON
+  Parameters: {"orderBy"=>"id asc", "currentPage"=>"1", "perPage"=>"25", "fields"=>"login_name", "scope"=>"start_with", "request"=>""}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1
+  [1m[36m (2.1ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE (login_name LIKE '%')[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36mUser Load (5.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE (login_name LIKE '%') ORDER BY id asc LIMIT 25 OFFSET 0[0m
+Completed 200 OK in 495ms (Views: 371.6ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/api/users?orderBy=id+asc&currentPage=2&perPage=25&fields=login_name&scope=start_with&request=" for 127.0.0.1 at 2013-02-11 22:21:40 +0200
+Processing by UsersController#index as JSON
+  Parameters: {"orderBy"=>"id asc", "currentPage"=>"2", "perPage"=>"25", "fields"=>"login_name", "scope"=>"start_with", "request"=>""}
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1
+  [1m[36m (1.4ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE (login_name LIKE '%')[0m
+  [1m[35m (1.4ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE (login_name LIKE '%') ORDER BY id asc LIMIT 25 OFFSET 25[0m
+Completed 200 OK in 80ms (Views: 25.2ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/api/users/32" for 127.0.0.1 at 2013-02-11 22:21:44 +0200
+Processing by UsersController#destroy as JSON
+  Parameters: {"id"=>"32"}
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1
+  [1m[36mUser Load (11.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY id asc LIMIT 1[0m  [["id", "32"]]
+  [1m[35m (0.7ms)[0m  begin transaction
+  [1m[36mSQL (49.8ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 32]]
+  [1m[35m (42.6ms)[0m  commit transaction
+Completed 204 No Content in 299ms (ActiveRecord: 0.0ms)
+
+
+Started PUT "/api/users/31" for 127.0.0.1 at 2013-02-11 22:21:57 +0200
+Processing by UsersController#update as JSON
+  Parameters: {"created_at"=>"2013-02-11T20:20:18Z", "email"=>"dsfd@Gmail.com", "first_name"=>"darkFOOO", "id"=>"31", "last_name"=>"darkBAAARRR", "login_name"=>"park", "region"=>"South", "role"=>"Merchandiser", "updated_at"=>"2013-02-11T20:20:18Z", "user"=>{"login_name"=>"park", "first_name"=>"darkFOOO", "last_name"=>"darkBAAARRR", "email"=>"dsfd@Gmail.com", "region"=>"South", "role"=>"Merchandiser"}}
+  [1m[36mUser Load (4.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY id asc LIMIT 1  [["id", "31"]]
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT 1 AS one FROM "users" WHERE ("users"."login_name" = 'park' AND "users"."id" != 31) LIMIT 1
+  [1m[36m (4.6ms)[0m  [1mUPDATE "users" SET "first_name" = 'darkFOOO', "last_name" = 'darkBAAARRR', "region" = 'South', "role" = 'Merchandiser', "updated_at" = '2013-02-11 20:21:57.759989' WHERE "users"."id" = 31[0m
+  [1m[35m (14.6ms)[0m  commit transaction
+Completed 204 No Content in 77ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/api/users?orderBy=id+asc&currentPage=2&perPage=25&fields=login_name&scope=start_with&request=" for 127.0.0.1 at 2013-02-11 22:22:03 +0200
+Processing by UsersController#index as JSON
+  Parameters: {"orderBy"=>"id asc", "currentPage"=>"2", "perPage"=>"25", "fields"=>"login_name", "scope"=>"start_with", "request"=>""}
+  [1m[36mUser Load (13.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "users" WHERE (login_name LIKE '%')
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35mUser Load (13.6ms)[0m  SELECT "users".* FROM "users" WHERE (login_name LIKE '%') ORDER BY id asc LIMIT 25 OFFSET 25
+Completed 200 OK in 325ms (Views: 81.9ms | ActiveRecord: 13.6ms)
+
+
+Started GET "/?first_name=darkFOOO&last_name=darkBAAARRR&email=dsfd%40Gmail.com&role=Merchandiser" for 127.0.0.1 at 2013-02-11 22:22:03 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"first_name"=>"darkFOOO", "last_name"=>"darkBAAARRR", "email"=>"dsfd@Gmail.com", "role"=>"Merchandiser"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1[0m
+  [1m[35m (8.6ms)[0m  SELECT COUNT(*) FROM "users" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35mUser Load (33.6ms)[0m  SELECT "users".* FROM "users" LIMIT 25 OFFSET 0
+  Rendered users/index.html.erb within layouts/application (804.1ms)
+  Rendered devise/menu/_login_items.html.erb (15.5ms)
+Completed 200 OK in 1935ms (Views: 1820.8ms | ActiveRecord: 43.2ms)
+
+
+Started GET "/api/users?orderBy=id+asc&currentPage=1&perPage=25&fields=login_name&scope=start_with&request=" for 127.0.0.1 at 2013-02-11 22:22:14 +0200
+Processing by UsersController#index as JSON
+  Parameters: {"orderBy"=>"id asc", "currentPage"=>"1", "perPage"=>"25", "fields"=>"login_name", "scope"=>"start_with", "request"=>""}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1[0m
+  [1m[35m (71.0ms)[0m  SELECT COUNT(*) FROM "users" WHERE (login_name LIKE '%')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35mUser Load (8.9ms)[0m  SELECT "users".* FROM "users" WHERE (login_name LIKE '%') ORDER BY id asc LIMIT 25 OFFSET 0
+Completed 200 OK in 1660ms (Views: 485.3ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/api/users?orderBy=id+asc&currentPage=2&perPage=25&fields=login_name&scope=start_with&request=" for 127.0.0.1 at 2013-02-11 22:22:20 +0200
+Processing by UsersController#index as JSON
+  Parameters: {"orderBy"=>"id asc", "currentPage"=>"2", "perPage"=>"25", "fields"=>"login_name", "scope"=>"start_with", "request"=>""}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "users" WHERE (login_name LIKE '%')
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35mUser Load (1.3ms)[0m  SELECT "users".* FROM "users" WHERE (login_name LIKE '%') ORDER BY id asc LIMIT 25 OFFSET 25
+Completed 200 OK in 69ms (Views: 27.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/users?orderBy=id+asc&currentPage=1&perPage=25&fields=login_name&scope=start_with&request=" for 127.0.0.1 at 2013-02-11 22:22:22 +0200
+Processing by UsersController#index as JSON
+  Parameters: {"orderBy"=>"id asc", "currentPage"=>"1", "perPage"=>"25", "fields"=>"login_name", "scope"=>"start_with", "request"=>""}
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1[0m
+  [1m[35m (0.9ms)[0m  SELECT COUNT(*) FROM "users" WHERE (login_name LIKE '%')
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE (login_name LIKE '%') ORDER BY id asc LIMIT 25 OFFSET 0
+Completed 200 OK in 166ms (Views: 110.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/users?orderBy=id+asc&currentPage=1&perPage=10&fields=login_name&scope=start_with&request=" for 127.0.0.1 at 2013-02-11 22:22:26 +0200
+Processing by UsersController#index as JSON
+  Parameters: {"orderBy"=>"id asc", "currentPage"=>"1", "perPage"=>"10", "fields"=>"login_name", "scope"=>"start_with", "request"=>""}
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1[0m
+  [1m[35m (1.1ms)[0m  SELECT COUNT(*) FROM "users" WHERE (login_name LIKE '%')
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35mUser Load (1.7ms)[0m  SELECT "users".* FROM "users" WHERE (login_name LIKE '%') ORDER BY id asc LIMIT 10 OFFSET 0
+Completed 200 OK in 99ms (Views: 44.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2013-02-11 22:22:33 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"1Yh7HBZ3KRLXrCh6aW+rAbnAiYitXJyiNoPVNRsDUbM="}
+  [1m[36mUser Load (17.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 28 ORDER BY id asc LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (3.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 72ms (ActiveRecord: 21.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-11 22:22:33 +0200
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 1ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-02-11 22:22:33 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (15.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (100.7ms)
+  Rendered devise/menu/_login_items.html.erb (0.8ms)
+Completed 200 OK in 1321ms (Views: 1304.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-02-11 22:22:57 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kDmBKmEpHYoewRGR45Q/J48t31XD3WIKL4VP3TDGoIE=", "user"=>{"login_name"=>"customer", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."login_name" = 'customer' ORDER BY id asc LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (23.9ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2013-02-11 19:58:25.724580', "current_sign_in_at" = '2013-02-11 20:23:01.289578', "sign_in_count" = 14, "updated_at" = '2013-02-11 20:23:01.306472' WHERE "users"."id" = 29
+  [1m[36m (40.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/orders
+Completed 302 Found in 3569ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2013-02-11 22:23:01 +0200
+Processing by OrdersController#index as HTML
+  [1m[35mOrder Load (1.5ms)[0m  SELECT "orders".* FROM "orders" 
+  [1m[36mEXPLAIN (13.6ms)[0m  [1mEXPLAIN QUERY PLAN SELECT "orders".* FROM "orders" [0m
+EXPLAIN for: SELECT "orders".* FROM "orders" 
+0|0|TABLE orders
+
+  Rendered orders/index.html.erb within layouts/application (174.2ms)
+  [1m[35mUser Load (5.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1
+  Rendered devise/menu/_login_items.html.erb (1.7ms)
+Completed 200 OK in 2106ms (Views: 722.5ms | ActiveRecord: 48.5ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-11 22:23:11 +0200
+Processing by OrdersController#index as JSON
+  [1m[36mOrder Load (0.7ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+Completed 200 OK in 174ms (Views: 99.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2013-02-11 22:24:23 +0200
+Processing by OrdersController#index as HTML
+  [1m[35mOrder Load (19.5ms)[0m  SELECT "orders".* FROM "orders" 
+  [1m[36mEXPLAIN (12.1ms)[0m  [1mEXPLAIN QUERY PLAN SELECT "orders".* FROM "orders" [0m
+EXPLAIN for: SELECT "orders".* FROM "orders" 
+0|0|TABLE orders
+
+  Rendered orders/index.html.erb within layouts/application (55.9ms)
+  [1m[35mUser Load (3.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1
+  Rendered devise/menu/_login_items.html.erb (1.9ms)
+Completed 200 OK in 1727ms (Views: 1117.7ms | ActiveRecord: 45.5ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-11 22:24:41 +0200
+Processing by OrdersController#index as JSON
+  [1m[36mOrder Load (1.1ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+Completed 200 OK in 271ms (Views: 125.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/orders/5/order_items" for 127.0.0.1 at 2013-02-11 22:24:45 +0200
+Processing by OrderItemsController#index as JSON
+  Parameters: {"order_id"=>"5"}
+  [1m[35mOrder Load (2.8ms)[0m  SELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT 1  [["id", "5"]]
+Completed 200 OK in 1745ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/orders/5/edit?order_number=00006&assignee=Administrator&credit_card_type=Visa&credit_card_number=&cvv2=&pref_delivery_date=&start_date=&issue_number=" for 127.0.0.1 at 2013-02-11 22:24:54 +0200
+
+AbstractController::ActionNotFound - The action 'edit' could not be found for OrdersController:
+  (gem) actionpack-3.2.11/lib/abstract_controller/base.rb:116:in `process'
+  (gem) actionpack-3.2.11/lib/abstract_controller/rendering.rb:45:in `process'
+  (gem) actionpack-3.2.11/lib/action_controller/metal.rb:203:in `dispatch'
+  (gem) actionpack-3.2.11/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  (gem) actionpack-3.2.11/lib/action_controller/metal.rb:246:in `block in action'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:73:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:36:in `call'
+  (gem) journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+  (gem) journey-1.0.4/lib/journey/router.rb:56:in `each'
+  (gem) journey-1.0.4/lib/journey/router.rb:56:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:601:in `call'
+  (gem) better_errors-0.3.2/lib/better_errors/middleware.rb:51:in `app_call'
+  (gem) better_errors-0.3.2/lib/better_errors/middleware.rb:45:in `call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:35:in `block in call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:34:in `catch'
+  (gem) warden-1.2.1/lib/warden/manager.rb:34:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  (gem) rack-1.4.4/lib/rack/etag.rb:23:in `call'
+  (gem) rack-1.4.4/lib/rack/conditionalget.rb:25:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/head.rb:14:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/flash.rb:242:in `call'
+  (gem) rack-1.4.4/lib/rack/session/abstract/id.rb:210:in `context'
+  (gem) rack-1.4.4/lib/rack/session/abstract/id.rb:205:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  (gem) activerecord-3.2.11/lib/active_record/query_cache.rb:64:in `call'
+  (gem) activerecord-3.2.11/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:405:in `_run__233852532__call__1021938981__callbacks'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  (gem) railties-3.2.11/lib/rails/rack/logger.rb:32:in `call_app'
+  (gem) railties-3.2.11/lib/rails/rack/logger.rb:16:in `block in call'
+  (gem) activesupport-3.2.11/lib/active_support/tagged_logging.rb:22:in `tagged'
+  (gem) railties-3.2.11/lib/rails/rack/logger.rb:16:in `call'
+  (gem) quiet_assets-1.0.1/lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  (gem) rack-1.4.4/lib/rack/methodoverride.rb:21:in `call'
+  (gem) rack-1.4.4/lib/rack/runtime.rb:17:in `call'
+  (gem) activesupport-3.2.11/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  (gem) rack-1.4.4/lib/rack/lock.rb:15:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/static.rb:62:in `call'
+  (gem) railties-3.2.11/lib/rails/engine.rb:479:in `call'
+  (gem) railties-3.2.11/lib/rails/application.rb:223:in `call'
+  (gem) rack-1.4.4/lib/rack/content_length.rb:14:in `call'
+  (gem) railties-3.2.11/lib/rails/rack/log_tailer.rb:17:in `call'
+  (gem) thin-1.5.0/lib/thin/connection.rb:81:in `block in pre_process'
+  (gem) thin-1.5.0/lib/thin/connection.rb:79:in `catch'
+  (gem) thin-1.5.0/lib/thin/connection.rb:79:in `pre_process'
+  (gem) thin-1.5.0/lib/thin/connection.rb:54:in `process'
+  (gem) thin-1.5.0/lib/thin/connection.rb:39:in `receive_data'
+  (gem) eventmachine-1.0.0/lib/eventmachine.rb:187:in `run_machine'
+  (gem) eventmachine-1.0.0/lib/eventmachine.rb:187:in `run'
+  (gem) thin-1.5.0/lib/thin/backends/base.rb:63:in `start'
+  (gem) thin-1.5.0/lib/thin/server.rb:159:in `start'
+  (gem) rack-1.4.4/lib/rack/handler/thin.rb:13:in `run'
+  (gem) rack-1.4.4/lib/rack/server.rb:268:in `start'
+  (gem) railties-3.2.11/lib/rails/commands/server.rb:70:in `start'
+  (gem) railties-3.2.11/lib/rails/commands.rb:55:in `block in <top (required)>'
+  (gem) railties-3.2.11/lib/rails/commands.rb:50:in `tap'
+  (gem) railties-3.2.11/lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+
+Started POST "/__better_errors/83057830/variables" for 127.0.0.1 at 2013-02-11 22:24:56 +0200
+
+
+Started GET "/orders/5/edit" for 127.0.0.1 at 2013-02-11 22:25:00 +0200
+
+AbstractController::ActionNotFound - The action 'edit' could not be found for OrdersController:
+  (gem) actionpack-3.2.11/lib/abstract_controller/base.rb:116:in `process'
+  (gem) actionpack-3.2.11/lib/abstract_controller/rendering.rb:45:in `process'
+  (gem) actionpack-3.2.11/lib/action_controller/metal.rb:203:in `dispatch'
+  (gem) actionpack-3.2.11/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  (gem) actionpack-3.2.11/lib/action_controller/metal.rb:246:in `block in action'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:73:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:36:in `call'
+  (gem) journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+  (gem) journey-1.0.4/lib/journey/router.rb:56:in `each'
+  (gem) journey-1.0.4/lib/journey/router.rb:56:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/routing/route_set.rb:601:in `call'
+  (gem) better_errors-0.3.2/lib/better_errors/middleware.rb:51:in `app_call'
+  (gem) better_errors-0.3.2/lib/better_errors/middleware.rb:45:in `call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:35:in `block in call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:34:in `catch'
+  (gem) warden-1.2.1/lib/warden/manager.rb:34:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  (gem) rack-1.4.4/lib/rack/etag.rb:23:in `call'
+  (gem) rack-1.4.4/lib/rack/conditionalget.rb:25:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/head.rb:14:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/flash.rb:242:in `call'
+  (gem) rack-1.4.4/lib/rack/session/abstract/id.rb:210:in `context'
+  (gem) rack-1.4.4/lib/rack/session/abstract/id.rb:205:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  (gem) activerecord-3.2.11/lib/active_record/query_cache.rb:64:in `call'
+  (gem) activerecord-3.2.11/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:405:in `_run__233852532__call__1021938981__callbacks'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  (gem) activesupport-3.2.11/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  (gem) railties-3.2.11/lib/rails/rack/logger.rb:32:in `call_app'
+  (gem) railties-3.2.11/lib/rails/rack/logger.rb:16:in `block in call'
+  (gem) activesupport-3.2.11/lib/active_support/tagged_logging.rb:22:in `tagged'
+  (gem) railties-3.2.11/lib/rails/rack/logger.rb:16:in `call'
+  (gem) quiet_assets-1.0.1/lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  (gem) rack-1.4.4/lib/rack/methodoverride.rb:21:in `call'
+  (gem) rack-1.4.4/lib/rack/runtime.rb:17:in `call'
+  (gem) activesupport-3.2.11/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  (gem) rack-1.4.4/lib/rack/lock.rb:15:in `call'
+  (gem) actionpack-3.2.11/lib/action_dispatch/middleware/static.rb:62:in `call'
+  (gem) railties-3.2.11/lib/rails/engine.rb:479:in `call'
+  (gem) railties-3.2.11/lib/rails/application.rb:223:in `call'
+  (gem) rack-1.4.4/lib/rack/content_length.rb:14:in `call'
+  (gem) railties-3.2.11/lib/rails/rack/log_tailer.rb:17:in `call'
+  (gem) thin-1.5.0/lib/thin/connection.rb:81:in `block in pre_process'
+  (gem) thin-1.5.0/lib/thin/connection.rb:79:in `catch'
+  (gem) thin-1.5.0/lib/thin/connection.rb:79:in `pre_process'
+  (gem) thin-1.5.0/lib/thin/connection.rb:54:in `process'
+  (gem) thin-1.5.0/lib/thin/connection.rb:39:in `receive_data'
+  (gem) eventmachine-1.0.0/lib/eventmachine.rb:187:in `run_machine'
+  (gem) eventmachine-1.0.0/lib/eventmachine.rb:187:in `run'
+  (gem) thin-1.5.0/lib/thin/backends/base.rb:63:in `start'
+  (gem) thin-1.5.0/lib/thin/server.rb:159:in `start'
+  (gem) rack-1.4.4/lib/rack/handler/thin.rb:13:in `run'
+  (gem) rack-1.4.4/lib/rack/server.rb:268:in `start'
+  (gem) railties-3.2.11/lib/rails/commands/server.rb:70:in `start'
+  (gem) railties-3.2.11/lib/rails/commands.rb:55:in `block in <top (required)>'
+  (gem) railties-3.2.11/lib/rails/commands.rb:50:in `tap'
+  (gem) railties-3.2.11/lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+
+Started POST "/__better_errors/83947570/variables" for 127.0.0.1 at 2013-02-11 22:25:02 +0200
+
+
+Started GET "/orders" for 127.0.0.1 at 2013-02-11 22:25:06 +0200
+Processing by OrdersController#index as HTML
+  [1m[36mOrder Load (1.1ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+  Rendered orders/index.html.erb within layouts/application (87.4ms)
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 29 ORDER BY id asc LIMIT 1
+  Rendered devise/menu/_login_items.html.erb (1.4ms)
+Completed 200 OK in 399ms (Views: 380.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/orders" for 127.0.0.1 at 2013-02-11 22:25:18 +0200
+Processing by OrdersController#index as JSON
+  [1m[36mOrder Load (41.7ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+  [1m[35mEXPLAIN (11.8ms)[0m  EXPLAIN QUERY PLAN SELECT "orders".* FROM "orders" 
+EXPLAIN for: SELECT "orders".* FROM "orders" 
+0|0|TABLE orders
+
+Completed 200 OK in 1066ms (Views: 69.3ms | ActiveRecord: 0.0ms)

@@ -4,7 +4,6 @@ class Shop.Views.OrdersIndex extends Backbone.View
 
   events:
     'change #filter': 'fillFilterOptions'
-    #'click #order_create_button': 'createOrder'
     'click .backbone': 'navigateLink' 
 
   initialize: ->
