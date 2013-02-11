@@ -2,10 +2,11 @@ class Shop.Routers.Orders extends Backbone.Router
 
   routes:
     "orders"            : "index"
-    "orders/:id"        : "show"
     "orders/new"        : "newOrder"
+    #"orders/:id"        : "show"
     "orders/:id/edit"   : "edit"
-    "orders/:id/show"   : "show"
+    #"orders/:id/show"   : "show"
+    #"orders/xxx"   : "index"
    
     
   initialize: ->

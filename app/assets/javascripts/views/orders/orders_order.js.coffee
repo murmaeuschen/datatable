@@ -12,7 +12,7 @@ class Shop.Views.OrdersOrder extends Backbone.View
     @
 
   goToEdit: ->   
-    Backbone.history.navigate("#{@model.get('id')}/edit", true)
+    Backbone.history.navigate("orders/#{@model.get('id')}/edit", true)
 
   destroy: ->
     @model['url'] = "/api/orders/#{@model.get('id')}"
