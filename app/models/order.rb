@@ -1,7 +1,7 @@
 class Order < ActiveRecord::Base
   belongs_to :user  
   has_many :order_items
-  has_many :items, :through => :order_items
+  has_many :items, :through => :order_items, :dependent => :destroy
 
   attr_accessible :credit_card_number,
                   :credit_card_type, 

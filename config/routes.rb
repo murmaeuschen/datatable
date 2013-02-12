@@ -6,7 +6,8 @@ Shop::Application.routes.draw do
   scope "api" do
     resources :users
     resources :orders do
-      resources :order_items      
+      resources :order_items
+      resources :items      
     end
     resources :order_items
     resources :items    
