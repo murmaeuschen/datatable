@@ -15,7 +15,7 @@ class Shop.Views.OrdersNew extends Backbone.View
     
   render: ->
     @$el.html(@template())
-    
+    #
     @$('form#new_order').validate
        rules:
          order_number: 
