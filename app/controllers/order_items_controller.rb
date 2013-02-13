@@ -23,7 +23,7 @@ class OrderItemsController < ApplicationController
    # }
     @order = Order.find params[:order_id]
 
-    @all_items = @order.items.select("item_id,item_name,item_description,dimension,price,quantity,price_per_line")
+    @all_items = @order.items.select("order_items.id,item_id,item_name,item_description,dimension,price,quantity,price_per_line")
     
     respond_to do |format|
       format.html
@@ -47,10 +47,11 @@ class OrderItemsController < ApplicationController
   end
 
   def create
-    @order_item = OrderItem.create params[:order_item]
+    @order = Order.find params[:order_id]
+    @order_item = @order.order_items.create params[:order_item]
     respond_to do |format|
       format.html { redirect_to user_path(@order_item) }
-      format.json { respond_with @order_item }
+      format.json { render :json => @order_item }
     end
   end
 
@@ -59,7 +60,7 @@ class OrderItemsController < ApplicationController
     @order_item.update_attributes params[:order_item]
     respond_to do |format|
       format.html
-      format.json { respond_with @order_item }
+      format.json { render :json => @order_item }
     end
   end
 

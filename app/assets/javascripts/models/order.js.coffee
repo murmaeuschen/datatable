@@ -11,10 +11,8 @@ class Shop.Models.Order extends Backbone.Model
       @_order_items.fetch()
     @_order_items 
 
-
   items: ->
-    alert "call items"
-    # unless @_order_items?
-    #   @_order_items = new Shop.Collections.OrderItems({order_id: @id})
-    #   @_order_items.fetch()
-    # @_order_items     
+    unless @_items?
+      @_items = new Shop.Collections.Items({order_id: @id})
+      @_items.fetch()
+    @_items   

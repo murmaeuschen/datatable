@@ -1,7 +1,8 @@
 class Shop.Collections.Items extends Backbone.Collection
 
   model: Shop.Models.Item
-
+  itemStore: {}
+  #itemQuery: {}
   url: '/api/items'
 
   # initialize: (order_id) ->
@@ -11,4 +12,4 @@ class Shop.Collections.Items extends Backbone.Collection
 
   parse: (resp) =>
     #@init_pagination(resp)
-    resp["models"]
+    resp["models"]  

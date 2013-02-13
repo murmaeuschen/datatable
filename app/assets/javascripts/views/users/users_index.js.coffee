@@ -55,7 +55,7 @@ class Shop.Views.UsersIndex extends Backbone.View
     @collection.howManyPer(per)
     @render
 
-  sortUsersAsc: (e) -># NEED refactor
+  sortUsersAsc: (e) -># NEED refactorr
     e.preventDefault()
     return if e.ctrlKey
     @collection.sortStore = ""

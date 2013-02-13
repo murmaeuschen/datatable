@@ -20,7 +20,7 @@ $(function(){
 	<div class="items_panel">
         <h5>Items Selection</h5>
 		<div class="row-fluid">
-			<button class="btn btn-primary">Add Item</button>
+			<button class="btn btn-primary" id="addItemLink">Add Item</button>
 			<select class="limit pull-right">
 				<option>
 					show 10 lines

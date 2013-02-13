@@ -6,6 +6,7 @@ class Shop.Views.OrdersNew extends Backbone.View
 
   events:
     "submit #new_order": "createOrder"
+    'click #addItemLink': 'addItemLink'
     'click #cancel'    : 'returnOnMain'
 
   
@@ -39,7 +40,7 @@ class Shop.Views.OrdersNew extends Backbone.View
       wait: true
       success: -> 
         $('#new_order')[0].reset()
-        Backbone.history.navigate("", true)            
+        Backbone.history.navigate("/orders", true)            
       error: @handleError
 
   handleError: (order, response) ->
@@ -47,6 +48,10 @@ class Shop.Views.OrdersNew extends Backbone.View
       errors = $.parseJSON(response.responseText).errors
       for attribute, messages of errors
         alert "#{attribute} #{message}" for message in messages
+
+  #addItemLink: (e) ->
+    #Backbone.history.navigate("orders/#{@model.get('id')}/items", true)
+    #false  
 
   returnOnMain: ->
     if confirm 'Are you sure you want to cancel operation. All data will be lost?'

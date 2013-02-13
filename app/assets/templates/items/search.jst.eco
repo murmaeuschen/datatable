@@ -26,7 +26,7 @@
 		</table>
 
     <section class="row-fluid">
-      <button class="offset11 span1 btn btn-primary">Add</button>
+      <button class="offset11 span1 btn btn-primary" id="addItem">Add</button>
     </section>
 
 	  <div class="panel">

@@ -22,6 +22,7 @@ class OrdersController < ApplicationController
      # total_count:  Order.count,
    # }
     @orders = Order.all
+    #@order = current_user.orders.create params[:order] in FUTURE
     
     respond_to do |format|
       format.html
