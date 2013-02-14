@@ -28,6 +28,7 @@ class Shop.Views.ItemsSearch extends Backbone.View
     itmPrice = Number(itm["price"])
     $(@el).find('#item_name').text(itmName)
     $(@el).find('#price').text(itmPrice)
+    $(@el).find('#quantity').val(1)
                 
   addItem: (e) ->
     event.preventDefault()
