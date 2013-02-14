@@ -42,6 +42,7 @@ class Shop.Views.ItemsSearch extends Backbone.View
       order_id: Number(@order_id)
       item_id: itm["id"] 
       quantity: itm["quantity"]
+      dimension: itm["dimension"]
       price_per_line: itm["price"] 
     order_item = new Shop.Models.OrderItem(itmQ)
     order_item.save()
