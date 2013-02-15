@@ -16,3 +16,6 @@ class Shop.Models.Order extends Backbone.Model
       @_items = new Shop.Collections.Items({order_id: @id})
       @_items.fetch()
     @_items   
+
+  
+    
