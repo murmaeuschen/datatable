@@ -12,10 +12,10 @@ class Shop.Views.OrderItemsItem extends Backbone.View
     @
 
   goToEdit: ->   
-    #Backbone.history.navigate("#{@model.get('id')}/edit", true)
+    order_id = Number(@model.collection.order_id.order_id)
+    Backbone.history.navigate("orders/" + order_id + "/order_items/" + @model.get("id") + "/items", true)
 
   destroy: ->
-    #/api/orders/6/order_items/7.json
     order_id = @model.collection.order_id.order_id
     @model['url'] =  "/api/orders/" + order_id + "/order_items/" + @model.get("id")
     @model.destroy() if confirm 'Are you sure you want to delete this item?'

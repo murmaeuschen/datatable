@@ -11,13 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130210101710) do
+ActiveRecord::Schema.define(:version => 20130214134431) do
 
   create_table "items", :force => true do |t|
     t.string   "item_name"
     t.string   "item_description"
     t.decimal  "price"
-    t.string   "dimension"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end
@@ -29,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20130210101710) do
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
     t.integer  "order_id"
+    t.string   "dimension"
   end
 
   add_index "order_items", ["item_id"], :name => "index_itemstables_on_item_id"

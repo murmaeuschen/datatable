@@ -11,6 +11,4 @@ class Shop.Collections.OrderItems extends Backbone.Collection
 
   parse: (resp) =>
     #@init_pagination(resp)
-    resp["models"]
-
- 
+    resp["models"]  
