@@ -70,7 +70,7 @@ order_item21 = OrderItem.create(price_per_line: 100, quantity: 2, item_id: items
 
 order2.order_items<<order_item21
 
-user = User.find(2)
+user = User.where(role:"Customer").first
 
 user.orders<<order1
 user.orders<<order2
