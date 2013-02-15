@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <section class="row-fluid">
-        <a id="order_create_button" href="orders/new" class="backbone">Create New Order</a>
+        <a id="order_create_button" href="/orders/new" class="backbone">Create New Order</a>
     </section>
 
 <div class="panel">

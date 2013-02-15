@@ -18,7 +18,8 @@ class Shop.Views.OrdersIndex extends Backbone.View
     @
 
   navigateLink: (event) ->
-    Backbone.history.navigate(event.target.attributes["href"].value, true) 
+    event.preventDefault()
+    Backbone.history.navigate(event.target.attributes["href"].value, true)     
     false
 
   appendOrder: (order) =>
