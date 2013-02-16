@@ -16,7 +16,7 @@ Shop::Application.routes.draw do
   resources :order_items
   resources :items
   
-    
+  
   root to: "users#index"
 
 

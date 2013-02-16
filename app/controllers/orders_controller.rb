@@ -13,21 +13,22 @@ class OrdersController < ApplicationController
    #   Order.scoped
    # end
 
-   # @orders = @orders.reorder(params[:orderBy]).page(params[:currentPage]).per(params[:perPage])
+    #@orders = Order.all
 
-   # @pagination = {
-      #current_page: @orders.current_page,
-      #num_pages:    @orders.num_pages,
-     # per_page:     @orders.limit_value,
-     # total_count:  Order.count,
-   # }
-    @orders = Order.all
+    @orders = Order.order(params[:orderBy]).page(params[:page]).per(params[:pp])
+
+    @pagination = {
+      page:         @orders.current_page,
+      num_pages:    @orders.num_pages,
+      pp:           @orders.limit_value,
+      total_count:  Order.count,
+    }
     #@order = current_user.orders.create params[:order] in FUTURE
     
     respond_to do |format|
       format.html
       format.json do
-        respond_with({ models: @orders })#}.merge @pagination)
+        respond_with({ models: @orders }.merge @pagination)
       end
     end
   end

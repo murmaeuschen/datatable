@@ -31,7 +31,7 @@ class Shop.Views.ItemsSearch extends Backbone.View
     $(@el).find('#quantity').val(1)
                 
   addItem: (e) ->
-    event.preventDefault()
+    e.preventDefault()
     itm = @collection.itemStore
     itm["quantity"] = Number($(@el).find('#quantity').val())
     itm["dimension"] = $(@el).find('#dimension :selected').val()
