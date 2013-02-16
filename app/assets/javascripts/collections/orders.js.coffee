@@ -2,14 +2,14 @@ class Shop.Collections.Orders extends Backbone.Collection
 
   baseUrl: '/api/orders'
   model: Shop.Models.Order
+
   
   #initialize: (options) =>
     #console.log options
     #@setPageInfo(options)
 
   parse: (resp) =>
-    console.log resp
-    @setPageInfo(resp["models"])
+    @setPageInfo(resp)
     resp["models"]
 
 
@@ -35,6 +35,13 @@ class Shop.Collections.Orders extends Backbone.Collection
       #fields: @fields
       #start_with: @start_with
       #request: @request
+
+  setParams:(orderBy, page, pp) =>
+    return unless page > 0
+    [oldOrderBy, @orderBy] = [@orderBy, String(orderBy)]
+    [oldPage, @page] = [@page, Number(page)]
+    [oldPP, @pp] = [@pp, Number(pp)]
+    @fetch() unless oldOrderBy == @orderBy && oldPage == @page && oldPP == @pp
 
   howManyPer: (newPerPage) =>
     @page = 1

@@ -6,8 +6,7 @@ class Shop.Routers.Orders extends Backbone.Router
     "orders/:id/edit(/)"                  : "edit"
     "orders/:id/items(/)"                 : "addItem"
     "orders/:id/order_items/:id/items(/)" : "editItem"
-    ""                                    : "index"
-            
+                
   initialize: ->
     @route /orders\/?\?(.*)/, "index", @index # orders?page=10&source=public
     @collection = new Shop.Collections.Orders($('#container').data('order'))
@@ -21,7 +20,7 @@ class Shop.Routers.Orders extends Backbone.Router
     @collection.setParams(params["orderBy"], params["page"], params["pp"]) if params["orderBy"]? && params["page"]? && params["pp"]?
     view = new Shop.Views.OrdersIndex(collection: @collection)    
     $('#container').html(view.render().el)
-  
+      
   newOrder: ->
     view = new Shop.Views.OrdersNew({collection: @collection})    
 

@@ -15,7 +15,7 @@ class OrdersController < ApplicationController
 
     #@orders = Order.all
 
-    @orders = Order.order(params[:orderBy]).page(params[:page]).per(params[:pp])
+    @orders = Order.reorder(params[:orderBy]).page(params[:page]).per(params[:pp])
 
     @pagination = {
       page:         @orders.current_page,

@@ -62,19 +62,23 @@
 		</table>
 
 		<div class="pagination pagination-centered" id="paging-buttons">       
-    	  <ul class="pager">           
+    	  <ul class="pager">      
+          <% if @pageInfo.page != 1: %> 
                     <li>
-                        <a href="#" id="first">First</a>
+                        <a href="/orders?page=1" id="first">First</a>
                     </li>
                     <li>
-                        <a href="#" id="backward">&larr; Backward</a>
+                        <a href="/orders?page=<%= @pageInfo.page-1 %>" id="backward">&larr; Backward</a>
+                    </li>
+          <% end %>
+          <% if @pageInfo.page != @pageInfo.numPages: %>
+                    <li>
+                        <a href="/orders?page=<%= @pageInfo.page+1 %>" id="forward">Forward &rarr;</a>
                     </li>
                     <li>
-                        <a href="#" id="forward">Forward &rarr;</a>
+                        <a href="/orders?page=<%= @pageInfo.numPages %>" id="last">Last</a>
                     </li>
-                    <li>
-                        <a href="#" id="last">Last</a>
-                    </li>
+          <% end %>
           </ul>            
          </div>
 </div>		
