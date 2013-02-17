@@ -13,8 +13,6 @@ class OrdersController < ApplicationController
    #   Order.scoped
    # end
 
-    #@orders = Order.all
-
     @orders = Order.reorder(params[:orderBy]).page(params[:page]).per(params[:pp])
 
     @pagination = {

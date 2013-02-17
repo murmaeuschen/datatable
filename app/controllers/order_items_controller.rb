@@ -23,12 +23,21 @@ class OrderItemsController < ApplicationController
    # }
     @order = Order.find params[:order_id]
 
-    @all_items = @order.items.select("order_items.id,item_id,item_name,item_description,dimension,price,quantity,price_per_line")
+    @all_items = @order.items.select("order_items.id,item_id,item_name,item_description,dimension,price,quantity,price_per_line")    
     
+    @all_items = @all_items.reorder(params[:orderBy]).page(params[:page]).per(params[:pp])
+
+    @pagination = {
+      page:         @all_items.current_page,
+      num_pages:    @all_items.num_pages,
+      pp:           @all_items.limit_value,
+      total_count:  @all_items.count,
+    }
+
     respond_to do |format|
       format.html
       format.json do
-        respond_with({ models: @all_items })#}.merge @pagination)
+        respond_with({ models: @all_items }.merge @pagination)
       end
     end
   end

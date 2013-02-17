@@ -9,23 +9,24 @@ class Shop.Routers.Orders extends Backbone.Router
                 
   initialize: ->
     @route /orders\/?\?(.*)/, "index", @index # orders?page=10&source=public
+    @route /orders\/:id\/edit\/\?(.*)/, "edit", @edit # orders/2/edit?page=10&source=public
     @collection = new Shop.Collections.Orders($('#container').data('order'))
     @collection.setPageInfo($('#container').data('pagination'))
     @collection.fetch()         
 
   index: (params) ->
-    console.log params
     params = _.strToParams(params)
-    console.log params
     @collection.setParams(params["orderBy"], params["page"], params["pp"]) if params["orderBy"]? && params["page"]? && params["pp"]?
     view = new Shop.Views.OrdersIndex(collection: @collection)    
     $('#container').html(view.render().el)
-      
+
   newOrder: ->
     view = new Shop.Views.OrdersNew({collection: @collection})    
 
-  edit: (id) ->    
+  edit: (id, params) -> 
+    params = _.strToParams(params)
     order = @collection.get(id)   
+    order.order_items().setParams(params["orderBy"], params["page"], params["pp"]) if params["orderBy"]? && params["page"]? && params["pp"]?
     view = new Shop.Views.OrdersEdit(model: order)
 
   addItem: (order_id) ->
