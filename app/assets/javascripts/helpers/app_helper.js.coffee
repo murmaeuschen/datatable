@@ -17,5 +17,12 @@ class ApplicationHelper
       []
     ).join("&")
 
+  locationWithParams: (location, params)->
+    return location unless params? and _.keys(params).length > 0
+    [location, currentParams] = location.split "?"
+    currentParams = @strToParams(currentParams)
+    params = _.extend(currentParams, params)
+    location + "?" + @paramsToStr(params)
+
       
 _.extend(_, new ApplicationHelper)

@@ -13,7 +13,7 @@ class Shop.Views.OrdersIndex extends Backbone.View
     @collection.on('change', @render, @)
 
   render: ->
-    $(@el).html(@template(orders: @collection))
+    $(@el).html(@template(orders: @collection, pageInfo: @collection.pageInfo() ))
     @collection.each(@appendOrder)
     @
 

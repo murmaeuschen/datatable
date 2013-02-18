@@ -26,4 +26,7 @@ class Order < ActiveRecord::Base
   #validates :expiry_date,        :presence => true
   #validates :issue_number,       :length => {:is => 1}
           
+
+  default_scope -> { order("id asc") }
+  paginates_per 5
 end

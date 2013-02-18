@@ -5,4 +5,7 @@ class OrderItem < ActiveRecord::Base
                   :quantity,
                   :dimension,
                   :item_id
+
+  default_scope -> { order("id asc") }
+    
 end

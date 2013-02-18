@@ -12,7 +12,6 @@ class Shop.Collections.Users extends Backbone.Collection
       numPages: @numPages
       currentPage: @currentPage
       perPage: @perPage
-      numPages: @numPages
       prev: false
       next: false
       orderBy: @orderBy
