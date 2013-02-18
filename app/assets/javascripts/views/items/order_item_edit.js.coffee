@@ -31,7 +31,7 @@ class Shop.Views.OrderItemEdit extends Backbone.View
     $(@el).find('#quantity').val(1)
     console.log @item_id
                 
-  editItem: (e) ->
+  editItem: (event) ->
     event.preventDefault()
     itm = @collection.itemStore
     itm["quantity"] = Number($(@el).find('#quantity').val())
