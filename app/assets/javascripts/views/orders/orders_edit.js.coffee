@@ -28,6 +28,22 @@ class Shop.Views.OrdersEdit extends Backbone.View
       Backbone.history.navigate("/orders", true)
     
   fillTable: ->  
-    @collection_of_orders_items = @model.order_items()
-    view = new Shop.Views.OrdersItemsIndex(collection: @collection_of_orders_items)    
-    $('#table_order_items').html(view.render().el)   
+    #@collection_of_orders_items = new Shop.Collections.OrderItems({order_id: @id})
+    #@collection_of_orders_items.fetch()
+        
+    @order_items = new Shop.Collections.OrderItems({order_id: @model.get('id')})
+    
+    @order_items.fetch
+      success: (collection) ->
+        console.log "There are now #{collection.length} suggestions in our collection."        
+        i = 0
+        while i < collection.length
+          item = collection.at(i)          
+          view = new Shop.Views.OrderItemsItem model: item
+          $('#example').append view.render().el          
+          i++
+      error: (collection, response) ->
+        console.log "Sad face! Server says #{response.status}."
+      
+
+ 

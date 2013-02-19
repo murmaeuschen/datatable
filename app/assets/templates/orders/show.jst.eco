@@ -7,6 +7,7 @@ $(function(){
     buttonImage: "/assets/calendar.gif",
     buttonImageOnly: true
    });
+  $("#example").dataTable(); 
 });
 </script>
 
@@ -30,7 +31,28 @@ $(function(){
 				</option>
 			</select>
 		</div>
-		<div id="table_order_items"></div>
+		<div id="table_order_items">
+         <table id="example">
+				<thead>
+					<tr>
+					  <th>Item Number</th>
+					  <th>Item Name</th>
+					  <th>Item Description</th>
+					  <th>Dimension</th>
+					  <th>Price</th>
+					  <th>Quantity</th>
+					  <th>Price per Line</th>
+					  <th>Edit</th>
+					  <th>Delete</th>
+					</tr>
+				</thead>
+				<tbody>		
+				
+
+
+            </tbody>
+			</table>
+		</div>
 		<div class="pagination pagination-centered" id="paging-buttons">       
 	    	  <ul class="pager">           
 	                    <li>
